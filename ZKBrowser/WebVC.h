@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+@class WebView;
 @interface WebVC : UIViewController
+/**
+ 这个方法要拿出来公用，因为在WebPagesVC里面会用到这玩意来创建
 
+ @return <#return value description#>
+ */
+- (WebView *)createNewWebView;
+
+/**
+ 添加KVO用的
+
+ @param theView <#theView description#>
+ */
+- (void)addKVO2theView:(UIView *)theView;
 @end

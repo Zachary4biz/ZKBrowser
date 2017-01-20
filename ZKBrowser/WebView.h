@@ -10,4 +10,7 @@
 
 @interface WebView : WKWebView
 @property (nonatomic, strong) UIProgressView *theProgressView;
+@property (nonatomic, strong) UIImage *snapShot;
+
+@property (nonatomic, assign) BOOL isUsingAsSmallWebView;
 @end

@@ -123,6 +123,10 @@ static CGFloat WandH4searchEngineBtn = 30.0;
     //结束编辑后，按钮变成“刷新”状态
     [self.refreshAndDeleteBtn setImage:[UIImage imageNamed:@"RefreshBtn"] forState:UIControlStateNormal];
     self.refreshAndDeleteBtn.ZKDescription = @"Refresh";
+    if (self.urlTextFieldEndEditingBlock) {
+        self.urlTextFieldEndEditingBlock();
+    }
+    
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {

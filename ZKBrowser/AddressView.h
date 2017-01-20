@@ -65,6 +65,7 @@ typedef enum : NSUInteger {
  */
 @property (nonatomic, strong)void (^clickRefreshAndDeleteBtnBlock)(id object);
 
+@property (nonatomic, strong)void (^urlTextFieldEndEditingBlock)();
 #pragma mark 一些方法
 /**
  初始化地址栏View

@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class WebVC;
 @interface WebPagesVC : UIViewController
-
 /**
- 保存正常模式下所有网页截图的数组
+ 实际上保存都是WebView，我给这个类加了一个属性是存截图的，使用就直接是aWebView =arr4NormalWebPages[1]; aWebView.snapShot;
  */
 @property (nonatomic, strong)NSMutableArray *arr4NormalWebPages;
 
@@ -20,19 +19,19 @@
  */
 @property (nonatomic, strong)NSMutableArray *arr4PrivateWebPages;
 
+/**
+ 就是WebVC
+ */
+@property (nonatomic, weak)WebVC *theWebVC;
+
+@property (nonatomic, copy)void (^dismissBlock)();
 
 /**
  给出WebPagesVC的单例
-
+ 不做单例，因为WebPagesVC和WebVC之间没有数据关联，可以直接销毁每次重新创建就行了
  @return WebPagesVC*
  */
-+ (instancetype) sharedInstance;
+//+ (instancetype) sharedInstance;
 
 
-/**
- 用来在这个VC中显示所有的网页tab
-
- @param arr4SnapshotOfWebView 一个存储有所有网页截图的数组
- */
-- (void)setUpWebPagesView:(NSMutableArray *)arr4SnapshotOfWebView;
 @end

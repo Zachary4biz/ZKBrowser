@@ -11,6 +11,7 @@
 @property (nonatomic, strong)WKProcessPool *aPool;
 @property (nonatomic, strong)WKPreferences *aPreference;
 @property (nonatomic, strong)WKUserContentController *aUserContentController;
+
 @end
 @implementation WebView
 
@@ -48,20 +49,10 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-//    WKWebViewConfiguration *aConfiguration = [[WKWebViewConfiguration alloc]init];
+    WKWebViewConfiguration *aDefualtConfiguration = [[WKWebViewConfiguration alloc]init];
     //通过这个初始化的就共享一个线程池
-//    aConfiguration.processPool = self.aPool;
-
-    if (self=[super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor colorWithWhite:0.93 alpha:1.0];
-        self.allowsBackForwardNavigationGestures = YES;
-        
-        _theProgressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleBar];
-        [_theProgressView setFrame:CGRectMake(0, 0, self.frame.size.width, 3)];
-        _theProgressView.progress = 0;
-        [self addSubview:self.theProgressView];
-    }
-    return self;
+    aDefualtConfiguration.processPool = self.aPool;
+    return [self initWithFrame:frame configuration:aDefualtConfiguration];
 
 }
 - (instancetype)initWithFrame:(CGRect)frame configuration:(nonnull WKWebViewConfiguration *)configuration
@@ -69,6 +60,17 @@
     if (self=[super initWithFrame:frame configuration:configuration]) {
         self.backgroundColor = [UIColor colorWithWhite:0.93 alpha:1.0];
         self.allowsBackForwardNavigationGestures = YES;
+        
+        //进度条
+        _theProgressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleBar];
+        [_theProgressView setFrame:CGRectMake(0, 0, self.frame.size.width, 3)];
+        _theProgressView.progress = 0;
+        [self addSubview:self.theProgressView];
+        
+        //添加一些常用网站
+
+        
+        
         
     }
     return self;

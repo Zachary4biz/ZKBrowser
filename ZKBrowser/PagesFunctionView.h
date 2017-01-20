@@ -15,9 +15,9 @@
 
 @property (nonatomic, strong)UIButton *backBtn;
 
-@property (nonatomic, strong)void (^clickPrivateBtnBlock)();
+@property (nonatomic, copy)void (^clickPrivateBtnBlock)();
 
-@property (nonatomic, strong)void (^clickCreatePageBtnBlock)();
+@property (nonatomic, copy)void (^clickCreatePageBtnBlock)();
 
-@property (nonatomic, strong)void (^clickBackBtnBlock)();
+@property (nonatomic, copy)void (^clickBackBtnBlock)();
 @end

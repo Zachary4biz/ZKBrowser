@@ -9,6 +9,7 @@
 #import "SetUpAboutKeyboard.h"
 #import <objc/runtime.h>
 #import <UIKit/UIKit.h>
+#import "UIResponder+FindFirstResponder.h"
 @implementation SetUpAboutKeyboard
 
 static int tag4topView = 9527;
@@ -41,7 +42,7 @@ static int counter = 0;
      *因为系统只会在DidDisappear之后才自动取消键盘，有时候我希望能在willDis时就取消
      *比如一个页面有输入框，但这个页面是present出来的，那么在它消失时，它会下移，直到消失不见了，键盘才移走
      */
-#warning 失败了，用willDisappear不可以，不运行那个方法，并且没有报错，直接挂。用DidDisappear可以
+
     /*
     Method newMethodAnother = class_getInstanceMethod([self class], @selector(newViewDidDisappearAnother:));
     //向目标VC以"viewDidDisappear"为方法名添-newMethodAnother
@@ -80,14 +81,18 @@ static int counter = 0;
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
 }
-//键盘弹出
+
 - (void)keyboardAppear:(NSNotification *)note
 {
     NSLog(@"setUpAboutKeyboard收到键盘弹出");
+#pragma mark Test About DarkKeyboard In WKWebContentView
+    
+    
     CGRect rect = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
     //设置键盘上方的指示View
     [self setTextFieldInputAccessoryView];
+    [self.aTextField becomeFirstResponder];
     
     UIToolbar *tempView = [self.view.window viewWithTag:tag4topView];
     [UIView animateWithDuration:duration animations:^{
@@ -166,7 +171,7 @@ static int counter = 0;
     [self.view.window endEditing:YES];
 }
 
-#warning 这里失败了，如果是用DidDisappear是可以的，用willDisappear会出错，没有报错，莫名其妙
+
 //和目标VC的viewWillDisappaer进行互换
 - (void)newViewWillDisappear:(BOOL)animated
 {

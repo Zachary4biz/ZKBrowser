@@ -22,6 +22,8 @@ static CGFloat buttonHeight = 0;
 - (instancetype)initWithFrame:(CGRect)aFrame
 {
     if (self = [super initWithFrame:aFrame]) {
+  
+        
         self.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
         buttonWidth = aFrame.size.width/5;
         buttonHeight = aFrame.size.height;

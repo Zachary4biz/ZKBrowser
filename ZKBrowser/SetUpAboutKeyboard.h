@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface SetUpAboutKeyboard : UIViewController
+/**
+ 测试在键盘弹出过程中如果修改了firstResponder为别的会怎么样
+ */
+@property (nonatomic, strong)UITextField *aTextField;
 //这个纯粹是为了骗过编译器，到时候要把这个方法的实现弄到目标vc中，而目标VC是有self.view的
 @property (nonatomic, strong)UIView *view;
 //topView键盘上方的那个指示view

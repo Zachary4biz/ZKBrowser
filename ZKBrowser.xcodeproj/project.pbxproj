@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11FBAA5B1E31B538005D5276 /* InputValidateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA5A1E31B538005D5276 /* InputValidateUtil.m */; };
 		B608AD5E1DFBE00C008C0010 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD5D1DFBE00C008C0010 /* main.m */; };
 		B608AD611DFBE00C008C0010 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD601DFBE00C008C0010 /* AppDelegate.m */; };
 		B608AD691DFBE00C008C0010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B608AD681DFBE00C008C0010 /* Assets.xcassets */; };
@@ -25,15 +26,23 @@
 		B608ADA21DFF08F4008C0010 /* SetUpAboutKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B608ADA11DFF08F4008C0010 /* SetUpAboutKeyboard.m */; };
 		B64975521E0EB0CD006F1652 /* PagesFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975511E0EB0CD006F1652 /* PagesFunctionView.m */; };
 		B64975551E0EB112006F1652 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975541E0EB112006F1652 /* WebView.m */; };
+		B6A9EFDD1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFDC1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m */; };
+		B6A9EFE51E1D0461000D0ABA /* SettingBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFE41E1D0461000D0ABA /* SettingBtnView.m */; };
+		B6A9EFE81E1D2458000D0ABA /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFE71E1D2458000D0ABA /* MyButton.m */; };
+		B6A9EFFF1E1F4D7E000D0ABA /* VerticalCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFFC1E1F4D7E000D0ABA /* VerticalCollectionView.m */; };
+		B6A9F0001E1F4D7E000D0ABA /* VerticalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFFE1E1F4D7E000D0ABA /* VerticalLayout.m */; };
+		B6A9F0031E1F83D8000D0ABA /* WebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9F0021E1F83D8000D0ABA /* WebViewDelegate.m */; };
 		B6E5C8E21E1232F4004F8635 /* DataCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E5C8E11E1232F4004F8635 /* DataCollection.m */; };
-		B6E5C8E51E123C6C004F8635 /* WebPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E5C8E41E123C6C004F8635 /* WebPageView.m */; };
 		B6E5C8E81E123D1F004F8635 /* WebPagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E5C8E71E123D1F004F8635 /* WebPagesVC.m */; };
-		B6E5C8ED1E1265CD004F8635 /* WebPageLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E5C8EC1E1265CD004F8635 /* WebPageLayout.m */; };
 		B6E648381E114B01000201D1 /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E648371E114B01000201D1 /* NSObject+Description.m */; };
 		B6F26F201E0D578C00A50825 /* FunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F26F1F1E0D578C00A50825 /* FunctionView.m */; };
+		B6FF55F01E232F2900B0561B /* SmallWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FF55EF1E232F2900B0561B /* SmallWebView.m */; };
+		B6FF55F31E23662B00B0561B /* VerticalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FF55F21E23662B00B0561B /* VerticalCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11FBAA591E31B538005D5276 /* InputValidateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputValidateUtil.h; sourceTree = "<group>"; };
+		11FBAA5A1E31B538005D5276 /* InputValidateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputValidateUtil.m; sourceTree = "<group>"; };
 		B608AD591DFBE00C008C0010 /* ZKBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B608AD5D1DFBE00C008C0010 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B608AD5F1DFBE00C008C0010 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,18 +83,30 @@
 		B64975511E0EB0CD006F1652 /* PagesFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesFunctionView.m; sourceTree = "<group>"; };
 		B64975531E0EB112006F1652 /* WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebView.h; sourceTree = "<group>"; };
 		B64975541E0EB112006F1652 /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebView.m; sourceTree = "<group>"; };
+		B6A9EFDB1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+FindFirstResponder.h"; sourceTree = "<group>"; };
+		B6A9EFDC1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+FindFirstResponder.m"; sourceTree = "<group>"; };
+		B6A9EFE31E1D0461000D0ABA /* SettingBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingBtnView.h; sourceTree = "<group>"; };
+		B6A9EFE41E1D0461000D0ABA /* SettingBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingBtnView.m; sourceTree = "<group>"; };
+		B6A9EFE61E1D2458000D0ABA /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		B6A9EFE71E1D2458000D0ABA /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
+		B6A9EFFB1E1F4D7E000D0ABA /* VerticalCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionView.h; sourceTree = "<group>"; };
+		B6A9EFFC1E1F4D7E000D0ABA /* VerticalCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionView.m; sourceTree = "<group>"; };
+		B6A9EFFD1E1F4D7E000D0ABA /* VerticalLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalLayout.h; sourceTree = "<group>"; };
+		B6A9EFFE1E1F4D7E000D0ABA /* VerticalLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalLayout.m; sourceTree = "<group>"; };
+		B6A9F0011E1F83D8000D0ABA /* WebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewDelegate.h; sourceTree = "<group>"; };
+		B6A9F0021E1F83D8000D0ABA /* WebViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewDelegate.m; sourceTree = "<group>"; };
 		B6E5C8E01E1232F4004F8635 /* DataCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCollection.h; sourceTree = "<group>"; };
 		B6E5C8E11E1232F4004F8635 /* DataCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCollection.m; sourceTree = "<group>"; };
-		B6E5C8E31E123C6C004F8635 /* WebPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPageView.h; sourceTree = "<group>"; };
-		B6E5C8E41E123C6C004F8635 /* WebPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPageView.m; sourceTree = "<group>"; };
 		B6E5C8E61E123D1F004F8635 /* WebPagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPagesVC.h; sourceTree = "<group>"; };
 		B6E5C8E71E123D1F004F8635 /* WebPagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPagesVC.m; sourceTree = "<group>"; };
-		B6E5C8EB1E1265CD004F8635 /* WebPageLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPageLayout.h; sourceTree = "<group>"; };
-		B6E5C8EC1E1265CD004F8635 /* WebPageLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPageLayout.m; sourceTree = "<group>"; };
 		B6E648361E114B01000201D1 /* NSObject+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
 		B6E648371E114B01000201D1 /* NSObject+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
 		B6F26F1E1E0D578C00A50825 /* FunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionView.h; sourceTree = "<group>"; };
 		B6F26F1F1E0D578C00A50825 /* FunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionView.m; sourceTree = "<group>"; };
+		B6FF55EE1E232F2900B0561B /* SmallWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallWebView.h; sourceTree = "<group>"; };
+		B6FF55EF1E232F2900B0561B /* SmallWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallWebView.m; sourceTree = "<group>"; };
+		B6FF55F11E23662B00B0561B /* VerticalCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionViewCell.h; sourceTree = "<group>"; };
+		B6FF55F21E23662B00B0561B /* VerticalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11FBAA581E31B52C005D5276 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				11FBAA591E31B538005D5276 /* InputValidateUtil.h */,
+				11FBAA5A1E31B538005D5276 /* InputValidateUtil.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		B608AD501DFBE00C008C0010 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +148,7 @@
 		B608AD5B1DFBE00C008C0010 /* ZKBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				11FBAA581E31B52C005D5276 /* Util */,
 				B608AD7F1DFBF021008C0010 /* Masonry */,
 				B608AD5F1DFBE00C008C0010 /* AppDelegate.h */,
 				B608AD601DFBE00C008C0010 /* AppDelegate.m */,
@@ -133,6 +164,10 @@
 				B6E5C8E11E1232F4004F8635 /* DataCollection.m */,
 				B6E648361E114B01000201D1 /* NSObject+Description.h */,
 				B6E648371E114B01000201D1 /* NSObject+Description.m */,
+				B6A9EFDB1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.h */,
+				B6A9EFDC1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m */,
+				B6A9EFE61E1D2458000D0ABA /* MyButton.h */,
+				B6A9EFE71E1D2458000D0ABA /* MyButton.m */,
 			);
 			path = ZKBrowser;
 			sourceTree = "<group>";
@@ -175,17 +210,39 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		B6A9EFE11E1D0435000D0ABA /* 底部工具栏 */ = {
+			isa = PBXGroup;
+			children = (
+				B6F26F1E1E0D578C00A50825 /* FunctionView.h */,
+				B6F26F1F1E0D578C00A50825 /* FunctionView.m */,
+				B6A9EFE31E1D0461000D0ABA /* SettingBtnView.h */,
+				B6A9EFE41E1D0461000D0ABA /* SettingBtnView.m */,
+			);
+			name = "底部工具栏";
+			sourceTree = "<group>";
+		};
+		B6A9EFE21E1D043F000D0ABA /* 顶部地址栏 */ = {
+			isa = PBXGroup;
+			children = (
+				B608AD7C1DFBEE8F008C0010 /* AddressView.h */,
+				B608AD7D1DFBEE8F008C0010 /* AddressView.m */,
+			);
+			name = "顶部地址栏";
+			sourceTree = "<group>";
+		};
 		B6E5C8E91E123D2F004F8635 /* WebPagesVC */ = {
 			isa = PBXGroup;
 			children = (
 				B6E5C8E61E123D1F004F8635 /* WebPagesVC.h */,
 				B6E5C8E71E123D1F004F8635 /* WebPagesVC.m */,
-				B6E5C8E31E123C6C004F8635 /* WebPageView.h */,
-				B6E5C8E41E123C6C004F8635 /* WebPageView.m */,
-				B64975501E0EB0CD006F1652 /* PagesFunctionView.h */,
 				B64975511E0EB0CD006F1652 /* PagesFunctionView.m */,
-				B6E5C8EB1E1265CD004F8635 /* WebPageLayout.h */,
-				B6E5C8EC1E1265CD004F8635 /* WebPageLayout.m */,
+				B64975501E0EB0CD006F1652 /* PagesFunctionView.h */,
+				B6A9EFFB1E1F4D7E000D0ABA /* VerticalCollectionView.h */,
+				B6A9EFFC1E1F4D7E000D0ABA /* VerticalCollectionView.m */,
+				B6A9EFFD1E1F4D7E000D0ABA /* VerticalLayout.h */,
+				B6A9EFFE1E1F4D7E000D0ABA /* VerticalLayout.m */,
+				B6FF55F11E23662B00B0561B /* VerticalCollectionViewCell.h */,
+				B6FF55F21E23662B00B0561B /* VerticalCollectionViewCell.m */,
 			);
 			name = WebPagesVC;
 			sourceTree = "<group>";
@@ -197,10 +254,12 @@
 				B608AD7A1DFBE49E008C0010 /* WebVC.m */,
 				B64975531E0EB112006F1652 /* WebView.h */,
 				B64975541E0EB112006F1652 /* WebView.m */,
-				B608AD7C1DFBEE8F008C0010 /* AddressView.h */,
-				B608AD7D1DFBEE8F008C0010 /* AddressView.m */,
-				B6F26F1E1E0D578C00A50825 /* FunctionView.h */,
-				B6F26F1F1E0D578C00A50825 /* FunctionView.m */,
+				B6A9F0011E1F83D8000D0ABA /* WebViewDelegate.h */,
+				B6A9F0021E1F83D8000D0ABA /* WebViewDelegate.m */,
+				B6FF55EE1E232F2900B0561B /* SmallWebView.h */,
+				B6FF55EF1E232F2900B0561B /* SmallWebView.m */,
+				B6A9EFE21E1D043F000D0ABA /* 顶部地址栏 */,
+				B6A9EFE11E1D0435000D0ABA /* 底部工具栏 */,
 			);
 			name = WebVC;
 			sourceTree = "<group>";
@@ -231,7 +290,7 @@
 		B608AD511DFBE00C008C0010 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "周桐";
 				TargetAttributes = {
 					B608AD581DFBE00C008C0010 = {
@@ -276,23 +335,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A9EFE51E1D0461000D0ABA /* SettingBtnView.m in Sources */,
 				B608AD981DFBF021008C0010 /* MASConstraint.m in Sources */,
-				B6E5C8ED1E1265CD004F8635 /* WebPageLayout.m in Sources */,
+				B6A9EFDD1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m in Sources */,
 				B608AD9B1DFBF021008C0010 /* MASViewAttribute.m in Sources */,
 				B6E648381E114B01000201D1 /* NSObject+Description.m in Sources */,
 				B608AD9D1DFBF021008C0010 /* NSArray+MASAdditions.m in Sources */,
+				B6A9F0001E1F4D7E000D0ABA /* VerticalLayout.m in Sources */,
+				B6FF55F01E232F2900B0561B /* SmallWebView.m in Sources */,
 				B608AD7B1DFBE49E008C0010 /* WebVC.m in Sources */,
 				B608AD9C1DFBF021008C0010 /* MASViewConstraint.m in Sources */,
-				B6E5C8E51E123C6C004F8635 /* WebPageView.m in Sources */,
 				B64975521E0EB0CD006F1652 /* PagesFunctionView.m in Sources */,
 				B608AD9A1DFBF021008C0010 /* MASLayoutConstraint.m in Sources */,
+				B6FF55F31E23662B00B0561B /* VerticalCollectionViewCell.m in Sources */,
 				B64975551E0EB112006F1652 /* WebView.m in Sources */,
 				B6E5C8E81E123D1F004F8635 /* WebPagesVC.m in Sources */,
+				B6A9EFE81E1D2458000D0ABA /* MyButton.m in Sources */,
 				B6E5C8E21E1232F4004F8635 /* DataCollection.m in Sources */,
 				B608AD9F1DFBF021008C0010 /* View+MASAdditions.m in Sources */,
+				B6A9F0031E1F83D8000D0ABA /* WebViewDelegate.m in Sources */,
 				B608AD971DFBF021008C0010 /* MASCompositeConstraint.m in Sources */,
 				B608AD9E1DFBF021008C0010 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				11FBAA5B1E31B538005D5276 /* InputValidateUtil.m in Sources */,
 				B6F26F201E0D578C00A50825 /* FunctionView.m in Sources */,
+				B6A9EFFF1E1F4D7E000D0ABA /* VerticalCollectionView.m in Sources */,
 				B608AD991DFBF021008C0010 /* MASConstraintMaker.m in Sources */,
 				B608ADA21DFF08F4008C0010 /* SetUpAboutKeyboard.m in Sources */,
 				B608AD7E1DFBEE8F008C0010 /* AddressView.m in Sources */,
@@ -333,6 +399,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -380,6 +447,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
