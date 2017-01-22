@@ -126,7 +126,7 @@ static CGFloat width4PagesFunctionView = 250.0;
     CGFloat insetHorizontal = 0.05*[UIScreen mainScreen].bounds.size.width;
     CGFloat height = self.view.frame.size.height-80-20-20;
 //一个普通网页截图应该有的大小
-    _cellSize = CGSizeMake(0.5*width, 0.4*height);
+    _cellSize = CGSizeMake(0.6*width, 0.6*height);
 //初始化一个用来当遮罩的UIImageView
     _blurIMGView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"BlurBackGround"]];
     [_blurIMGView setFrame:CGRectMake(0, 0, _cellSize.width, _cellSize.height)];
