@@ -62,13 +62,22 @@ typedef enum{
 
 /**
  加在collectionView上面，通过手势的location找到index，从而获取到手势点选的cell
+ 不选择给每个cell添加是因为那样太多了，不方便写代理，也是无意义地消耗内存
  */
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture4Cell;
+
 /**
- 数组用来保存cell的pan手势，因为在代理里面要遍历出来
- 让每一个cell的pan手势都能够和collectionView的pan手势同时进行
+ 一个网页截图的大小
  */
-//@property (nonatomic, strong) NSMutableArray *cellPanGestureArr;
+@property (nonatomic, assign) CGSize cellSize;
+
+/**
+ 这个是正在滑动的cell
+ 之所以也做成全局变量，首先是因为目前的方法是通过手势的location找到cell
+ 所以必须在滑动手势的Began状态去取这个cell，并且记录下来，不然之后的location会超出cell布局的frame
+ 结果就是取不到cell了，出BUG
+ */
+@property (nonatomic, strong) VerticalCollectionViewCell *handlingCell;
 @end
 
 @implementation WebPagesVC
@@ -106,6 +115,7 @@ static id instance;
 static CGFloat insetOfCollectionAndFunctionView = 10.0;
 static CGFloat height4PagesFunctionView = 80.0;
 static CGFloat width4PagesFunctionView = 250.0;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
  
@@ -116,10 +126,10 @@ static CGFloat width4PagesFunctionView = 250.0;
     CGFloat insetHorizontal = 0.05*[UIScreen mainScreen].bounds.size.width;
     CGFloat height = self.view.frame.size.height-80-20-20;
 //一个普通网页截图应该有的大小
-    CGSize aWebSize = CGSizeMake(0.7*width, 0.6*height);
+    _cellSize = CGSizeMake(0.5*width, 0.4*height);
 //初始化一个用来当遮罩的UIImageView
     _blurIMGView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"BlurBackGround"]];
-    [_blurIMGView setFrame:CGRectMake(0, 0, aWebSize.width, aWebSize.height)];
+    [_blurIMGView setFrame:CGRectMake(0, 0, _cellSize.width, _cellSize.height)];
 
 #pragma mark _aCollectionView
     CGRect frame4CollectionView = CGRectMake(0,
@@ -147,7 +157,7 @@ static CGFloat width4PagesFunctionView = 250.0;
     _normalCollectionView = [[VerticalCollectionView alloc]initWithFrame:CGRectMake(insetHorizontal, 20, width, height)
                                                                  dataArr:_arr4NormalWebPages
                                                           cellIdentifier:normalCellID
-                                                                cellSize:aWebSize
+                                                                cellSize:_cellSize
                                                           configureBlock:^(id data, VerticalCollectionViewCell *cell) {
                                                               //配置Cell
                                                               //给它截图
@@ -177,7 +187,7 @@ static CGFloat width4PagesFunctionView = 250.0;
     _privateColleciontView = [[VerticalCollectionView alloc]initWithFrame:CGRectMake(insetHorizontal, 20, width, height)
                                                                  dataArr:_arr4PrivateWebPages
                                                           cellIdentifier:privateCellID
-                                                                cellSize:aWebSize
+                                                                cellSize:_cellSize
                                                           configureBlock:^(id data, VerticalCollectionViewCell *cell) {
                                                               
                                                           }];
@@ -351,20 +361,24 @@ static CGFloat width4PagesFunctionView = 250.0;
 #pragma mark - 响应
 - (void)panGesture4Cell:(UIPanGestureRecognizer *)thePanGesture
 {
-    //根据手势的点取到handlingCell
-    CGPoint locationPoint = [thePanGesture locationInView:self.normalCollectionView];
-    NSIndexPath *indexPath4HandlingCell = [self.normalCollectionView indexPathForItemAtPoint:locationPoint];
-    VerticalCollectionViewCell *handlingCell =(VerticalCollectionViewCell *)[self.normalCollectionView cellForItemAtIndexPath:indexPath4HandlingCell];
-    //位移
-    CGPoint translationPoint = [thePanGesture translationInView:self.normalCollectionView];
-    
+
     switch (thePanGesture.state) {
         case UIGestureRecognizerStateBegan:
-            nil;
+        {
+            //根据手势的点取到handlingCell
+            CGPoint locationPoint = [thePanGesture locationInView:self.normalCollectionView];
+            NSIndexPath *indexPath4HandlingCell = [self.normalCollectionView indexPathForItemAtPoint:locationPoint];
+            _handlingCell =(VerticalCollectionViewCell *)[self.normalCollectionView cellForItemAtIndexPath:indexPath4HandlingCell];
         break;
+        }
         case UIGestureRecognizerStateChanged:
         {
-            handlingCell.transform = CGAffineTransformMakeTranslation(translationPoint.x, 0);
+            //位移
+            CGPoint translationPoint = [thePanGesture translationInView:self.normalCollectionView];
+            _handlingCell.transform = CGAffineTransformMakeTranslation(translationPoint.x, 0);
+            //alpha设置一下，最后是大于0.4吧，不然很丑
+            CGFloat alphaShouldBe = 1 - fabs(translationPoint.x)/(0.5*_cellSize.width);
+            _handlingCell.alpha = alphaShouldBe>0.4?alphaShouldBe:0.4;
         }
         break;
         case UIGestureRecognizerStateCancelled:
@@ -374,29 +388,34 @@ static CGFloat width4PagesFunctionView = 250.0;
             NSLog(@"end");
             NSLog(@"enter End %@",thePanGesture.isEnabled?@"enabled":@"disabled");
             //结束时判断位置
+            CGPoint translationPoint = [thePanGesture translationInView:self.normalCollectionView];
             if (_arr4NormalWebPages.count>1) {
-                //如果Tab多于一个
-                if (translationPoint.x>150 || translationPoint.x<-150) {
+                //如果Tab多于一个就可以删除
+                //删除的阈值是 移动了cell宽度的一半
+                CGFloat threshold = 0.5*_cellSize.width;
+                if (fabs(translationPoint.x)>threshold) {
                     //如果超过了限定，删除
                     NSLog(@"调用了");
                     //更改webVC的页面为这个被移除的页面的前一个
-                    NSInteger handlingIndex = indexPath4HandlingCell.row;
-                    NSInteger nextIndexShouldBe = handlingIndex-1<0?handlingIndex+1:handlingIndex-1;
+                    NSIndexPath *handlingIndex = [_normalCollectionView indexPathForCell:_handlingCell];
+                    NSInteger nextIndexShouldBe = handlingIndex.row-1<0?handlingIndex.row+1:handlingIndex.row-1;
                     [self changeWebViewWith:_arr4NormalWebPages[nextIndexShouldBe]];
                     //修改数据源
-                    [_arr4NormalWebPages removeObjectAtIndex:handlingIndex];
+                    [_arr4NormalWebPages removeObjectAtIndex:handlingIndex.row];
                     //重置一些懒加载的东西为nil
                     [_normalCollectionView updateDataArrWith:_arr4NormalWebPages];
                     //删除cell
-                    [_normalCollectionView deleteItemsAtIndexPaths:@[indexPath4HandlingCell]];
+                    [_normalCollectionView deleteItemsAtIndexPaths:@[handlingIndex]];
                 }else{
                     [UIView animateWithDuration:0.2 animations:^{
-                        handlingCell.transform = CGAffineTransformIdentity;
+                        _handlingCell.transform = CGAffineTransformIdentity;
+                        _handlingCell.alpha = 1.0;
                     }];
                 }
             }else{
                 [UIView animateWithDuration:0.2 animations:^{
-                    handlingCell.transform = CGAffineTransformIdentity;
+                    _handlingCell.transform = CGAffineTransformIdentity;
+                    _handlingCell.alpha = 1.0;
                 }];
             }
         }
