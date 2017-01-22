@@ -13,8 +13,6 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self doInit];
-        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGesture:)];
-        [self.ZKIMGView addGestureRecognizer:panGesture];
         self.ZKIMGView.userInteractionEnabled = YES;
     }
     return self;
@@ -34,12 +32,12 @@
     
     _ZKIMGView.layer.borderWidth = 3;
 }
-- (void)panGesture:(UIPanGestureRecognizer *)aPanGesture
-{
-    if (self.panGestureBlock) {
-        self.panGestureBlock(aPanGesture);
-    }else{
-        NSLog(@"didn't realize panGestureBlock");
-    }
-}
+//- (void)panGesture:(UIPanGestureRecognizer *)aPanGesture
+//{
+//    if (self.panGestureBlock) {
+//        self.panGestureBlock(aPanGesture);
+//    }else{
+//        NSLog(@"didn't realize panGestureBlock");
+//    }
+//}
 @end

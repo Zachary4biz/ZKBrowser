@@ -23,40 +23,52 @@ typedef enum{
 /**
  中间的浏览器内容页面
  */
-@property (nonatomic, strong)WebView *webView;
+@property (nonatomic, strong) WebView *webView;
 /**
  保存有当前所有打开的webView
  */
-@property (nonatomic, strong)NSMutableArray *arr4WebViews;
+@property (nonatomic, strong) NSMutableArray *arr4WebViews;
 /**
  网页地址
  */
-@property (nonatomic, strong)AddressView *addressView;
+@property (nonatomic, strong) AddressView *addressView;
 @end
 
-@interface WebPagesVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface WebPagesVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate>
 /**
  大的背景，里面套俩collectionView
  */
-@property (nonatomic, strong)UICollectionView *aCollectionView;
+@property (nonatomic, strong) UICollectionView *aCollectionView;
 /**
  左侧的collectionView，正常浏览模式
  */
-@property (nonatomic, strong)VerticalCollectionView *normalCollectionView;
+@property (nonatomic, strong) VerticalCollectionView *normalCollectionView;
 /**
  右侧的collectionView，隐私模式
  */
-@property (nonatomic, strong)VerticalCollectionView *privateColleciontView;
+@property (nonatomic, strong) VerticalCollectionView *privateColleciontView;
+/**
+ 底部的工具条，三个按钮
+ */
+@property (nonatomic, strong) PagesFunctionView *aFunctionView;
 /**
  用来标记这个webView正在以小窗口模式打开，所以给这个cell加一个模糊
  */
-@property (nonatomic, strong)UIImageView *blurIMGView;
+@property (nonatomic, strong) UIImageView *blurIMGView;
 /**
  当前是什么浏览模式，主要是判断浏览器有没有开启隐私模式，这影响到aCollectionView有一个还是两个cell
  */
+@property (nonatomic, assign) BrowseType currentType;
 
-
-
+/**
+ 加在collectionView上面，通过手势的location找到index，从而获取到手势点选的cell
+ */
+@property (nonatomic, strong) UIPanGestureRecognizer *panGesture4Cell;
+/**
+ 数组用来保存cell的pan手势，因为在代理里面要遍历出来
+ 让每一个cell的pan手势都能够和collectionView的pan手势同时进行
+ */
+//@property (nonatomic, strong) NSMutableArray *cellPanGestureArr;
 @end
 
 @implementation WebPagesVC
@@ -76,8 +88,6 @@ static id instance;
     return instance;
 }
 
-//默认是正常模式（隐私模式关闭）
-static BrowseType currentType = BrowseNormalType;
 - (NSMutableArray *)arr4NormalWebPages
 {
     if (!_arr4NormalWebPages) {
@@ -111,7 +121,7 @@ static CGFloat width4PagesFunctionView = 250.0;
     _blurIMGView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"BlurBackGround"]];
     [_blurIMGView setFrame:CGRectMake(0, 0, aWebSize.width, aWebSize.height)];
 
-#pragma mark wrapperCollectionView
+#pragma mark _aCollectionView
     CGRect frame4CollectionView = CGRectMake(0,
                                              20,
                                              2*self.view.frame.size.width,
@@ -148,44 +158,60 @@ static CGFloat width4PagesFunctionView = 250.0;
                                                               if (theView.isUsingAsSmallWebView) {
                                                                   [cell.contentView addSubview:wself.blurIMGView];
                                                               }
-                                                              //给它配置block
-                                                              [self setUpPanGestureBlockOfCell:cell];
+//                                                              //给它配置block
+//                                                              [wself setUpPanGestureBlockOfCell:cell];
+                                                              
+                                                              //因为跟collectionView的pan冲突了，保存起来看能不能做什么
+                                                              //需要注意的是在cell被移除的时候，这个数组里面相应的gesture也要移除
+//                                                              [wself.cellPanGestureArr addObject:cell.panGesture];
                                                           }];
     _normalCollectionView.delegate = self;
+    _normalCollectionView.alwaysBounceVertical = YES;
+    //添加移动cell的手势
+    _panGesture4Cell = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGesture4Cell:)];
+    _panGesture4Cell.delegate = self;
+    [_normalCollectionView addGestureRecognizer:_panGesture4Cell];
+    
     
 #pragma mark privateCollectionView
-  
+    _privateColleciontView = [[VerticalCollectionView alloc]initWithFrame:CGRectMake(insetHorizontal, 20, width, height)
+                                                                 dataArr:_arr4PrivateWebPages
+                                                          cellIdentifier:privateCellID
+                                                                cellSize:aWebSize
+                                                          configureBlock:^(id data, VerticalCollectionViewCell *cell) {
+                                                              
+                                                          }];
+    _privateColleciontView.delegate = self;
     
-    
-#pragma mark bottomToolBar
-    PagesFunctionView *aFunctionView = [[PagesFunctionView alloc]initWithFrame:CGRectMake(0.5*(self.view.frame.size.width - width4PagesFunctionView), CGRectGetMaxY(_aCollectionView.frame)+insetOfCollectionAndFunctionView, width4PagesFunctionView, height4PagesFunctionView)];
+#pragma mark aFunctionView
+    _aFunctionView = [[PagesFunctionView alloc]initWithFrame:CGRectMake(0.5*(self.view.frame.size.width - width4PagesFunctionView), CGRectGetMaxY(_aCollectionView.frame)+insetOfCollectionAndFunctionView, width4PagesFunctionView, height4PagesFunctionView)];
     //点击返回按钮的响应
     typeof(self) __weak Wself = self;
-    aFunctionView.clickBackBtnBlock = ^(){
+    _aFunctionView.clickBackBtnBlock = ^(){
         [Wself dismissViewControllerAnimated:YES completion:^{
             //更改了逻辑，在willDissApppear里面再回调dissmissBlock
             //不然在点击返回和添加按钮都要调用dissmissBlock
         }];
     };
     //点击添加按钮的响应
-    aFunctionView.clickCreatePageBtnBlock = ^(){
+    _aFunctionView.clickCreatePageBtnBlock = ^(){
         WebView *aWebView = [Wself.theWebVC createNewWebView];
         [Wself changeWebViewWith:aWebView];
         [Wself dismissViewControllerAnimated:YES completion:nil];
     };
     //点击隐私模式按钮的响应
-    aFunctionView.clickPrivateBtnBlock = ^(){
+    _aFunctionView.clickPrivateBtnBlock = ^(){
         
     };
-    aFunctionView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:aFunctionView];
+    _aFunctionView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:_aFunctionView];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.normalCollectionView reloadData];
     [self.normalCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.arr4NormalWebPages.count-1 inSection:0]
-                                      atScrollPosition:UICollectionViewScrollPositionTop
+                                      atScrollPosition:UICollectionViewScrollPositionBottom
                                               animated:NO];
     
 //    [self.normalCollectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
@@ -226,7 +252,7 @@ static CGFloat width4PagesFunctionView = 250.0;
 {
     NSInteger result = 0;
     if (collectionView == _aCollectionView) {
-        if (currentType == BrowseNormalType) {
+        if (_currentType == BrowseNormalType) {
             //正常模式就只有一列
             result = 1;
             NSLog(@"当前是正常模式");
@@ -278,10 +304,110 @@ static CGFloat width4PagesFunctionView = 250.0;
         }
     }
 }
-#pragma mark - UICollectionViewDelegateFlowLayout
 
-
-
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    NSLog(@"gestureRecognizer:%@",gestureRecognizer);
+    if (gestureRecognizer == _panGesture4Cell) {
+        //转一下类型，获取translation
+        CGPoint translationPoint = [(UIPanGestureRecognizer *)gestureRecognizer translationInView:self.normalCollectionView];
+        if (fabs(translationPoint.x) > fabs(translationPoint.y) ) {
+            //表示是横向pan
+            //获取location，如果手势不在cell上也不要响应，不然容易BUG
+            CGPoint locationPoint = [(UIPanGestureRecognizer *)gestureRecognizer locationInView:self.normalCollectionView];
+            if (![_normalCollectionView indexPathForItemAtPoint:locationPoint]) {
+                //如果不在cell上就不响应
+                return NO;
+            }
+            return YES;
+        }else{
+            //表示竖直pan，要用collectionView自身的滚动手势
+            return NO;
+        }
+    }
+    return YES;
+}
+/*
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    NSLog(@"_________________");
+    NSLog(@"gestureRecognizer:%@",gestureRecognizer);
+    NSLog(@"\n");
+    NSLog(@"otherGestureRecognizer:%@",otherGestureRecognizer);
+    NSLog(@"____________________");
+    
+    if ([gestureRecognizer isEqual:_panGesture4Cell]) {
+        if ([otherGestureRecognizer.view isEqual:_normalCollectionView]) {
+            NSLog(@"两个相同");
+            return YES;
+        }else{
+            return NO;
+        }
+    }
+    return NO;
+}
+*/
+#pragma mark - 响应
+- (void)panGesture4Cell:(UIPanGestureRecognizer *)thePanGesture
+{
+    //根据手势的点取到handlingCell
+    CGPoint locationPoint = [thePanGesture locationInView:self.normalCollectionView];
+    NSIndexPath *indexPath4HandlingCell = [self.normalCollectionView indexPathForItemAtPoint:locationPoint];
+    VerticalCollectionViewCell *handlingCell =(VerticalCollectionViewCell *)[self.normalCollectionView cellForItemAtIndexPath:indexPath4HandlingCell];
+    //位移
+    CGPoint translationPoint = [thePanGesture translationInView:self.normalCollectionView];
+    
+    switch (thePanGesture.state) {
+        case UIGestureRecognizerStateBegan:
+            nil;
+        break;
+        case UIGestureRecognizerStateChanged:
+        {
+            handlingCell.transform = CGAffineTransformMakeTranslation(translationPoint.x, 0);
+        }
+        break;
+        case UIGestureRecognizerStateCancelled:
+            NSLog(@"cancel");
+        case UIGestureRecognizerStateEnded:
+        {
+            NSLog(@"end");
+            NSLog(@"enter End %@",thePanGesture.isEnabled?@"enabled":@"disabled");
+            //结束时判断位置
+            if (_arr4NormalWebPages.count>1) {
+                //如果Tab多于一个
+                if (translationPoint.x>150 || translationPoint.x<-150) {
+                    //如果超过了限定，删除
+                    NSLog(@"调用了");
+                    //更改webVC的页面为这个被移除的页面的前一个
+                    NSInteger handlingIndex = indexPath4HandlingCell.row;
+                    NSInteger nextIndexShouldBe = handlingIndex-1<0?handlingIndex+1:handlingIndex-1;
+                    [self changeWebViewWith:_arr4NormalWebPages[nextIndexShouldBe]];
+                    //修改数据源
+                    [_arr4NormalWebPages removeObjectAtIndex:handlingIndex];
+                    //重置一些懒加载的东西为nil
+                    [_normalCollectionView updateDataArrWith:_arr4NormalWebPages];
+                    //删除cell
+                    [_normalCollectionView deleteItemsAtIndexPaths:@[indexPath4HandlingCell]];
+                }else{
+                    [UIView animateWithDuration:0.2 animations:^{
+                        handlingCell.transform = CGAffineTransformIdentity;
+                    }];
+                }
+            }else{
+                [UIView animateWithDuration:0.2 animations:^{
+                    handlingCell.transform = CGAffineTransformIdentity;
+                }];
+            }
+        }
+        default:
+        break;
+    }
+    
+    
+    
+    
+}
 #pragma mark - Self-Made自定义的方法
 //更换webView
 - (void)changeWebViewWith:(WebView *)aView
@@ -300,28 +426,61 @@ static CGFloat width4PagesFunctionView = 250.0;
     
 }
 //配置cell的panGestureBlock
+/*
 - (void)setUpPanGestureBlockOfCell:(VerticalCollectionViewCell *)cell
 {
     typeof(cell) __weak Wcell = cell;
+    typeof(self) __weak Wself = self;
     cell.panGestureBlock = ^(UIPanGestureRecognizer *thePanGesture){
-        if (thePanGesture.state == UIGestureRecognizerStateChanged) {
-            NSIndexPath *index = [_normalCollectionView indexPathForCell:Wcell];
-            CGPoint gesturePoint = [thePanGesture translationInView:Wcell];
-            Wcell.transform = CGAffineTransformMakeTranslation(gesturePoint.x, 0);
-            if (gesturePoint.x>150 || gesturePoint.x<-150) {
-                [_arr4NormalWebPages removeObjectAtIndex:index.row];
-                [_normalCollectionView updateDataArrWith:_arr4NormalWebPages];
-                [_normalCollectionView deleteItemsAtIndexPaths:@[index]];
-#warning 这个很重要，因为拖动太快了的话，超过150会在这里调用两次，第二次的时候collectionView已经没有这个cell了，index是nil，会报错的
-                thePanGesture.enabled = NO;
-            }
-        }else if(thePanGesture.state == UIGestureRecognizerStateEnded){
-            [UIView animateWithDuration:0.2 animations:^{
-                Wcell.transform = CGAffineTransformIdentity;
-            }];
+        NSIndexPath *index = [_normalCollectionView indexPathForCell:Wcell];
+        CGPoint gestureTranslationPoint = [thePanGesture translationInView:Wcell];
+        switch (thePanGesture.state) {
+            case UIGestureRecognizerStateBegan:
+                NSLog(@"gesturePoint.x is %lf y is %lf",gestureTranslationPoint.x, gestureTranslationPoint.y);
+                if (ABS(gestureTranslationPoint.y)<4) {
+                    //阈值设为4判断一下，竖直方向初始位移小于4就认为是水平，StateChange中执行手势
+                }else{
+                    //竖直方向的初始位移大于4认为是竖直的要滚动，StateChange中不执行
+//                    [thePanGesture requireGestureRecognizerToFail:_normalCollectionView.panGestureRecognizer];
+                }
+                break;
+            case UIGestureRecognizerStateChanged:
+                //正在改变时，位移
+                Wcell.transform = CGAffineTransformMakeTranslation(gestureTranslationPoint.x, 0);
+                break;
+            case UIGestureRecognizerStateEnded:
+                NSLog(@"enter End %@",thePanGesture.isEnabled?@"enabled":@"disabled");
+                //结束时判断位置
+                if (_arr4NormalWebPages.count>1) {
+                    //如果Tab多于一个
+                    if (gestureTranslationPoint.x>150 || gestureTranslationPoint.x<-150) {
+                        //如果超过了限定，删除
+                        NSLog(@"调用了");
+                        //更改webVC的页面为这个被移除的页面的前一个
+                        NSInteger pageIndexShouldBe = index.row-1<0?index.row+1:index.row-1;
+                        [Wself changeWebViewWith:_arr4NormalWebPages[pageIndexShouldBe]];
+                        //移除手势数组中的手势
+                        [_cellPanGestureArr removeObjectAtIndex:index.row];
+                        [_arr4NormalWebPages removeObjectAtIndex:index.row];
+                        [_normalCollectionView updateDataArrWith:_arr4NormalWebPages];
+                        [_normalCollectionView deleteItemsAtIndexPaths:@[index]];
+                    }else{
+                        [UIView animateWithDuration:0.2 animations:^{
+                            Wcell.transform = CGAffineTransformIdentity;
+                        }];
+                    }
+                }else{
+                    [UIView animateWithDuration:0.2 animations:^{
+                        Wcell.transform = CGAffineTransformIdentity;
+                    }];
+                }
+                thePanGesture.enabled = YES;
+                break;
+            default:
+                break;
         }
     };
 }
-
+*/
 
 @end

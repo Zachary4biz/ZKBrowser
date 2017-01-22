@@ -41,6 +41,7 @@
     _layOut = [[VerticalLayout alloc]init];
     _layOut.itemSize = anItemSize;
     _layOut.edgeInset = UIEdgeInsetsMake(60, 0, 20, 0);
+    
     return [self initWithFrame:aFrame
                        dataArr:aDataArr
                 cellIdentifier:aCellIdentifier
@@ -61,6 +62,7 @@
         self.cellIdentifier = aCellIdentifier;
         self.cellConfigureBlock = aConfigureBlock;
         [self registerClass:[VerticalCollectionViewCell class] forCellWithReuseIdentifier:aCellIdentifier];
+        
         
     }
     return self;

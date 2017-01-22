@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class WebVC;
-@interface WebPagesVC : UIViewController
+@interface WebPagesVC : UIViewController<UIGestureRecognizerDelegate>
 /**
  实际上保存都是WebView，我给这个类加了一个属性是存截图的，使用就直接是aWebView =arr4NormalWebPages[1]; aWebView.snapShot;
  */

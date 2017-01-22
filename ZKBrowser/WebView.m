@@ -75,5 +75,9 @@
     }
     return self;
 }
-
+- (void)dealloc
+{
+    NSLog(@"-- webView销毁");
+    NSLog(@"-- 地址为%p，title是%@,URL是%@",self,self.title,self.URL);
+}
 @end

@@ -12,4 +12,5 @@
 @property (nonatomic, strong) UIImageView *ZKIMGView;
 
 @property (nonatomic, copy) void (^panGestureBlock)(id object);
+//@property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 @end
