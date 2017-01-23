@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WebVC.h"
+#import "SpotlightUtil.h"
 @interface AppDelegate ()
 
 @end
@@ -18,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[WebVC alloc]init];
+    self.window.rootViewController = [WebVC sharedInstance];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -48,6 +49,28 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+//点击spotlight之后的响应方法
+- (BOOL)application:(UIApplication *)application
+continueUserActivity:(nonnull NSUserActivity *)userActivity
+ restorationHandler:(nonnull void (^)(NSArray * _Nullable))restorationHandler
+{
+    if ([[userActivity activityType] isEqualToString:CSSearchableItemActionType]) {
+        NSString *uniqueIdentifier = [userActivity.userInfo objectForKey:CSSearchableItemActivityIdentifier];
+        //接受事先定义好的竖直，如果是多个参数可以使用Json转成string传递过来，然后再把string转回去
+        //这个就是spotlightUtil的spotlightInfo
+        NSLog(@"传递过来的值是%@",uniqueIdentifier);
+        WebVC *theWebVC = [WebVC sharedInstance];
+        theWebVC.spotlightParam = uniqueIdentifier;
+        [theWebVC requestWithSpotlightParam:uniqueIdentifier];
+        
+    }else{
+        NSLog(@"not Equal");
+        NSLog(@"userActivityType %@",[userActivity activityType]);
+        NSLog(@"CSSearchableItemActionType %@",CSSearchableItemActionType);
+    }
+    return YES;
 }
 
 

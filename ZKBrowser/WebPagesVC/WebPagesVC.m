@@ -358,6 +358,10 @@ static CGFloat width4PagesFunctionView = 250.0;
             [self changeWebViewWith:theClickedWebView];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
+    }else if (collectionView == _privateColleciontView){
+        WebView *theClickedWebView = _arr4PrivateWebPages[indexPath.row];
+        [self changeWebViewWith:theClickedWebView];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

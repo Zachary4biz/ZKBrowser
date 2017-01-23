@@ -7,22 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		118FB16D1E35BEB800A50698 /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB15C1E35BEB800A50698 /* NSObject+Description.m */; };
 		118FB16E1E35BEB800A50698 /* SetUpAboutKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1601E35BEB800A50698 /* SetUpAboutKeyboard.m */; };
 		118FB16F1E35BEB800A50698 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1631E35BEB800A50698 /* MyButton.m */; };
 		118FB1701E35BEB800A50698 /* VerticalCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1661E35BEB800A50698 /* VerticalCollectionView.m */; };
 		118FB1711E35BEB800A50698 /* VerticalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1681E35BEB800A50698 /* VerticalCollectionViewCell.m */; };
 		118FB1721E35BEB800A50698 /* VerticalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB16A1E35BEB800A50698 /* VerticalLayout.m */; };
-		118FB1731E35BEB800A50698 /* UIResponder+FindFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB16C1E35BEB800A50698 /* UIResponder+FindFirstResponder.m */; };
 		118FB18B1E35BEC200A50698 /* PagesFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1761E35BEC200A50698 /* PagesFunctionView.m */; };
 		118FB18C1E35BEC200A50698 /* WebPagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1781E35BEC200A50698 /* WebPagesVC.m */; };
 		118FB18D1E35BEC200A50698 /* FunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB17C1E35BEC200A50698 /* FunctionView.m */; };
 		118FB18E1E35BEC200A50698 /* SettingBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB17E1E35BEC200A50698 /* SettingBtnView.m */; };
-		118FB18F1E35BEC200A50698 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1811E35BEC200A50698 /* WebVC.m */; };
 		118FB1901E35BEC200A50698 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1831E35BEC200A50698 /* WebView.m */; };
 		118FB1911E35BEC200A50698 /* WebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1851E35BEC200A50698 /* WebViewDelegate.m */; };
-		118FB1921E35BEC200A50698 /* SmallWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1871E35BEC200A50698 /* SmallWebView.m */; };
 		118FB1931E35BEC200A50698 /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB18A1E35BEC200A50698 /* AddressView.m */; };
+		118FB1971E35F8C200A50698 /* SpotlightUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1961E35F8C200A50698 /* SpotlightUtil.m */; };
+		118FB19C1E35F91900A50698 /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1991E35F91900A50698 /* NSObject+Description.m */; };
+		118FB19D1E35F91900A50698 /* UIResponder+FindFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB19B1E35F91900A50698 /* UIResponder+FindFirstResponder.m */; };
+		118FB1A01E3600FD00A50698 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB19F1E3600FD00A50698 /* WebVC.m */; };
+		118FB1A41E36010600A50698 /* SmallWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1A31E36010600A50698 /* SmallWebView.m */; };
+		118FB1A91E36021300A50698 /* CodeRecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1A81E36021300A50698 /* CodeRecoder.m */; };
+		118FB1AC1E3613F400A50698 /* InputAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1AB1E3613F400A50698 /* InputAccessory.m */; };
 		B608AD5E1DFBE00C008C0010 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD5D1DFBE00C008C0010 /* main.m */; };
 		B608AD611DFBE00C008C0010 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD601DFBE00C008C0010 /* AppDelegate.m */; };
 		B608AD691DFBE00C008C0010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B608AD681DFBE00C008C0010 /* Assets.xcassets */; };
@@ -39,8 +42,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		118FB15B1E35BEB800A50698 /* NSObject+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
-		118FB15C1E35BEB800A50698 /* NSObject+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
 		118FB15F1E35BEB800A50698 /* SetUpAboutKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpAboutKeyboard.h; sourceTree = "<group>"; };
 		118FB1601E35BEB800A50698 /* SetUpAboutKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpAboutKeyboard.m; sourceTree = "<group>"; };
 		118FB1621E35BEB800A50698 /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
@@ -51,8 +52,6 @@
 		118FB1681E35BEB800A50698 /* VerticalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionViewCell.m; sourceTree = "<group>"; };
 		118FB1691E35BEB800A50698 /* VerticalLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalLayout.h; sourceTree = "<group>"; };
 		118FB16A1E35BEB800A50698 /* VerticalLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalLayout.m; sourceTree = "<group>"; };
-		118FB16B1E35BEB800A50698 /* UIResponder+FindFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+FindFirstResponder.h"; sourceTree = "<group>"; };
-		118FB16C1E35BEB800A50698 /* UIResponder+FindFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+FindFirstResponder.m"; sourceTree = "<group>"; };
 		118FB1751E35BEC200A50698 /* PagesFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagesFunctionView.h; sourceTree = "<group>"; };
 		118FB1761E35BEC200A50698 /* PagesFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesFunctionView.m; sourceTree = "<group>"; };
 		118FB1771E35BEC200A50698 /* WebPagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPagesVC.h; sourceTree = "<group>"; };
@@ -61,16 +60,25 @@
 		118FB17C1E35BEC200A50698 /* FunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionView.m; sourceTree = "<group>"; };
 		118FB17D1E35BEC200A50698 /* SettingBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingBtnView.h; sourceTree = "<group>"; };
 		118FB17E1E35BEC200A50698 /* SettingBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingBtnView.m; sourceTree = "<group>"; };
-		118FB1801E35BEC200A50698 /* WebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
-		118FB1811E35BEC200A50698 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 		118FB1821E35BEC200A50698 /* WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebView.h; sourceTree = "<group>"; };
 		118FB1831E35BEC200A50698 /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebView.m; sourceTree = "<group>"; };
 		118FB1841E35BEC200A50698 /* WebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewDelegate.h; sourceTree = "<group>"; };
 		118FB1851E35BEC200A50698 /* WebViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewDelegate.m; sourceTree = "<group>"; };
-		118FB1861E35BEC200A50698 /* SmallWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallWebView.h; sourceTree = "<group>"; };
-		118FB1871E35BEC200A50698 /* SmallWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallWebView.m; sourceTree = "<group>"; };
 		118FB1891E35BEC200A50698 /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
 		118FB18A1E35BEC200A50698 /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
+		118FB1951E35F8C200A50698 /* SpotlightUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotlightUtil.h; sourceTree = "<group>"; };
+		118FB1961E35F8C200A50698 /* SpotlightUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotlightUtil.m; sourceTree = "<group>"; };
+		118FB1981E35F91900A50698 /* NSObject+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
+		118FB1991E35F91900A50698 /* NSObject+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
+		118FB19A1E35F91900A50698 /* UIResponder+FindFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+FindFirstResponder.h"; sourceTree = "<group>"; };
+		118FB19B1E35F91900A50698 /* UIResponder+FindFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+FindFirstResponder.m"; sourceTree = "<group>"; };
+		118FB19E1E3600FD00A50698 /* WebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		118FB19F1E3600FD00A50698 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
+		118FB1A21E36010600A50698 /* SmallWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallWebView.h; sourceTree = "<group>"; };
+		118FB1A31E36010600A50698 /* SmallWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallWebView.m; sourceTree = "<group>"; };
+		118FB1A81E36021300A50698 /* CodeRecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeRecoder.m; sourceTree = "<group>"; };
+		118FB1AA1E3613F400A50698 /* InputAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputAccessory.h; sourceTree = "<group>"; };
+		118FB1AB1E3613F400A50698 /* InputAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputAccessory.m; sourceTree = "<group>"; };
 		B608AD591DFBE00C008C0010 /* ZKBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B608AD5D1DFBE00C008C0010 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B608AD5F1DFBE00C008C0010 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +125,10 @@
 		118FB1581E35BEB800A50698 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				118FB1981E35F91900A50698 /* NSObject+Description.h */,
+				118FB1991E35F91900A50698 /* NSObject+Description.m */,
+				118FB19A1E35F91900A50698 /* UIResponder+FindFirstResponder.h */,
+				118FB19B1E35F91900A50698 /* UIResponder+FindFirstResponder.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -131,11 +143,9 @@
 		118FB15A1E35BEB800A50698 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				118FB15B1E35BEB800A50698 /* NSObject+Description.h */,
-				118FB15C1E35BEB800A50698 /* NSObject+Description.m */,
 				118FB15D1E35BEB800A50698 /* SelfMade */,
-				118FB16B1E35BEB800A50698 /* UIResponder+FindFirstResponder.h */,
-				118FB16C1E35BEB800A50698 /* UIResponder+FindFirstResponder.m */,
+				118FB1AA1E3613F400A50698 /* InputAccessory.h */,
+				118FB1AB1E3613F400A50698 /* InputAccessory.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -184,10 +194,10 @@
 		118FB1741E35BEC200A50698 /* WebPagesVC */ = {
 			isa = PBXGroup;
 			children = (
-				118FB1751E35BEC200A50698 /* PagesFunctionView.h */,
-				118FB1761E35BEC200A50698 /* PagesFunctionView.m */,
 				118FB1771E35BEC200A50698 /* WebPagesVC.h */,
 				118FB1781E35BEC200A50698 /* WebPagesVC.m */,
+				118FB1751E35BEC200A50698 /* PagesFunctionView.h */,
+				118FB1761E35BEC200A50698 /* PagesFunctionView.m */,
 			);
 			path = WebPagesVC;
 			sourceTree = "<group>";
@@ -195,11 +205,12 @@
 		118FB1791E35BEC200A50698 /* WebVC */ = {
 			isa = PBXGroup;
 			children = (
-				118FB17A1E35BEC200A50698 /* BottomToolBar */,
-				118FB17F1E35BEC200A50698 /* MidWebContent */,
-				118FB1861E35BEC200A50698 /* SmallWebView.h */,
-				118FB1871E35BEC200A50698 /* SmallWebView.m */,
+				118FB19E1E3600FD00A50698 /* WebVC.h */,
+				118FB19F1E3600FD00A50698 /* WebVC.m */,
 				118FB1881E35BEC200A50698 /* TopAddressBar */,
+				118FB17F1E35BEC200A50698 /* MidWebContent */,
+				118FB17A1E35BEC200A50698 /* BottomToolBar */,
+				118FB1A11E36010600A50698 /* SmallWebView */,
 			);
 			path = WebVC;
 			sourceTree = "<group>";
@@ -218,8 +229,6 @@
 		118FB17F1E35BEC200A50698 /* MidWebContent */ = {
 			isa = PBXGroup;
 			children = (
-				118FB1801E35BEC200A50698 /* WebVC.h */,
-				118FB1811E35BEC200A50698 /* WebVC.m */,
 				118FB1821E35BEC200A50698 /* WebView.h */,
 				118FB1831E35BEC200A50698 /* WebView.m */,
 				118FB1841E35BEC200A50698 /* WebViewDelegate.h */,
@@ -235,6 +244,32 @@
 				118FB18A1E35BEC200A50698 /* AddressView.m */,
 			);
 			path = TopAddressBar;
+			sourceTree = "<group>";
+		};
+		118FB1941E35F39C00A50698 /* Spotlight */ = {
+			isa = PBXGroup;
+			children = (
+				118FB1951E35F8C200A50698 /* SpotlightUtil.h */,
+				118FB1961E35F8C200A50698 /* SpotlightUtil.m */,
+			);
+			path = Spotlight;
+			sourceTree = "<group>";
+		};
+		118FB1A11E36010600A50698 /* SmallWebView */ = {
+			isa = PBXGroup;
+			children = (
+				118FB1A21E36010600A50698 /* SmallWebView.h */,
+				118FB1A31E36010600A50698 /* SmallWebView.m */,
+			);
+			path = SmallWebView;
+			sourceTree = "<group>";
+		};
+		118FB1A51E3601CE00A50698 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				118FB1A81E36021300A50698 /* CodeRecoder.m */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		B608AD501DFBE00C008C0010 = {
@@ -256,6 +291,8 @@
 		B608AD5B1DFBE00C008C0010 /* ZKBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				118FB1A51E3601CE00A50698 /* Resource */,
+				118FB1941E35F39C00A50698 /* Spotlight */,
 				118FB1741E35BEC200A50698 /* WebPagesVC */,
 				118FB1791E35BEC200A50698 /* WebVC */,
 				118FB1581E35BEB800A50698 /* Category */,
@@ -383,30 +420,33 @@
 			files = (
 				118FB1721E35BEB800A50698 /* VerticalLayout.m in Sources */,
 				B608AD981DFBF021008C0010 /* MASConstraint.m in Sources */,
+				118FB19C1E35F91900A50698 /* NSObject+Description.m in Sources */,
 				B608AD9B1DFBF021008C0010 /* MASViewAttribute.m in Sources */,
 				B608AD9D1DFBF021008C0010 /* NSArray+MASAdditions.m in Sources */,
 				118FB16F1E35BEB800A50698 /* MyButton.m in Sources */,
+				118FB1A01E3600FD00A50698 /* WebVC.m in Sources */,
+				118FB1A41E36010600A50698 /* SmallWebView.m in Sources */,
+				118FB1A91E36021300A50698 /* CodeRecoder.m in Sources */,
 				B608AD9C1DFBF021008C0010 /* MASViewConstraint.m in Sources */,
 				118FB18C1E35BEC200A50698 /* WebPagesVC.m in Sources */,
-				118FB16D1E35BEB800A50698 /* NSObject+Description.m in Sources */,
 				118FB1911E35BEC200A50698 /* WebViewDelegate.m in Sources */,
 				118FB18B1E35BEC200A50698 /* PagesFunctionView.m in Sources */,
+				118FB1AC1E3613F400A50698 /* InputAccessory.m in Sources */,
 				B608AD9A1DFBF021008C0010 /* MASLayoutConstraint.m in Sources */,
 				118FB1701E35BEB800A50698 /* VerticalCollectionView.m in Sources */,
-				118FB18F1E35BEC200A50698 /* WebVC.m in Sources */,
 				118FB18D1E35BEC200A50698 /* FunctionView.m in Sources */,
 				118FB18E1E35BEC200A50698 /* SettingBtnView.m in Sources */,
 				B608AD9F1DFBF021008C0010 /* View+MASAdditions.m in Sources */,
 				B608AD971DFBF021008C0010 /* MASCompositeConstraint.m in Sources */,
 				B608AD9E1DFBF021008C0010 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				118FB1711E35BEB800A50698 /* VerticalCollectionViewCell.m in Sources */,
-				118FB1731E35BEB800A50698 /* UIResponder+FindFirstResponder.m in Sources */,
 				B608AD991DFBF021008C0010 /* MASConstraintMaker.m in Sources */,
 				118FB16E1E35BEB800A50698 /* SetUpAboutKeyboard.m in Sources */,
+				118FB1971E35F8C200A50698 /* SpotlightUtil.m in Sources */,
 				118FB1901E35BEC200A50698 /* WebView.m in Sources */,
-				118FB1921E35BEC200A50698 /* SmallWebView.m in Sources */,
 				118FB1931E35BEC200A50698 /* AddressView.m in Sources */,
 				B608AD611DFBE00C008C0010 /* AppDelegate.m in Sources */,
+				118FB19D1E35F91900A50698 /* UIResponder+FindFirstResponder.m in Sources */,
 				B608AD5E1DFBE00C008C0010 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
