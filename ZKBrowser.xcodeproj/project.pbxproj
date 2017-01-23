@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11FBAA5B1E31B538005D5276 /* InputValidateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA5A1E31B538005D5276 /* InputValidateUtil.m */; };
+		118FB16D1E35BEB800A50698 /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB15C1E35BEB800A50698 /* NSObject+Description.m */; };
+		118FB16E1E35BEB800A50698 /* SetUpAboutKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1601E35BEB800A50698 /* SetUpAboutKeyboard.m */; };
+		118FB16F1E35BEB800A50698 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1631E35BEB800A50698 /* MyButton.m */; };
+		118FB1701E35BEB800A50698 /* VerticalCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1661E35BEB800A50698 /* VerticalCollectionView.m */; };
+		118FB1711E35BEB800A50698 /* VerticalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1681E35BEB800A50698 /* VerticalCollectionViewCell.m */; };
+		118FB1721E35BEB800A50698 /* VerticalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB16A1E35BEB800A50698 /* VerticalLayout.m */; };
+		118FB1731E35BEB800A50698 /* UIResponder+FindFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB16C1E35BEB800A50698 /* UIResponder+FindFirstResponder.m */; };
+		118FB18B1E35BEC200A50698 /* PagesFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1761E35BEC200A50698 /* PagesFunctionView.m */; };
+		118FB18C1E35BEC200A50698 /* WebPagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1781E35BEC200A50698 /* WebPagesVC.m */; };
+		118FB18D1E35BEC200A50698 /* FunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB17C1E35BEC200A50698 /* FunctionView.m */; };
+		118FB18E1E35BEC200A50698 /* SettingBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB17E1E35BEC200A50698 /* SettingBtnView.m */; };
+		118FB18F1E35BEC200A50698 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1811E35BEC200A50698 /* WebVC.m */; };
+		118FB1901E35BEC200A50698 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1831E35BEC200A50698 /* WebView.m */; };
+		118FB1911E35BEC200A50698 /* WebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1851E35BEC200A50698 /* WebViewDelegate.m */; };
+		118FB1921E35BEC200A50698 /* SmallWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1871E35BEC200A50698 /* SmallWebView.m */; };
+		118FB1931E35BEC200A50698 /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB18A1E35BEC200A50698 /* AddressView.m */; };
 		B608AD5E1DFBE00C008C0010 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD5D1DFBE00C008C0010 /* main.m */; };
 		B608AD611DFBE00C008C0010 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD601DFBE00C008C0010 /* AppDelegate.m */; };
 		B608AD691DFBE00C008C0010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B608AD681DFBE00C008C0010 /* Assets.xcassets */; };
 		B608AD6C1DFBE00C008C0010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B608AD6A1DFBE00C008C0010 /* LaunchScreen.storyboard */; };
-		B608AD7B1DFBE49E008C0010 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD7A1DFBE49E008C0010 /* WebVC.m */; };
-		B608AD7E1DFBEE8F008C0010 /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD7D1DFBEE8F008C0010 /* AddressView.m */; };
 		B608AD971DFBF021008C0010 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD811DFBF021008C0010 /* MASCompositeConstraint.m */; };
 		B608AD981DFBF021008C0010 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD841DFBF021008C0010 /* MASConstraint.m */; };
 		B608AD991DFBF021008C0010 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD861DFBF021008C0010 /* MASConstraintMaker.m */; };
@@ -23,26 +36,41 @@
 		B608AD9D1DFBF021008C0010 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD901DFBF021008C0010 /* NSArray+MASAdditions.m */; };
 		B608AD9E1DFBF021008C0010 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD931DFBF021008C0010 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		B608AD9F1DFBF021008C0010 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD951DFBF021008C0010 /* View+MASAdditions.m */; };
-		B608ADA21DFF08F4008C0010 /* SetUpAboutKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B608ADA11DFF08F4008C0010 /* SetUpAboutKeyboard.m */; };
-		B64975521E0EB0CD006F1652 /* PagesFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975511E0EB0CD006F1652 /* PagesFunctionView.m */; };
-		B64975551E0EB112006F1652 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975541E0EB112006F1652 /* WebView.m */; };
-		B6A9EFDD1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFDC1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m */; };
-		B6A9EFE51E1D0461000D0ABA /* SettingBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFE41E1D0461000D0ABA /* SettingBtnView.m */; };
-		B6A9EFE81E1D2458000D0ABA /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFE71E1D2458000D0ABA /* MyButton.m */; };
-		B6A9EFFF1E1F4D7E000D0ABA /* VerticalCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFFC1E1F4D7E000D0ABA /* VerticalCollectionView.m */; };
-		B6A9F0001E1F4D7E000D0ABA /* VerticalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9EFFE1E1F4D7E000D0ABA /* VerticalLayout.m */; };
-		B6A9F0031E1F83D8000D0ABA /* WebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A9F0021E1F83D8000D0ABA /* WebViewDelegate.m */; };
-		B6E5C8E21E1232F4004F8635 /* DataCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E5C8E11E1232F4004F8635 /* DataCollection.m */; };
-		B6E5C8E81E123D1F004F8635 /* WebPagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E5C8E71E123D1F004F8635 /* WebPagesVC.m */; };
-		B6E648381E114B01000201D1 /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E648371E114B01000201D1 /* NSObject+Description.m */; };
-		B6F26F201E0D578C00A50825 /* FunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F26F1F1E0D578C00A50825 /* FunctionView.m */; };
-		B6FF55F01E232F2900B0561B /* SmallWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FF55EF1E232F2900B0561B /* SmallWebView.m */; };
-		B6FF55F31E23662B00B0561B /* VerticalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FF55F21E23662B00B0561B /* VerticalCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11FBAA591E31B538005D5276 /* InputValidateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputValidateUtil.h; sourceTree = "<group>"; };
-		11FBAA5A1E31B538005D5276 /* InputValidateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputValidateUtil.m; sourceTree = "<group>"; };
+		118FB15B1E35BEB800A50698 /* NSObject+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
+		118FB15C1E35BEB800A50698 /* NSObject+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
+		118FB15F1E35BEB800A50698 /* SetUpAboutKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpAboutKeyboard.h; sourceTree = "<group>"; };
+		118FB1601E35BEB800A50698 /* SetUpAboutKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpAboutKeyboard.m; sourceTree = "<group>"; };
+		118FB1621E35BEB800A50698 /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		118FB1631E35BEB800A50698 /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
+		118FB1651E35BEB800A50698 /* VerticalCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionView.h; sourceTree = "<group>"; };
+		118FB1661E35BEB800A50698 /* VerticalCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionView.m; sourceTree = "<group>"; };
+		118FB1671E35BEB800A50698 /* VerticalCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionViewCell.h; sourceTree = "<group>"; };
+		118FB1681E35BEB800A50698 /* VerticalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionViewCell.m; sourceTree = "<group>"; };
+		118FB1691E35BEB800A50698 /* VerticalLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalLayout.h; sourceTree = "<group>"; };
+		118FB16A1E35BEB800A50698 /* VerticalLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalLayout.m; sourceTree = "<group>"; };
+		118FB16B1E35BEB800A50698 /* UIResponder+FindFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+FindFirstResponder.h"; sourceTree = "<group>"; };
+		118FB16C1E35BEB800A50698 /* UIResponder+FindFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+FindFirstResponder.m"; sourceTree = "<group>"; };
+		118FB1751E35BEC200A50698 /* PagesFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagesFunctionView.h; sourceTree = "<group>"; };
+		118FB1761E35BEC200A50698 /* PagesFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesFunctionView.m; sourceTree = "<group>"; };
+		118FB1771E35BEC200A50698 /* WebPagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPagesVC.h; sourceTree = "<group>"; };
+		118FB1781E35BEC200A50698 /* WebPagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPagesVC.m; sourceTree = "<group>"; };
+		118FB17B1E35BEC200A50698 /* FunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionView.h; sourceTree = "<group>"; };
+		118FB17C1E35BEC200A50698 /* FunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionView.m; sourceTree = "<group>"; };
+		118FB17D1E35BEC200A50698 /* SettingBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingBtnView.h; sourceTree = "<group>"; };
+		118FB17E1E35BEC200A50698 /* SettingBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingBtnView.m; sourceTree = "<group>"; };
+		118FB1801E35BEC200A50698 /* WebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		118FB1811E35BEC200A50698 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
+		118FB1821E35BEC200A50698 /* WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebView.h; sourceTree = "<group>"; };
+		118FB1831E35BEC200A50698 /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebView.m; sourceTree = "<group>"; };
+		118FB1841E35BEC200A50698 /* WebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewDelegate.h; sourceTree = "<group>"; };
+		118FB1851E35BEC200A50698 /* WebViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewDelegate.m; sourceTree = "<group>"; };
+		118FB1861E35BEC200A50698 /* SmallWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallWebView.h; sourceTree = "<group>"; };
+		118FB1871E35BEC200A50698 /* SmallWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallWebView.m; sourceTree = "<group>"; };
+		118FB1891E35BEC200A50698 /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
+		118FB18A1E35BEC200A50698 /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
 		B608AD591DFBE00C008C0010 /* ZKBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B608AD5D1DFBE00C008C0010 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B608AD5F1DFBE00C008C0010 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,10 +78,6 @@
 		B608AD681DFBE00C008C0010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B608AD6B1DFBE00C008C0010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B608AD6D1DFBE00C008C0010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B608AD791DFBE49E008C0010 /* WebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
-		B608AD7A1DFBE49E008C0010 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
-		B608AD7C1DFBEE8F008C0010 /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
-		B608AD7D1DFBEE8F008C0010 /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
 		B608AD801DFBF021008C0010 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		B608AD811DFBF021008C0010 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		B608AD821DFBF021008C0010 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -77,36 +101,6 @@
 		B608AD941DFBF021008C0010 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
 		B608AD951DFBF021008C0010 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		B608AD961DFBF021008C0010 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		B608ADA01DFF08F4008C0010 /* SetUpAboutKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpAboutKeyboard.h; sourceTree = "<group>"; };
-		B608ADA11DFF08F4008C0010 /* SetUpAboutKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpAboutKeyboard.m; sourceTree = "<group>"; };
-		B64975501E0EB0CD006F1652 /* PagesFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagesFunctionView.h; sourceTree = "<group>"; };
-		B64975511E0EB0CD006F1652 /* PagesFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesFunctionView.m; sourceTree = "<group>"; };
-		B64975531E0EB112006F1652 /* WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebView.h; sourceTree = "<group>"; };
-		B64975541E0EB112006F1652 /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebView.m; sourceTree = "<group>"; };
-		B6A9EFDB1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+FindFirstResponder.h"; sourceTree = "<group>"; };
-		B6A9EFDC1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+FindFirstResponder.m"; sourceTree = "<group>"; };
-		B6A9EFE31E1D0461000D0ABA /* SettingBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingBtnView.h; sourceTree = "<group>"; };
-		B6A9EFE41E1D0461000D0ABA /* SettingBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingBtnView.m; sourceTree = "<group>"; };
-		B6A9EFE61E1D2458000D0ABA /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
-		B6A9EFE71E1D2458000D0ABA /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
-		B6A9EFFB1E1F4D7E000D0ABA /* VerticalCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionView.h; sourceTree = "<group>"; };
-		B6A9EFFC1E1F4D7E000D0ABA /* VerticalCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionView.m; sourceTree = "<group>"; };
-		B6A9EFFD1E1F4D7E000D0ABA /* VerticalLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalLayout.h; sourceTree = "<group>"; };
-		B6A9EFFE1E1F4D7E000D0ABA /* VerticalLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalLayout.m; sourceTree = "<group>"; };
-		B6A9F0011E1F83D8000D0ABA /* WebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewDelegate.h; sourceTree = "<group>"; };
-		B6A9F0021E1F83D8000D0ABA /* WebViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewDelegate.m; sourceTree = "<group>"; };
-		B6E5C8E01E1232F4004F8635 /* DataCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCollection.h; sourceTree = "<group>"; };
-		B6E5C8E11E1232F4004F8635 /* DataCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCollection.m; sourceTree = "<group>"; };
-		B6E5C8E61E123D1F004F8635 /* WebPagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebPagesVC.h; sourceTree = "<group>"; };
-		B6E5C8E71E123D1F004F8635 /* WebPagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPagesVC.m; sourceTree = "<group>"; };
-		B6E648361E114B01000201D1 /* NSObject+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Description.h"; sourceTree = "<group>"; };
-		B6E648371E114B01000201D1 /* NSObject+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Description.m"; sourceTree = "<group>"; };
-		B6F26F1E1E0D578C00A50825 /* FunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionView.h; sourceTree = "<group>"; };
-		B6F26F1F1E0D578C00A50825 /* FunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionView.m; sourceTree = "<group>"; };
-		B6FF55EE1E232F2900B0561B /* SmallWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallWebView.h; sourceTree = "<group>"; };
-		B6FF55EF1E232F2900B0561B /* SmallWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallWebView.m; sourceTree = "<group>"; };
-		B6FF55F11E23662B00B0561B /* VerticalCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionViewCell.h; sourceTree = "<group>"; };
-		B6FF55F21E23662B00B0561B /* VerticalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +114,127 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11FBAA581E31B52C005D5276 /* Util */ = {
+		118FB1581E35BEB800A50698 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				11FBAA591E31B538005D5276 /* InputValidateUtil.h */,
-				11FBAA5A1E31B538005D5276 /* InputValidateUtil.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		118FB1591E35BEB800A50698 /* History */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		118FB15A1E35BEB800A50698 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				118FB15B1E35BEB800A50698 /* NSObject+Description.h */,
+				118FB15C1E35BEB800A50698 /* NSObject+Description.m */,
+				118FB15D1E35BEB800A50698 /* SelfMade */,
+				118FB16B1E35BEB800A50698 /* UIResponder+FindFirstResponder.h */,
+				118FB16C1E35BEB800A50698 /* UIResponder+FindFirstResponder.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		118FB15D1E35BEB800A50698 /* SelfMade */ = {
+			isa = PBXGroup;
+			children = (
+				118FB15E1E35BEB800A50698 /* Keyboard */,
+				118FB1611E35BEB800A50698 /* MyButton */,
+				118FB1641E35BEB800A50698 /* VerticalCollectionView */,
+			);
+			path = SelfMade;
+			sourceTree = "<group>";
+		};
+		118FB15E1E35BEB800A50698 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				118FB15F1E35BEB800A50698 /* SetUpAboutKeyboard.h */,
+				118FB1601E35BEB800A50698 /* SetUpAboutKeyboard.m */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		118FB1611E35BEB800A50698 /* MyButton */ = {
+			isa = PBXGroup;
+			children = (
+				118FB1621E35BEB800A50698 /* MyButton.h */,
+				118FB1631E35BEB800A50698 /* MyButton.m */,
+			);
+			path = MyButton;
+			sourceTree = "<group>";
+		};
+		118FB1641E35BEB800A50698 /* VerticalCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				118FB1651E35BEB800A50698 /* VerticalCollectionView.h */,
+				118FB1661E35BEB800A50698 /* VerticalCollectionView.m */,
+				118FB1671E35BEB800A50698 /* VerticalCollectionViewCell.h */,
+				118FB1681E35BEB800A50698 /* VerticalCollectionViewCell.m */,
+				118FB1691E35BEB800A50698 /* VerticalLayout.h */,
+				118FB16A1E35BEB800A50698 /* VerticalLayout.m */,
+			);
+			path = VerticalCollectionView;
+			sourceTree = "<group>";
+		};
+		118FB1741E35BEC200A50698 /* WebPagesVC */ = {
+			isa = PBXGroup;
+			children = (
+				118FB1751E35BEC200A50698 /* PagesFunctionView.h */,
+				118FB1761E35BEC200A50698 /* PagesFunctionView.m */,
+				118FB1771E35BEC200A50698 /* WebPagesVC.h */,
+				118FB1781E35BEC200A50698 /* WebPagesVC.m */,
+			);
+			path = WebPagesVC;
+			sourceTree = "<group>";
+		};
+		118FB1791E35BEC200A50698 /* WebVC */ = {
+			isa = PBXGroup;
+			children = (
+				118FB17A1E35BEC200A50698 /* BottomToolBar */,
+				118FB17F1E35BEC200A50698 /* MidWebContent */,
+				118FB1861E35BEC200A50698 /* SmallWebView.h */,
+				118FB1871E35BEC200A50698 /* SmallWebView.m */,
+				118FB1881E35BEC200A50698 /* TopAddressBar */,
+			);
+			path = WebVC;
+			sourceTree = "<group>";
+		};
+		118FB17A1E35BEC200A50698 /* BottomToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				118FB17B1E35BEC200A50698 /* FunctionView.h */,
+				118FB17C1E35BEC200A50698 /* FunctionView.m */,
+				118FB17D1E35BEC200A50698 /* SettingBtnView.h */,
+				118FB17E1E35BEC200A50698 /* SettingBtnView.m */,
+			);
+			path = BottomToolBar;
+			sourceTree = "<group>";
+		};
+		118FB17F1E35BEC200A50698 /* MidWebContent */ = {
+			isa = PBXGroup;
+			children = (
+				118FB1801E35BEC200A50698 /* WebVC.h */,
+				118FB1811E35BEC200A50698 /* WebVC.m */,
+				118FB1821E35BEC200A50698 /* WebView.h */,
+				118FB1831E35BEC200A50698 /* WebView.m */,
+				118FB1841E35BEC200A50698 /* WebViewDelegate.h */,
+				118FB1851E35BEC200A50698 /* WebViewDelegate.m */,
+			);
+			path = MidWebContent;
+			sourceTree = "<group>";
+		};
+		118FB1881E35BEC200A50698 /* TopAddressBar */ = {
+			isa = PBXGroup;
+			children = (
+				118FB1891E35BEC200A50698 /* AddressView.h */,
+				118FB18A1E35BEC200A50698 /* AddressView.m */,
+			);
+			path = TopAddressBar;
 			sourceTree = "<group>";
 		};
 		B608AD501DFBE00C008C0010 = {
@@ -148,26 +256,18 @@
 		B608AD5B1DFBE00C008C0010 /* ZKBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				11FBAA581E31B52C005D5276 /* Util */,
+				118FB1741E35BEC200A50698 /* WebPagesVC */,
+				118FB1791E35BEC200A50698 /* WebVC */,
+				118FB1581E35BEB800A50698 /* Category */,
+				118FB1591E35BEB800A50698 /* History */,
+				118FB15A1E35BEB800A50698 /* Util */,
 				B608AD7F1DFBF021008C0010 /* Masonry */,
 				B608AD5F1DFBE00C008C0010 /* AppDelegate.h */,
 				B608AD601DFBE00C008C0010 /* AppDelegate.m */,
-				B608ADA01DFF08F4008C0010 /* SetUpAboutKeyboard.h */,
-				B608ADA11DFF08F4008C0010 /* SetUpAboutKeyboard.m */,
 				B608AD681DFBE00C008C0010 /* Assets.xcassets */,
 				B608AD6A1DFBE00C008C0010 /* LaunchScreen.storyboard */,
 				B608AD6D1DFBE00C008C0010 /* Info.plist */,
 				B608AD5C1DFBE00C008C0010 /* Supporting Files */,
-				B6E5C8EA1E123D3D004F8635 /* WebVC */,
-				B6E5C8E91E123D2F004F8635 /* WebPagesVC */,
-				B6E5C8E01E1232F4004F8635 /* DataCollection.h */,
-				B6E5C8E11E1232F4004F8635 /* DataCollection.m */,
-				B6E648361E114B01000201D1 /* NSObject+Description.h */,
-				B6E648371E114B01000201D1 /* NSObject+Description.m */,
-				B6A9EFDB1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.h */,
-				B6A9EFDC1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m */,
-				B6A9EFE61E1D2458000D0ABA /* MyButton.h */,
-				B6A9EFE71E1D2458000D0ABA /* MyButton.m */,
 			);
 			path = ZKBrowser;
 			sourceTree = "<group>";
@@ -208,60 +308,6 @@
 				B608AD961DFBF021008C0010 /* View+MASShorthandAdditions.h */,
 			);
 			path = Masonry;
-			sourceTree = "<group>";
-		};
-		B6A9EFE11E1D0435000D0ABA /* 底部工具栏 */ = {
-			isa = PBXGroup;
-			children = (
-				B6F26F1E1E0D578C00A50825 /* FunctionView.h */,
-				B6F26F1F1E0D578C00A50825 /* FunctionView.m */,
-				B6A9EFE31E1D0461000D0ABA /* SettingBtnView.h */,
-				B6A9EFE41E1D0461000D0ABA /* SettingBtnView.m */,
-			);
-			name = "底部工具栏";
-			sourceTree = "<group>";
-		};
-		B6A9EFE21E1D043F000D0ABA /* 顶部地址栏 */ = {
-			isa = PBXGroup;
-			children = (
-				B608AD7C1DFBEE8F008C0010 /* AddressView.h */,
-				B608AD7D1DFBEE8F008C0010 /* AddressView.m */,
-			);
-			name = "顶部地址栏";
-			sourceTree = "<group>";
-		};
-		B6E5C8E91E123D2F004F8635 /* WebPagesVC */ = {
-			isa = PBXGroup;
-			children = (
-				B6E5C8E61E123D1F004F8635 /* WebPagesVC.h */,
-				B6E5C8E71E123D1F004F8635 /* WebPagesVC.m */,
-				B64975511E0EB0CD006F1652 /* PagesFunctionView.m */,
-				B64975501E0EB0CD006F1652 /* PagesFunctionView.h */,
-				B6A9EFFB1E1F4D7E000D0ABA /* VerticalCollectionView.h */,
-				B6A9EFFC1E1F4D7E000D0ABA /* VerticalCollectionView.m */,
-				B6A9EFFD1E1F4D7E000D0ABA /* VerticalLayout.h */,
-				B6A9EFFE1E1F4D7E000D0ABA /* VerticalLayout.m */,
-				B6FF55F11E23662B00B0561B /* VerticalCollectionViewCell.h */,
-				B6FF55F21E23662B00B0561B /* VerticalCollectionViewCell.m */,
-			);
-			name = WebPagesVC;
-			sourceTree = "<group>";
-		};
-		B6E5C8EA1E123D3D004F8635 /* WebVC */ = {
-			isa = PBXGroup;
-			children = (
-				B608AD791DFBE49E008C0010 /* WebVC.h */,
-				B608AD7A1DFBE49E008C0010 /* WebVC.m */,
-				B64975531E0EB112006F1652 /* WebView.h */,
-				B64975541E0EB112006F1652 /* WebView.m */,
-				B6A9F0011E1F83D8000D0ABA /* WebViewDelegate.h */,
-				B6A9F0021E1F83D8000D0ABA /* WebViewDelegate.m */,
-				B6FF55EE1E232F2900B0561B /* SmallWebView.h */,
-				B6FF55EF1E232F2900B0561B /* SmallWebView.m */,
-				B6A9EFE21E1D043F000D0ABA /* 顶部地址栏 */,
-				B6A9EFE11E1D0435000D0ABA /* 底部工具栏 */,
-			);
-			name = WebVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,33 +381,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6A9EFE51E1D0461000D0ABA /* SettingBtnView.m in Sources */,
+				118FB1721E35BEB800A50698 /* VerticalLayout.m in Sources */,
 				B608AD981DFBF021008C0010 /* MASConstraint.m in Sources */,
-				B6A9EFDD1E1BDC77000D0ABA /* UIResponder+FindFirstResponder.m in Sources */,
 				B608AD9B1DFBF021008C0010 /* MASViewAttribute.m in Sources */,
-				B6E648381E114B01000201D1 /* NSObject+Description.m in Sources */,
 				B608AD9D1DFBF021008C0010 /* NSArray+MASAdditions.m in Sources */,
-				B6A9F0001E1F4D7E000D0ABA /* VerticalLayout.m in Sources */,
-				B6FF55F01E232F2900B0561B /* SmallWebView.m in Sources */,
-				B608AD7B1DFBE49E008C0010 /* WebVC.m in Sources */,
+				118FB16F1E35BEB800A50698 /* MyButton.m in Sources */,
 				B608AD9C1DFBF021008C0010 /* MASViewConstraint.m in Sources */,
-				B64975521E0EB0CD006F1652 /* PagesFunctionView.m in Sources */,
+				118FB18C1E35BEC200A50698 /* WebPagesVC.m in Sources */,
+				118FB16D1E35BEB800A50698 /* NSObject+Description.m in Sources */,
+				118FB1911E35BEC200A50698 /* WebViewDelegate.m in Sources */,
+				118FB18B1E35BEC200A50698 /* PagesFunctionView.m in Sources */,
 				B608AD9A1DFBF021008C0010 /* MASLayoutConstraint.m in Sources */,
-				B6FF55F31E23662B00B0561B /* VerticalCollectionViewCell.m in Sources */,
-				B64975551E0EB112006F1652 /* WebView.m in Sources */,
-				B6E5C8E81E123D1F004F8635 /* WebPagesVC.m in Sources */,
-				B6A9EFE81E1D2458000D0ABA /* MyButton.m in Sources */,
-				B6E5C8E21E1232F4004F8635 /* DataCollection.m in Sources */,
+				118FB1701E35BEB800A50698 /* VerticalCollectionView.m in Sources */,
+				118FB18F1E35BEC200A50698 /* WebVC.m in Sources */,
+				118FB18D1E35BEC200A50698 /* FunctionView.m in Sources */,
+				118FB18E1E35BEC200A50698 /* SettingBtnView.m in Sources */,
 				B608AD9F1DFBF021008C0010 /* View+MASAdditions.m in Sources */,
-				B6A9F0031E1F83D8000D0ABA /* WebViewDelegate.m in Sources */,
 				B608AD971DFBF021008C0010 /* MASCompositeConstraint.m in Sources */,
 				B608AD9E1DFBF021008C0010 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				11FBAA5B1E31B538005D5276 /* InputValidateUtil.m in Sources */,
-				B6F26F201E0D578C00A50825 /* FunctionView.m in Sources */,
-				B6A9EFFF1E1F4D7E000D0ABA /* VerticalCollectionView.m in Sources */,
+				118FB1711E35BEB800A50698 /* VerticalCollectionViewCell.m in Sources */,
+				118FB1731E35BEB800A50698 /* UIResponder+FindFirstResponder.m in Sources */,
 				B608AD991DFBF021008C0010 /* MASConstraintMaker.m in Sources */,
-				B608ADA21DFF08F4008C0010 /* SetUpAboutKeyboard.m in Sources */,
-				B608AD7E1DFBEE8F008C0010 /* AddressView.m in Sources */,
+				118FB16E1E35BEB800A50698 /* SetUpAboutKeyboard.m in Sources */,
+				118FB1901E35BEC200A50698 /* WebView.m in Sources */,
+				118FB1921E35BEC200A50698 /* SmallWebView.m in Sources */,
+				118FB1931E35BEC200A50698 /* AddressView.m in Sources */,
 				B608AD611DFBE00C008C0010 /* AppDelegate.m in Sources */,
 				B608AD5E1DFBE00C008C0010 /* main.m in Sources */,
 			);
