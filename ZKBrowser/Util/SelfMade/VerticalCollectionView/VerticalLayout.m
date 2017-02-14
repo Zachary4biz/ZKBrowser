@@ -85,6 +85,7 @@
                                 self.edgeInset.top+self.topInsetWhereTabDisappear,
                                 self.itemSize.width,
                                 self.itemSize.height);
+        attr.zIndex = 0;
     }else
     {
         //其他
@@ -92,6 +93,7 @@
                                 self.edgeInset.top+self.topInsetWhereTabDisappear+indexPath.row*self.itemPileSpacing,
                                 self.itemSize.width,
                                 self.itemSize.height);
+        attr.zIndex = indexPath.row;
     }
     return attr;
 }

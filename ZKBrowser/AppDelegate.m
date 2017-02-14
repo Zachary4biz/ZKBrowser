@@ -64,7 +64,6 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
         WebVC *theWebVC = [WebVC sharedInstance];
         theWebVC.spotlightParam = uniqueIdentifier;
         [theWebVC requestWithSpotlightParam:uniqueIdentifier];
-        
     }else{
         NSLog(@"not Equal");
         NSLog(@"userActivityType %@",[userActivity activityType]);

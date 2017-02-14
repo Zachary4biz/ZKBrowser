@@ -160,13 +160,15 @@
                     //如果超过了限定，删除
                     NSLog(@"调用了");
                     NSIndexPath *handlingIndex = [self indexPathForCell:_handlingCell];
-                    //更新数据源 + 删除cell
+                    //1.更新数据源
                     [self.cellDataArr removeObjectAtIndex:handlingIndex.row];
-                    [self deleteItemsAtIndexPaths:@[handlingIndex]];
-                    
-                    //更新layOut自定义布局需要的东西
+                    //2.更新layOut自定义布局需要的东西
                     self.layOut.totalItemNum = self.cellDataArr.count;
                     [self.layOut resetArr4Attributes];
+                    //3.最后才能删除cell
+                    [self deleteItemsAtIndexPaths:@[handlingIndex]];
+                    
+                    
                     
                     //看外部是不是也有什么数据是要更新的
                     if (self.panGestureDeleteCellBlock) {

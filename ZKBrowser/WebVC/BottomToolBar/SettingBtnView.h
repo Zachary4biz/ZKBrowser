@@ -11,8 +11,10 @@
 @interface SettingBtnView : UIView
 @property (nonatomic, strong) void (^clickDesktopBtnBlock)();
 @property (nonatomic, strong) void (^clickMultiTabBtnBlock)();
+@property (nonatomic, strong) void (^clickRecognizationBtnBlock)();
 @property (nonatomic, strong) MyButton *DesktopBtn;
 @property (nonatomic, strong) MyButton *MultiTabBtn;
+@property (nonatomic, strong) MyButton *RecognizationBtn;
 
 /**
  这里是因为切换webView之后，状态是有所改变的，所以要重置一下settingBtnView的状态

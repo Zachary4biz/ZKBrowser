@@ -89,6 +89,9 @@ static CGFloat Height4FunctionView = 44.0;
 {
     NSLog(@"加载结束时回调-%s",__func__);
     //    self.addressView.urlTextField.text = webView.URL.absoluteString;
+//    [webView evaluateJavaScript:@"document.documentElement.style.webkitUserSelect = 'none'" completionHandler:nil];
+    //禁掉自带的长按弹出窗口
+    [webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout = 'none'" completionHandler:nil];
 }
 //加载失败时调用
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
@@ -206,8 +209,11 @@ static CGFloat Height4FunctionView = 44.0;
     NSLog(@"body--%@",message.body);
     NSLog(@"webview--%@",message.webView);
     NSLog(@"framInfo--%@",message.frameInfo);
-    if ([message.name isEqualToString:@"ScriptMessageHandler"]) {
+    if ([message.name isEqualToString:@"contextMenuMessageHandler"]) {
         NSDictionary *aDic = message.body;
+        NSLog(@"aDic -- %@",aDic);
+        
+        /*
         NSString *className = aDic[@"className"];
         NSString *functionName = aDic[@"functionName"];
         NSLog(@"类名key-className-%@",className);
@@ -224,6 +230,7 @@ static CGFloat Height4FunctionView = 44.0;
         }else{
             NSLog(@"类--%@--未找到",className);
         }
+        */
         
     }
     

@@ -8,10 +8,12 @@
 
 #import "WebView.h"
 @interface WebView()
-@property (nonatomic, strong)WKProcessPool *aPool;
+
+@property (nonatomic, strong)WKProcessPool *thePool;
+/*
 @property (nonatomic, strong)WKPreferences *aPreference;
 @property (nonatomic, strong)WKUserContentController *aUserContentController;
-
+*/
 @end
 @implementation WebView
 
@@ -23,13 +25,14 @@
 }
 */
 
-- (WKProcessPool *)aPool
+- (WKProcessPool *)thePool
 {
-    if (!_aPool) {
-        _aPool = [[WKProcessPool alloc]init];
+    if (!_thePool) {
+        _thePool = [[WKProcessPool alloc]init];
     }
-    return _aPool;
+    return _thePool;
 }
+/*
 - (WKPreferences *)aPreference
 {
     if (!_aPreference) {
@@ -46,12 +49,12 @@
     }
     return _aUserContentController;
 }
-
+*/
 - (instancetype)initWithFrame:(CGRect)frame
 {
     WKWebViewConfiguration *aDefualtConfiguration = [[WKWebViewConfiguration alloc]init];
     //通过这个初始化的就共享一个线程池
-    aDefualtConfiguration.processPool = self.aPool;
+    aDefualtConfiguration.processPool = self.thePool;
     return [self initWithFrame:frame configuration:aDefualtConfiguration];
 
 }
@@ -68,8 +71,6 @@
         [self addSubview:self.theProgressView];
         
         //添加一些常用网站
-
-        
         
         
     }

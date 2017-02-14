@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112C5E1A1E373B290047DFB4 /* ContextMenu.js in Resources */ = {isa = PBXBuildFile; fileRef = 112C5E191E373B290047DFB4 /* ContextMenu.js */; };
+		112C5E601E3844640047DFB4 /* getElementFromPoint.js in Resources */ = {isa = PBXBuildFile; fileRef = 112C5E5F1E3844640047DFB4 /* getElementFromPoint.js */; };
 		118FB16E1E35BEB800A50698 /* SetUpAboutKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1601E35BEB800A50698 /* SetUpAboutKeyboard.m */; };
 		118FB16F1E35BEB800A50698 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1631E35BEB800A50698 /* MyButton.m */; };
 		118FB1701E35BEB800A50698 /* VerticalCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1661E35BEB800A50698 /* VerticalCollectionView.m */; };
@@ -41,7 +43,26 @@
 		B608AD9F1DFBF021008C0010 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD951DFBF021008C0010 /* View+MASAdditions.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		11B7A82D1E518D1A00C8A2E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11B7A8281E518D1900C8A2E0 /* ZKiMessageApp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 11B7A8041E518D1900C8A2E0;
+			remoteInfo = ZKiMessageApp;
+		};
+		11B7A82F1E518D1A00C8A2E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11B7A8281E518D1900C8A2E0 /* ZKiMessageApp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 11B7A80E1E518D1900C8A2E0;
+			remoteInfo = MessagesExtension;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		112C5E191E373B290047DFB4 /* ContextMenu.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ContextMenu.js; sourceTree = "<group>"; };
+		112C5E5F1E3844640047DFB4 /* getElementFromPoint.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = getElementFromPoint.js; sourceTree = "<group>"; };
 		118FB15F1E35BEB800A50698 /* SetUpAboutKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpAboutKeyboard.h; sourceTree = "<group>"; };
 		118FB1601E35BEB800A50698 /* SetUpAboutKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpAboutKeyboard.m; sourceTree = "<group>"; };
 		118FB1621E35BEB800A50698 /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
@@ -79,6 +100,7 @@
 		118FB1A81E36021300A50698 /* CodeRecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeRecoder.m; sourceTree = "<group>"; };
 		118FB1AA1E3613F400A50698 /* InputAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputAccessory.h; sourceTree = "<group>"; };
 		118FB1AB1E3613F400A50698 /* InputAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputAccessory.m; sourceTree = "<group>"; };
+		11B7A8281E518D1900C8A2E0 /* ZKiMessageApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZKiMessageApp.xcodeproj; path = ZKiMessageApp/ZKiMessageApp.xcodeproj; sourceTree = "<group>"; };
 		B608AD591DFBE00C008C0010 /* ZKBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B608AD5D1DFBE00C008C0010 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B608AD5F1DFBE00C008C0010 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -267,14 +289,26 @@
 		118FB1A51E3601CE00A50698 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				112C5E191E373B290047DFB4 /* ContextMenu.js */,
+				112C5E5F1E3844640047DFB4 /* getElementFromPoint.js */,
 				118FB1A81E36021300A50698 /* CodeRecoder.m */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		11B7A8291E518D1900C8A2E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11B7A82E1E518D1A00C8A2E0 /* ZKiMessageApp.app */,
+				11B7A8301E518D1A00C8A2E0 /* MessagesExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B608AD501DFBE00C008C0010 = {
 			isa = PBXGroup;
 			children = (
+				11B7A8281E518D1900C8A2E0 /* ZKiMessageApp.xcodeproj */,
 				B608AD5B1DFBE00C008C0010 /* ZKBrowser */,
 				B608AD5A1DFBE00C008C0010 /* Products */,
 			);
@@ -394,6 +428,12 @@
 			mainGroup = B608AD501DFBE00C008C0010;
 			productRefGroup = B608AD5A1DFBE00C008C0010 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 11B7A8291E518D1900C8A2E0 /* Products */;
+					ProjectRef = 11B7A8281E518D1900C8A2E0 /* ZKiMessageApp.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B608AD581DFBE00C008C0010 /* ZKBrowser */,
@@ -401,11 +441,30 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		11B7A82E1E518D1A00C8A2E0 /* ZKiMessageApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ZKiMessageApp.app;
+			remoteRef = 11B7A82D1E518D1A00C8A2E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		11B7A8301E518D1A00C8A2E0 /* MessagesExtension.appex */ = {
+			isa = PBXReferenceProxy;
+			fileType = "wrapper.app-extension";
+			path = MessagesExtension.appex;
+			remoteRef = 11B7A82F1E518D1A00C8A2E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		B608AD571DFBE00C008C0010 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112C5E1A1E373B290047DFB4 /* ContextMenu.js in Resources */,
+				112C5E601E3844640047DFB4 /* getElementFromPoint.js in Resources */,
 				B608AD6C1DFBE00C008C0010 /* LaunchScreen.storyboard in Resources */,
 				B608AD691DFBE00C008C0010 /* Assets.xcassets in Resources */,
 			);

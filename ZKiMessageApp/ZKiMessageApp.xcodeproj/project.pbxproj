@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11B7A8081E518D1900C8A2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B7A8071E518D1900C8A2E0 /* Assets.xcassets */; };
+		11B7A80F1E518D1900C8A2E0 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11B7A80E1E518D1900C8A2E0 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11B7A8141E518D1900C8A2E0 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B7A8131E518D1900C8A2E0 /* Messages.framework */; };
+		11B7A8181E518D1900C8A2E0 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8171E518D1900C8A2E0 /* MessagesViewController.m */; };
+		11B7A81B1E518D1900C8A2E0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B7A8191E518D1900C8A2E0 /* MainInterface.storyboard */; };
+		11B7A81D1E518D1900C8A2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B7A81C1E518D1900C8A2E0 /* Assets.xcassets */; };
+		11B7A8331E51901700C8A2E0 /* SlideTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8321E51901700C8A2E0 /* SlideTabViewController.m */; };
+		11B7A84C1E51922300C8A2E0 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8361E51922300C8A2E0 /* MASCompositeConstraint.m */; };
+		11B7A84D1E51922300C8A2E0 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8391E51922300C8A2E0 /* MASConstraint.m */; };
+		11B7A84E1E51922300C8A2E0 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A83B1E51922300C8A2E0 /* MASConstraintMaker.m */; };
+		11B7A84F1E51922300C8A2E0 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A83D1E51922300C8A2E0 /* MASLayoutConstraint.m */; };
+		11B7A8501E51922300C8A2E0 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8411E51922300C8A2E0 /* MASViewAttribute.m */; };
+		11B7A8511E51922300C8A2E0 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8431E51922300C8A2E0 /* MASViewConstraint.m */; };
+		11B7A8521E51922300C8A2E0 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8451E51922300C8A2E0 /* NSArray+MASAdditions.m */; };
+		11B7A8531E51922300C8A2E0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8481E51922300C8A2E0 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		11B7A8541E51922300C8A2E0 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A84A1E51922300C8A2E0 /* View+MASAdditions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11B7A8101E518D1900C8A2E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11B7A7FE1E518D1800C8A2E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11B7A80D1E518D1900C8A2E0;
+			remoteInfo = MessagesExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		11B7A8241E518D1900C8A2E0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				11B7A80F1E518D1900C8A2E0 /* MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		11B7A8041E518D1900C8A2E0 /* ZKiMessageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKiMessageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B7A8071E518D1900C8A2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11B7A8091E518D1900C8A2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11B7A80E1E518D1900C8A2E0 /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B7A8131E518D1900C8A2E0 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		11B7A8161E518D1900C8A2E0 /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		11B7A8171E518D1900C8A2E0 /* MessagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		11B7A81A1E518D1900C8A2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		11B7A81C1E518D1900C8A2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11B7A81E1E518D1900C8A2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11B7A8311E51901700C8A2E0 /* SlideTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideTabViewController.h; sourceTree = "<group>"; };
+		11B7A8321E51901700C8A2E0 /* SlideTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideTabViewController.m; sourceTree = "<group>"; };
+		11B7A8351E51922300C8A2E0 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		11B7A8361E51922300C8A2E0 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		11B7A8371E51922300C8A2E0 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		11B7A8381E51922300C8A2E0 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		11B7A8391E51922300C8A2E0 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		11B7A83A1E51922300C8A2E0 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		11B7A83B1E51922300C8A2E0 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		11B7A83C1E51922300C8A2E0 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		11B7A83D1E51922300C8A2E0 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		11B7A83E1E51922300C8A2E0 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		11B7A83F1E51922300C8A2E0 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		11B7A8401E51922300C8A2E0 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		11B7A8411E51922300C8A2E0 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		11B7A8421E51922300C8A2E0 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		11B7A8431E51922300C8A2E0 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		11B7A8441E51922300C8A2E0 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		11B7A8451E51922300C8A2E0 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		11B7A8461E51922300C8A2E0 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		11B7A8471E51922300C8A2E0 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		11B7A8481E51922300C8A2E0 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		11B7A8491E51922300C8A2E0 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		11B7A84A1E51922300C8A2E0 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		11B7A84B1E51922300C8A2E0 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11B7A80B1E518D1900C8A2E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B7A8141E518D1900C8A2E0 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11B7A7FD1E518D1800C8A2E0 = {
+			isa = PBXGroup;
+			children = (
+				11B7A8341E51922300C8A2E0 /* Masonry */,
+				11B7A8061E518D1900C8A2E0 /* ZKiMessageApp */,
+				11B7A8151E518D1900C8A2E0 /* MessagesExtension */,
+				11B7A8121E518D1900C8A2E0 /* Frameworks */,
+				11B7A8051E518D1900C8A2E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11B7A8051E518D1900C8A2E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11B7A8041E518D1900C8A2E0 /* ZKiMessageApp.app */,
+				11B7A80E1E518D1900C8A2E0 /* MessagesExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11B7A8061E518D1900C8A2E0 /* ZKiMessageApp */ = {
+			isa = PBXGroup;
+			children = (
+				11B7A8071E518D1900C8A2E0 /* Assets.xcassets */,
+				11B7A8091E518D1900C8A2E0 /* Info.plist */,
+			);
+			path = ZKiMessageApp;
+			sourceTree = "<group>";
+		};
+		11B7A8121E518D1900C8A2E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11B7A8131E518D1900C8A2E0 /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11B7A8151E518D1900C8A2E0 /* MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				11B7A8161E518D1900C8A2E0 /* MessagesViewController.h */,
+				11B7A8171E518D1900C8A2E0 /* MessagesViewController.m */,
+				11B7A8191E518D1900C8A2E0 /* MainInterface.storyboard */,
+				11B7A81C1E518D1900C8A2E0 /* Assets.xcassets */,
+				11B7A81E1E518D1900C8A2E0 /* Info.plist */,
+				11B7A8311E51901700C8A2E0 /* SlideTabViewController.h */,
+				11B7A8321E51901700C8A2E0 /* SlideTabViewController.m */,
+			);
+			path = MessagesExtension;
+			sourceTree = "<group>";
+		};
+		11B7A8341E51922300C8A2E0 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				11B7A8351E51922300C8A2E0 /* MASCompositeConstraint.h */,
+				11B7A8361E51922300C8A2E0 /* MASCompositeConstraint.m */,
+				11B7A8371E51922300C8A2E0 /* MASConstraint+Private.h */,
+				11B7A8381E51922300C8A2E0 /* MASConstraint.h */,
+				11B7A8391E51922300C8A2E0 /* MASConstraint.m */,
+				11B7A83A1E51922300C8A2E0 /* MASConstraintMaker.h */,
+				11B7A83B1E51922300C8A2E0 /* MASConstraintMaker.m */,
+				11B7A83C1E51922300C8A2E0 /* MASLayoutConstraint.h */,
+				11B7A83D1E51922300C8A2E0 /* MASLayoutConstraint.m */,
+				11B7A83E1E51922300C8A2E0 /* Masonry.h */,
+				11B7A83F1E51922300C8A2E0 /* MASUtilities.h */,
+				11B7A8401E51922300C8A2E0 /* MASViewAttribute.h */,
+				11B7A8411E51922300C8A2E0 /* MASViewAttribute.m */,
+				11B7A8421E51922300C8A2E0 /* MASViewConstraint.h */,
+				11B7A8431E51922300C8A2E0 /* MASViewConstraint.m */,
+				11B7A8441E51922300C8A2E0 /* NSArray+MASAdditions.h */,
+				11B7A8451E51922300C8A2E0 /* NSArray+MASAdditions.m */,
+				11B7A8461E51922300C8A2E0 /* NSArray+MASShorthandAdditions.h */,
+				11B7A8471E51922300C8A2E0 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				11B7A8481E51922300C8A2E0 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				11B7A8491E51922300C8A2E0 /* View+MASAdditions.h */,
+				11B7A84A1E51922300C8A2E0 /* View+MASAdditions.m */,
+				11B7A84B1E51922300C8A2E0 /* View+MASShorthandAdditions.h */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11B7A8031E518D1900C8A2E0 /* ZKiMessageApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11B7A8251E518D1900C8A2E0 /* Build configuration list for PBXNativeTarget "ZKiMessageApp" */;
+			buildPhases = (
+				11B7A8021E518D1900C8A2E0 /* Resources */,
+				11B7A8241E518D1900C8A2E0 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11B7A8111E518D1900C8A2E0 /* PBXTargetDependency */,
+			);
+			name = ZKiMessageApp;
+			productName = ZKiMessageApp;
+			productReference = 11B7A8041E518D1900C8A2E0 /* ZKiMessageApp.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		11B7A80D1E518D1900C8A2E0 /* MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11B7A8211E518D1900C8A2E0 /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
+			buildPhases = (
+				11B7A80A1E518D1900C8A2E0 /* Sources */,
+				11B7A80B1E518D1900C8A2E0 /* Frameworks */,
+				11B7A80C1E518D1900C8A2E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MessagesExtension;
+			productName = MessagesExtension;
+			productReference = 11B7A80E1E518D1900C8A2E0 /* MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11B7A7FE1E518D1800C8A2E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Zac;
+				TargetAttributes = {
+					11B7A8031E518D1900C8A2E0 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 4E33RF5MGJ;
+						ProvisioningStyle = Automatic;
+					};
+					11B7A80D1E518D1900C8A2E0 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 4E33RF5MGJ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 11B7A8011E518D1800C8A2E0 /* Build configuration list for PBXProject "ZKiMessageApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11B7A7FD1E518D1800C8A2E0;
+			productRefGroup = 11B7A8051E518D1900C8A2E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11B7A8031E518D1900C8A2E0 /* ZKiMessageApp */,
+				11B7A80D1E518D1900C8A2E0 /* MessagesExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11B7A8021E518D1900C8A2E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B7A8081E518D1900C8A2E0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B7A80C1E518D1900C8A2E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B7A81D1E518D1900C8A2E0 /* Assets.xcassets in Resources */,
+				11B7A81B1E518D1900C8A2E0 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11B7A80A1E518D1900C8A2E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B7A84D1E51922300C8A2E0 /* MASConstraint.m in Sources */,
+				11B7A8501E51922300C8A2E0 /* MASViewAttribute.m in Sources */,
+				11B7A84E1E51922300C8A2E0 /* MASConstraintMaker.m in Sources */,
+				11B7A8531E51922300C8A2E0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				11B7A8331E51901700C8A2E0 /* SlideTabViewController.m in Sources */,
+				11B7A84C1E51922300C8A2E0 /* MASCompositeConstraint.m in Sources */,
+				11B7A8541E51922300C8A2E0 /* View+MASAdditions.m in Sources */,
+				11B7A8521E51922300C8A2E0 /* NSArray+MASAdditions.m in Sources */,
+				11B7A84F1E51922300C8A2E0 /* MASLayoutConstraint.m in Sources */,
+				11B7A8181E518D1900C8A2E0 /* MessagesViewController.m in Sources */,
+				11B7A8511E51922300C8A2E0 /* MASViewConstraint.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11B7A8111E518D1900C8A2E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11B7A80D1E518D1900C8A2E0 /* MessagesExtension */;
+			targetProxy = 11B7A8101E518D1900C8A2E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11B7A8191E518D1900C8A2E0 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11B7A81A1E518D1900C8A2E0 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11B7A81F1E518D1900C8A2E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11B7A8201E518D1900C8A2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11B7A8221E518D1900C8A2E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 4E33RF5MGJ;
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Zac.ZKiMessageApp.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		11B7A8231E518D1900C8A2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 4E33RF5MGJ;
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Zac.ZKiMessageApp.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		11B7A8261E518D1900C8A2E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4E33RF5MGJ;
+				INFOPLIST_FILE = ZKiMessageApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Zac.ZKiMessageApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11B7A8271E518D1900C8A2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4E33RF5MGJ;
+				INFOPLIST_FILE = ZKiMessageApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Zac.ZKiMessageApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11B7A8011E518D1800C8A2E0 /* Build configuration list for PBXProject "ZKiMessageApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B7A81F1E518D1900C8A2E0 /* Debug */,
+				11B7A8201E518D1900C8A2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11B7A8211E518D1900C8A2E0 /* Build configuration list for PBXNativeTarget "MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B7A8221E518D1900C8A2E0 /* Debug */,
+				11B7A8231E518D1900C8A2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		11B7A8251E518D1900C8A2E0 /* Build configuration list for PBXNativeTarget "ZKiMessageApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B7A8261E518D1900C8A2E0 /* Debug */,
+				11B7A8271E518D1900C8A2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11B7A7FE1E518D1800C8A2E0 /* Project object */;
+}

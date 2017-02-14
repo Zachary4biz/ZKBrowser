@@ -42,16 +42,28 @@ static CGFloat inset = 5;
         [_MultiTabBtn addTarget:self action:@selector(clickMultiTabBtn) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_MultiTabBtn];
         
+        _RecognizationBtn = [[MyButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_MultiTabBtn.frame)+inset,
+                                                                      inset,
+                                                                      0.25*frame.size.width - 5*inset,
+                                                                      frame.size.height-inset)];
+        [_RecognizationBtn setTitle:@"RecognizationPic" forState:UIControlStateNormal];
+        [_RecognizationBtn setImage:[UIImage imageNamed:@"RecognizationBtn"] forState:UIControlStateNormal];
+        [_RecognizationBtn addTarget:self action:@selector(clickRecognizationBtn) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_RecognizationBtn];
+        
         
     }
     return self;
 }
+
 - (void)resetAllState
 {
     [_MultiTabBtn setTitle:@"MultiTab" forState:UIControlStateNormal];
     [_DesktopBtn setTitle:@"Desktop" forState:UIControlStateNormal];
+    [_RecognizationBtn setTitle:@"RecognizationPic" forState:UIControlStateNormal];
     self.ZKDescription = @"reseted";
 }
+
 - (void)clickDesktopBtn
 {
     if (self.clickDesktopBtnBlock) {
@@ -64,6 +76,12 @@ static CGFloat inset = 5;
     if (self.clickMultiTabBtnBlock) {
         self.clickMultiTabBtnBlock();
     }
-    
+}
+
+- (void)clickRecognizationBtn
+{
+    if (self.clickRecognizationBtnBlock) {
+        self.clickRecognizationBtnBlock();
+    }
 }
 @end
