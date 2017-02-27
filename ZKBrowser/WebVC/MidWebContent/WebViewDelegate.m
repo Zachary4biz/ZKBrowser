@@ -75,39 +75,50 @@ static CGFloat Height4FunctionView = 44.0;
 }
 #pragma mark - WKNavigationDelegate(加载状态)
 //页面开始加载时调用
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
+- (void)webView:(WebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {
-    NSLog(@"页面开始加载时调用-%s",__func__);
+    NSLog(@"页面开始加载时调用-%p-%s",webView,__func__);
+
 }
 //内容开始返回时调用
-- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
+- (void)webView:(WebView *)webView didCommitNavigation:(WKNavigation *)navigation
 {
-    NSLog(@"内容开始返回时调用-%s",__func__);
+    NSLog(@"内容开始返回时调用-%p-%s",webView,__func__);
+    if ([_navigationDelegate respondsToSelector:@selector(commitNavigationWebView:)]) {
+        [_navigationDelegate commitNavigationWebView:webView];
+    }
 }
 //加载结束时回调
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
+- (void)webView:(WebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-    NSLog(@"加载结束时回调-%s",__func__);
+    NSLog(@"加载结束时回调-%p-%s",webView,__func__);
     //    self.addressView.urlTextField.text = webView.URL.absoluteString;
 //    [webView evaluateJavaScript:@"document.documentElement.style.webkitUserSelect = 'none'" completionHandler:nil];
     //禁掉自带的长按弹出窗口
     [webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout = 'none'" completionHandler:nil];
+    
+    if ([_navigationDelegate respondsToSelector:@selector(finishNavigationWebView:)]) {
+        [_navigationDelegate finishNavigationWebView:webView];
+    }
 }
 //加载失败时调用
-- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
+- (void)webView:(WebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
-    NSLog(@"加载失败时调用-%s",__func__);
+    NSLog(@"加载失败时调用-%p-%s",webView,__func__);
     NSLog(@"错误时--%@",error);
+    if ([_navigationDelegate respondsToSelector:@selector(failNavigationWebView:withErrorCode:)]) {
+        [_navigationDelegate failNavigationWebView:webView withErrorCode:error.code];
+    }
 }
 //接收到服务器重定向
-- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation
+- (void)webView:(WebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation
 {
     NSLog(@"接收到服务器重定向-%s",__func__);
     NSLog(@"**********************，URL被重定向了");
     
 }
 //进程被终止的回调
-- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView
+- (void)webViewWebContentProcessDidTerminate:(WebView *)webView
 {
     NSLog(@"进程被终止的回调--%s",__func__);
 }
@@ -118,10 +129,10 @@ static CGFloat Height4FunctionView = 44.0;
     decisionHandler(WKNavigationResponsePolicyAllow);
     
     //    NSLog(@"接收响应后决定是否跳转-%s",__func__);
-    NSLog(@"有关navigatioNResponse的信息--\n 是否是主窗口:%@\n  response是:%@\n  是否显示MIMEType:%@",
-          navigationResponse.forMainFrame?@"YES":@"NO",
-          navigationResponse.response,
-          navigationResponse.canShowMIMEType?@"YES":@"NO");
+//    NSLog(@"有关navigatioNResponse的信息--\n 是否是主窗口:%@\n  response是:%@\n  是否显示MIMEType:%@",
+//          navigationResponse.forMainFrame?@"YES":@"NO",
+//          navigationResponse.response,
+//          navigationResponse.canShowMIMEType?@"YES":@"NO");
     
 }
 //发送请求前是否跳转
@@ -129,14 +140,14 @@ static CGFloat Height4FunctionView = 44.0;
 {
     
     //    NSLog(@"发送请求前是否跳转-%s",__func__);
-    NSLog(@"有关navigationAction的信息--------------\ntargetframe窗口的:\n  mainFrame:%@,\n  request:%@,\n  securityOrigin:%@",
-          navigationAction.targetFrame.mainFrame?@"YES":@"NO",
-          navigationAction.targetFrame.request,
-          navigationAction.targetFrame.securityOrigin);
-    NSLog(@"\nsourceframe窗口的:\n mainFrame:%@,\n request:%@,\n  securityOrigin:%@",
-          navigationAction.sourceFrame.mainFrame?@"YES":@"NO",
-          navigationAction.sourceFrame.request,
-          navigationAction.sourceFrame.securityOrigin);
+//    NSLog(@"有关navigationAction的信息--------------\ntargetframe窗口的:\n  mainFrame:%@,\n  request:%@,\n  securityOrigin:%@",
+//          navigationAction.targetFrame.mainFrame?@"YES":@"NO",
+//          navigationAction.targetFrame.request,
+//          navigationAction.targetFrame.securityOrigin);
+//    NSLog(@"\nsourceframe窗口的:\n mainFrame:%@,\n request:%@,\n  securityOrigin:%@",
+//          navigationAction.sourceFrame.mainFrame?@"YES":@"NO",
+//          navigationAction.sourceFrame.request,
+//          navigationAction.sourceFrame.securityOrigin);
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
@@ -205,6 +216,8 @@ static CGFloat Height4FunctionView = 44.0;
 #pragma mark - WKScriptMessageHandler
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
 {
+    NSLog(@"");
+    NSLog(@">>>>>>>>>>>>>>>>>>>>WKScriptMessageHadnler");
     NSLog(@"name--%@",message.name);
     NSLog(@"body--%@",message.body);
     NSLog(@"webview--%@",message.webView);

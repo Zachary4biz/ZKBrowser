@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0820"
-   version = "1.3">
+   wasCreatedForAppExtension = "YES"
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +15,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B608AD581DFBE00C008C0010"
-               BuildableName = "ZKBrowser.app"
-               BlueprintName = "ZKBrowser"
+               BlueprintIdentifier = "11B7A8C01E52CD9100C8A2E0"
+               BuildableName = "MessagesExtension.appex"
+               BlueprintName = "MessagesExtension"
+               ReferencedContainer = "container:ZKBrowser.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "11B7A8B71E52CD9100C8A2E0"
+               BuildableName = "qweqw.app"
+               BlueprintName = "qweqw"
                ReferencedContainer = "container:ZKBrowser.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B608AD581DFBE00C008C0010"
-            BuildableName = "ZKBrowser.app"
-            BlueprintName = "ZKBrowser"
+            BlueprintIdentifier = "11B7A8C01E52CD9100C8A2E0"
+            BuildableName = "MessagesExtension.appex"
+            BlueprintName = "MessagesExtension"
             ReferencedContainer = "container:ZKBrowser.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -43,21 +58,22 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B608AD581DFBE00C008C0010"
-            BuildableName = "ZKBrowser.app"
-            BlueprintName = "ZKBrowser"
+            BlueprintIdentifier = "11B7A8B71E52CD9100C8A2E0"
+            BuildableName = "qweqw.app"
+            BlueprintName = "qweqw"
             ReferencedContainer = "container:ZKBrowser.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,14 +85,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
+      debugDocumentVersioning = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B608AD581DFBE00C008C0010"
-            BuildableName = "ZKBrowser.app"
-            BlueprintName = "ZKBrowser"
+            BlueprintIdentifier = "11B7A8B71E52CD9100C8A2E0"
+            BuildableName = "qweqw.app"
+            BlueprintName = "qweqw"
             ReferencedContainer = "container:ZKBrowser.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

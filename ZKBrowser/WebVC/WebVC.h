@@ -39,6 +39,8 @@
  */
 - (void)takeSnapshotOf:(WebView *)aView;
 
+@property (nonatomic, strong) NSMutableDictionary *dictUnarchived;
+- (void)loadLocalWKWebViews;
 /**
  获得一个单例，因为不希望WebVC销毁，
  此外考虑从spotlight进来的情况，在AppDelegate中
@@ -50,6 +52,11 @@
  @return <#return value description#>
  */
 + (WebVC *)sharedInstance;
+
+//spotlight
 @property (nonatomic, strong) NSString *spotlightParam;
 - (void)requestWithSpotlightParam:(NSString *)aParam;
+
+//iMessage
+- (void)requestWithiMessageURL:(NSURL *)iMessageURL;
 @end

@@ -19,8 +19,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [WebVC sharedInstance];
+    WebVC *webVC = [WebVC sharedInstance];
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"dict4SaveURLOfWebView.archiver"];
+    NSMutableDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    
+    if (dict) {
+        webVC.dictUnarchived = dict;
+        [webVC loadLocalWKWebViews];
+    }
+    
+    self.window.rootViewController = webVC;
     [self.window makeKeyAndVisible];
+    
+    
+    
+    
     return YES;
 }
 
@@ -34,6 +47,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSLog(@"app did enter background");
 }
 
 
@@ -48,10 +62,12 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:
+    NSLog(@"app will terminate");
+    
 }
 
-//点击spotlight之后的响应方法
+#pragma mark - 点击spotlight之后的响应方法
 - (BOOL)application:(UIApplication *)application
 continueUserActivity:(nonnull NSUserActivity *)userActivity
  restorationHandler:(nonnull void (^)(NSArray * _Nullable))restorationHandler
@@ -72,5 +88,46 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
     return YES;
 }
 
+#pragma mark - iMessageApp拓展进来
+- (BOOL)application:(UIApplication *)application openURL:(NSURL * _Nonnull)url sourceApplication:(NSString * _Nullable)sourceApplication annotation:(id _Nonnull)annotation
+{
+//    NSString *prefix = @"ZKBrowser://action=";
+//    
+//    if ([[url absoluteString] rangeOfString:prefix].location!= NSNotFound) {
+//        NSString *action = [[url absoluteString] substringFromIndex:prefix.length];
+//        if ([action isEqualToString:@"iMessage"]) {
+//
+//        }
+//    };
+    NSString *prefix = @"ZKBrowser://";
+    NSString *str = url.absoluteString;
+    
+    NSURL *iMessageURL;
+    if ([str rangeOfString:prefix].location != NSNotFound) {
+        str = [str substringFromIndex:prefix.length];
+        if ([str rangeOfString:@"action="].location != NSNotFound) {
+            //获取 action 对应的参数
+            NSUInteger rangEnd = [str rangeOfString:@"&"].location;
+            NSUInteger rangBegin = NSMaxRange([str rangeOfString:@"action="]);
+            NSString *actionStr = [str substringWithRange:NSMakeRange(rangBegin, rangEnd-rangBegin)];
+            NSLog(@"actionStr is %@",actionStr);
+            //判断 action 对应得参数是什么
+            if ([actionStr isEqualToString:@"iMessage"]) {
+                NSLog(@"from iMessage");
+                NSUInteger rangBegin4URL = NSMaxRange([str rangeOfString:@"url="]);
+                iMessageURL = [NSURL URLWithString:[str substringFromIndex:rangBegin4URL]];
+            }
+            if ([actionStr isEqualToString:@"Today"]) {
+                NSLog(@"from Today");
+            }
+        }
+    }
+    if (iMessageURL) {
+        NSLog(@"iMessageURL is %@",iMessageURL);
+        WebVC *theWebVC = [WebVC sharedInstance];
+        [theWebVC requestWithiMessageURL:iMessageURL];
+    }
+    return YES;
+}
 
 @end
