@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ButtonView">
+            <rect key="frame" x="0.0" y="0.0" width="262" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftU-mi-6H8">
+                    <rect key="frame" x="40.5" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="D32-DH-kPD"/>
+                        <constraint firstAttribute="height" constant="50" id="KNX-xc-Ovw"/>
+                    </constraints>
+                    <state key="normal" image="iM_Favorite"/>
+                    <connections>
+                        <action selector="favoriteBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Njb-CE-I0l"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxi-1H-TiA">
+                    <rect key="frame" x="176.5" y="5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="a9A-cL-2V4"/>
+                        <constraint firstAttribute="width" constant="40" id="zJt-s0-H4x"/>
+                    </constraints>
+                    <state key="normal" image="iM_History"/>
+                    <connections>
+                        <action selector="historyBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="bGK-b8-Agb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ftU-mi-6H8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.5" id="2eD-wN-7ZF"/>
+                <constraint firstItem="Yxi-1H-TiA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.5" id="E95-C0-S9K"/>
+                <constraint firstItem="Yxi-1H-TiA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Iuz-DX-0UP"/>
+                <constraint firstItem="ftU-mi-6H8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uQf-kN-dhT"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="favoriteBtn" destination="ftU-mi-6H8" id="UGc-94-Q6V"/>
+                <outlet property="historyBtn" destination="Yxi-1H-TiA" id="5e1-ip-lh2"/>
+            </connections>
+            <point key="canvasLocation" x="-24" y="208"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iM_Favorite" width="373" height="373"/>
+        <image name="iM_History" width="1102" height="1102"/>
+    </resources>
+</document>

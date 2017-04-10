@@ -57,7 +57,11 @@
     _addBar.clickEngineBlock = ^(){
         Wself.pickV.hidden = NO;
         [UIView animateWithDuration:0.3 animations:^{
-            [Wself.pickV mas_updateConstraints:^(MASConstraintMaker *make) {
+            [Wself.pickV mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.leading.equalTo(Wself.addBar.mas_leading);
+                make.width.equalTo(Wself.addBar.mas_width);
+                make.height.mas_equalTo(125);
+                //top  对 bottom
                 make.top.equalTo(Wself.addBar.mas_bottom);
             }];
         }];
@@ -67,7 +71,11 @@
         [Wself.addBar.engineBtn setImage:[UIImage imageNamed:engineName] forState:UIControlStateNormal];
         
         [UIView animateWithDuration:0.3 animations:^{
-            [Wself.pickV mas_updateConstraints:^(MASConstraintMaker *make) {
+            [Wself.pickV mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.leading.equalTo(Wself.addBar.mas_leading);
+                make.width.equalTo(Wself.addBar.mas_width);
+                make.height.mas_equalTo(125);
+                //bottom  对 top
                 make.bottom.equalTo(Wself.addBar.mas_bottom);
             }];
         }];
