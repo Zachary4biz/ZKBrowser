@@ -27,38 +27,6 @@
             endingLineNumber = "1076"
             landmarkName = "-handleLongPress:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WebVC handleLongPress:]"
-                  moduleName = "ZKBrowser"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zac/WorkSpace/ZKBrowser/ZKBrowser/WebVC/WebVC.m"
-                  timestampString = "513498387.876322"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1076"
-                  endingLineNumber = "1076"
-                  offsetFromSymbolStart = "220">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__25-[WebVC handleLongPress:]_block_invoke"
-                  moduleName = "ZKBrowser"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zac/WorkSpace/ZKBrowser/ZKBrowser/WebVC/WebVC.m"
-                  timestampString = "513498387.878187"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1077"
-                  endingLineNumber = "1077"
-                  offsetFromSymbolStart = "80">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -203,6 +171,70 @@
             endingLineNumber = "75"
             landmarkName = "-didBecomeActiveWithConversation:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZKBrowseriMessageExtension/MessagesViewController.m"
+            timestampString = "513509727.026416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-prepareViews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZKBrowseriMessageExtension/MessagesViewController.m"
+            timestampString = "513511029.794672"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-prepareLayout"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MessagesViewController prepareLayout]"
+                  moduleName = "ZKBrowseriMessageExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zac/WorkSpace/ZKBrowser/ZKBrowseriMessageExtension/MessagesViewController.m"
+                  timestampString = "513508701.767035"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[MessagesViewController prepareLayout]_block_invoke"
+                  moduleName = "ZKBrowseriMessageExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zac/WorkSpace/ZKBrowser/ZKBrowseriMessageExtension/MessagesViewController.m"
+                  timestampString = "513508701.7687"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
