@@ -9,6 +9,7 @@
 @interface MessagesViewController ()<WKUIDelegate,WKNavigationDelegate>
 @property (nonatomic, strong) AddressView *addressView;
 @property (nonatomic, strong) ZKWebView *webView;
+- (IBAction)testBtn:(id)sender;
 
 @end
 
@@ -32,9 +33,27 @@
     [self.view layoutIfNeeded];
     [self setUpAddressView];
     
-    
+#pragma mark - 测试
+    UIButton *testBtn = [[UIButton alloc]initWithFrame:CGRectMake(20, 20, 40, 40)];
+    [testBtn setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:testBtn];
+    [testBtn addTarget:self action:@selector(clickTest) forControlEvents:UIControlEventTouchUpInside];
+#pragma mark - 测试
 }
-
+- (void)clickTest
+{
+    NSLog(@"点击测试");
+    NSString *urlScheme = @"zkbrowser://www.baidu.com";
+    NSURL *url = [NSURL URLWithString:urlScheme];
+    
+    [self.extensionContext openURL:url completionHandler:^(BOOL success) {
+        if (success) {
+            NSLog(@"跳转成功");
+        }else{
+            NSLog(@"跳转失败");
+        }
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -56,7 +75,7 @@
             if (success) {
                 NSLog(@"success");
             }else{
-                NSLog(@"fial");
+                NSLog(@"fail");
             }
         }];
     }
@@ -100,7 +119,7 @@
     NSLog(@"willSelectMessage");
     NSLog(@"url is %@",message.URL);
 //    self.extensionContext
-    NSString *urlScheme = @"zkbrowser://";
+    NSString *urlScheme = @"zkbrowser://www.baidu.com";
     NSURL *url = [NSURL URLWithString:urlScheme];
     
     [self.extensionContext openURL:url completionHandler:^(BOOL success) {
@@ -138,6 +157,13 @@
         NSLog(@"将要收拢");
         [self urlTextFieldResignFirstResponder];
     }
+    [self.extensionContext openURL:[NSURL URLWithString:@"zkbrowser://www.baidu.com"] completionHandler:^(BOOL success) {
+        if (success) {
+            NSLog(@"跳转成功");
+        }else{
+            NSLog(@"跳转失败");
+        }
+    }];
 }
 
 -(void)didTransitionToPresentationStyle:(MSMessagesAppPresentationStyle)presentationStyle {
@@ -483,4 +509,16 @@ static float progressValueThreshold = 0.9;
     
 }
 
+- (IBAction)testBtn:(id)sender {
+    NSString *urlScheme = @"zkbrowser://www.baidu.com";
+    NSURL *url = [NSURL URLWithString:urlScheme];
+    
+    [self.extensionContext openURL:url completionHandler:^(BOOL success) {
+        if (success) {
+            NSLog(@"跳转成功");
+        }else{
+            NSLog(@"跳转失败");
+        }
+    }];
+}
 @end

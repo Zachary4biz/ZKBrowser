@@ -14,10 +14,30 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ZKBrowserTodayExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>ZKBrowseriMessageExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>11B7A8C01E52CD9100C8A2E0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>11F72E021E9B416C0028151E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>11F72E191E9B56AC0028151E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

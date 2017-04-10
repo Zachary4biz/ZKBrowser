@@ -28,24 +28,15 @@
 		118FB1A41E36010600A50698 /* SmallWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1A31E36010600A50698 /* SmallWebView.m */; };
 		118FB1A91E36021300A50698 /* CodeRecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1A81E36021300A50698 /* CodeRecoder.m */; };
 		118FB1AC1E3613F400A50698 /* InputAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1AB1E3613F400A50698 /* InputAccessory.m */; };
-		11B7A8BB1E52CD9100C8A2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B7A8BA1E52CD9100C8A2E0 /* Assets.xcassets */; };
-		11B7A8C21E52CD9100C8A2E0 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11B7A8C11E52CD9100C8A2E0 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		11B7A8C71E52CD9100C8A2E0 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B7A8C61E52CD9100C8A2E0 /* Messages.framework */; };
-		11B7A8CE1E52CD9100C8A2E0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B7A8CC1E52CD9100C8A2E0 /* MainInterface.storyboard */; };
-		11B7A8D91E52CE5400C8A2E0 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD811DFBF021008C0010 /* MASCompositeConstraint.m */; };
-		11B7A8DA1E52CE5400C8A2E0 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD841DFBF021008C0010 /* MASConstraint.m */; };
-		11B7A8DB1E52CE5400C8A2E0 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD861DFBF021008C0010 /* MASConstraintMaker.m */; };
-		11B7A8DC1E52CE5400C8A2E0 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD881DFBF021008C0010 /* MASLayoutConstraint.m */; };
-		11B7A8DD1E52CE5400C8A2E0 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD8C1DFBF021008C0010 /* MASViewAttribute.m */; };
-		11B7A8DE1E52CE5400C8A2E0 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD8E1DFBF021008C0010 /* MASViewConstraint.m */; };
-		11B7A8DF1E52CE5400C8A2E0 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD901DFBF021008C0010 /* NSArray+MASAdditions.m */; };
-		11B7A8E01E52CE5400C8A2E0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD931DFBF021008C0010 /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		11B7A8E11E52CE5400C8A2E0 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD951DFBF021008C0010 /* View+MASAdditions.m */; };
-		11B7A8E61E52CEBD00C8A2E0 /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8E31E52CEBD00C8A2E0 /* AddressView.m */; };
-		11B7A8E71E52CEBD00C8A2E0 /* ZKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8E51E52CEBD00C8A2E0 /* ZKWebView.m */; };
-		11B7A8E81E52CEF400C8A2E0 /* NSObject+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1991E35F91900A50698 /* NSObject+Description.m */; };
-		11B7A8E91E52CF1300C8A2E0 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7A8CA1E52CD9100C8A2E0 /* MessagesViewController.m */; };
-		11B7A8EB1E52CF6200C8A2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B7A8EA1E52CF6200C8A2E0 /* Assets.xcassets */; };
+		11F72E051E9B416C0028151E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F72E041E9B416C0028151E /* NotificationCenter.framework */; };
+		11F72E091E9B416C0028151E /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F72E081E9B416C0028151E /* TodayViewController.m */; };
+		11F72E0C1E9B416C0028151E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F72E0A1E9B416C0028151E /* MainInterface.storyboard */; };
+		11F72E101E9B416C0028151E /* ZKBrowserTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11F72E031E9B416C0028151E /* ZKBrowserTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11F72E1B1E9B56AC0028151E /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B7A8C61E52CD9100C8A2E0 /* Messages.framework */; };
+		11F72E1F1E9B56AC0028151E /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F72E1E1E9B56AC0028151E /* MessagesViewController.m */; };
+		11F72E221E9B56AC0028151E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F72E201E9B56AC0028151E /* MainInterface.storyboard */; };
+		11F72E241E9B56AC0028151E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F72E231E9B56AC0028151E /* Assets.xcassets */; };
+		11F72E281E9B56AC0028151E /* ZKBrowseriMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11F72E1A1E9B56AC0028151E /* ZKBrowseriMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B608AD5E1DFBE00C008C0010 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD5D1DFBE00C008C0010 /* main.m */; };
 		B608AD611DFBE00C008C0010 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B608AD601DFBE00C008C0010 /* AppDelegate.m */; };
 		B608AD691DFBE00C008C0010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B608AD681DFBE00C008C0010 /* Assets.xcassets */; };
@@ -62,23 +53,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		11B7A8C31E52CD9100C8A2E0 /* PBXContainerItemProxy */ = {
+		11F72E0E1E9B416C0028151E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B608AD511DFBE00C008C0010 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 11B7A8C01E52CD9100C8A2E0;
-			remoteInfo = MessagesExtension;
+			remoteGlobalIDString = 11F72E021E9B416C0028151E;
+			remoteInfo = ZKBrowserTodayExtension;
+		};
+		11F72E261E9B56AC0028151E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B608AD511DFBE00C008C0010 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11F72E191E9B56AC0028151E;
+			remoteInfo = ZKBrowseriMessageExtension;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		11B7A8D51E52CD9100C8A2E0 /* Embed App Extensions */ = {
+		11F72E141E9B416C0028151E /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				11B7A8C21E52CD9100C8A2E0 /* MessagesExtension.appex in Embed App Extensions */,
+				11F72E281E9B56AC0028151E /* ZKBrowseriMessageExtension.appex in Embed App Extensions */,
+				11F72E101E9B416C0028151E /* ZKBrowserTodayExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,20 +124,22 @@
 		118FB1A81E36021300A50698 /* CodeRecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeRecoder.m; sourceTree = "<group>"; };
 		118FB1AA1E3613F400A50698 /* InputAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputAccessory.h; sourceTree = "<group>"; };
 		118FB1AB1E3613F400A50698 /* InputAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputAccessory.m; sourceTree = "<group>"; };
-		11B7A8B81E52CD9100C8A2E0 /* qweqw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qweqw.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		11B7A8BA1E52CD9100C8A2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		11B7A8BC1E52CD9100C8A2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11B7A8C11E52CD9100C8A2E0 /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B7A8C61E52CD9100C8A2E0 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
-		11B7A8C91E52CD9100C8A2E0 /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
-		11B7A8CA1E52CD9100C8A2E0 /* MessagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
-		11B7A8CD1E52CD9100C8A2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		11B7A8D11E52CD9100C8A2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11B7A8E21E52CEBD00C8A2E0 /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
-		11B7A8E31E52CEBD00C8A2E0 /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
-		11B7A8E41E52CEBD00C8A2E0 /* ZKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKWebView.h; sourceTree = "<group>"; };
-		11B7A8E51E52CEBD00C8A2E0 /* ZKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKWebView.m; sourceTree = "<group>"; };
-		11B7A8EA1E52CF6200C8A2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11F72DDA1E9B23A80028151E /* ZKBrowser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZKBrowser.entitlements; sourceTree = "<group>"; };
+		11F72E031E9B416C0028151E /* ZKBrowserTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ZKBrowserTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F72E041E9B416C0028151E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		11F72E071E9B416C0028151E /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		11F72E081E9B416C0028151E /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		11F72E0B1E9B416C0028151E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		11F72E0D1E9B416C0028151E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F72E151E9B55BE0028151E /* ZKBrowserTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZKBrowserTodayExtension.entitlements; sourceTree = "<group>"; };
+		11F72E1A1E9B56AC0028151E /* ZKBrowseriMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ZKBrowseriMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F72E1D1E9B56AC0028151E /* MessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		11F72E1E1E9B56AC0028151E /* MessagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		11F72E211E9B56AC0028151E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		11F72E231E9B56AC0028151E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11F72E251E9B56AC0028151E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F72E2C1E9B58D10028151E /* ZKBrowseriMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZKBrowseriMessageExtension.entitlements; sourceTree = "<group>"; };
 		B608AD591DFBE00C008C0010 /* ZKBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B608AD5D1DFBE00C008C0010 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B608AD5F1DFBE00C008C0010 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -172,11 +173,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		11B7A8BE1E52CD9100C8A2E0 /* Frameworks */ = {
+		11F72E001E9B416C0028151E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11B7A8C71E52CD9100C8A2E0 /* Messages.framework in Frameworks */,
+				11F72E051E9B416C0028151E /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F72E171E9B56AC0028151E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F72E1B1E9B56AC0028151E /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,45 +351,46 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		11B7A8B91E52CD9100C8A2E0 /* qweqw */ = {
-			isa = PBXGroup;
-			children = (
-				11B7A8BA1E52CD9100C8A2E0 /* Assets.xcassets */,
-				11B7A8BC1E52CD9100C8A2E0 /* Info.plist */,
-			);
-			path = qweqw;
-			sourceTree = "<group>";
-		};
 		11B7A8C51E52CD9100C8A2E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				11B7A8C61E52CD9100C8A2E0 /* Messages.framework */,
+				11F72E041E9B416C0028151E /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		11B7A8C81E52CD9100C8A2E0 /* MessagesExtension */ = {
+		11F72E061E9B416C0028151E /* ZKBrowserTodayExtension */ = {
 			isa = PBXGroup;
 			children = (
-				11B7A8E21E52CEBD00C8A2E0 /* AddressView.h */,
-				11B7A8E31E52CEBD00C8A2E0 /* AddressView.m */,
-				11B7A8E41E52CEBD00C8A2E0 /* ZKWebView.h */,
-				11B7A8E51E52CEBD00C8A2E0 /* ZKWebView.m */,
-				11B7A8C91E52CD9100C8A2E0 /* MessagesViewController.h */,
-				11B7A8CA1E52CD9100C8A2E0 /* MessagesViewController.m */,
-				11B7A8CC1E52CD9100C8A2E0 /* MainInterface.storyboard */,
-				11B7A8EA1E52CF6200C8A2E0 /* Assets.xcassets */,
-				11B7A8D11E52CD9100C8A2E0 /* Info.plist */,
+				11F72E151E9B55BE0028151E /* ZKBrowserTodayExtension.entitlements */,
+				11F72E071E9B416C0028151E /* TodayViewController.h */,
+				11F72E081E9B416C0028151E /* TodayViewController.m */,
+				11F72E0A1E9B416C0028151E /* MainInterface.storyboard */,
+				11F72E0D1E9B416C0028151E /* Info.plist */,
 			);
-			path = MessagesExtension;
+			path = ZKBrowserTodayExtension;
+			sourceTree = "<group>";
+		};
+		11F72E1C1E9B56AC0028151E /* ZKBrowseriMessageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				11F72E2C1E9B58D10028151E /* ZKBrowseriMessageExtension.entitlements */,
+				11F72E1D1E9B56AC0028151E /* MessagesViewController.h */,
+				11F72E1E1E9B56AC0028151E /* MessagesViewController.m */,
+				11F72E201E9B56AC0028151E /* MainInterface.storyboard */,
+				11F72E231E9B56AC0028151E /* Assets.xcassets */,
+				11F72E251E9B56AC0028151E /* Info.plist */,
+			);
+			path = ZKBrowseriMessageExtension;
 			sourceTree = "<group>";
 		};
 		B608AD501DFBE00C008C0010 = {
 			isa = PBXGroup;
 			children = (
 				B608AD5B1DFBE00C008C0010 /* ZKBrowser */,
-				11B7A8B91E52CD9100C8A2E0 /* qweqw */,
-				11B7A8C81E52CD9100C8A2E0 /* MessagesExtension */,
+				11F72E061E9B416C0028151E /* ZKBrowserTodayExtension */,
+				11F72E1C1E9B56AC0028151E /* ZKBrowseriMessageExtension */,
 				11B7A8C51E52CD9100C8A2E0 /* Frameworks */,
 				B608AD5A1DFBE00C008C0010 /* Products */,
 			);
@@ -390,8 +400,8 @@
 			isa = PBXGroup;
 			children = (
 				B608AD591DFBE00C008C0010 /* ZKBrowser.app */,
-				11B7A8B81E52CD9100C8A2E0 /* qweqw.app */,
-				11B7A8C11E52CD9100C8A2E0 /* MessagesExtension.appex */,
+				11F72E031E9B416C0028151E /* ZKBrowserTodayExtension.appex */,
+				11F72E1A1E9B56AC0028151E /* ZKBrowseriMessageExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -399,6 +409,7 @@
 		B608AD5B1DFBE00C008C0010 /* ZKBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				11F72DDA1E9B23A80028151E /* ZKBrowser.entitlements */,
 				118FB1A51E3601CE00A50698 /* Resource */,
 				118FB1941E35F39C00A50698 /* Spotlight */,
 				118FB1741E35BEC200A50698 /* WebPagesVC */,
@@ -458,38 +469,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		11B7A8B71E52CD9100C8A2E0 /* qweqw */ = {
+		11F72E021E9B416C0028151E /* ZKBrowserTodayExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11B7A8D61E52CD9100C8A2E0 /* Build configuration list for PBXNativeTarget "qweqw" */;
+			buildConfigurationList = 11F72E111E9B416C0028151E /* Build configuration list for PBXNativeTarget "ZKBrowserTodayExtension" */;
 			buildPhases = (
-				11B7A8B61E52CD9100C8A2E0 /* Resources */,
-				11B7A8D51E52CD9100C8A2E0 /* Embed App Extensions */,
+				11F72DFF1E9B416C0028151E /* Sources */,
+				11F72E001E9B416C0028151E /* Frameworks */,
+				11F72E011E9B416C0028151E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				11B7A8C41E52CD9100C8A2E0 /* PBXTargetDependency */,
 			);
-			name = qweqw;
-			productName = qweqw;
-			productReference = 11B7A8B81E52CD9100C8A2E0 /* qweqw.app */;
-			productType = "com.apple.product-type.application.messages";
+			name = ZKBrowserTodayExtension;
+			productName = ZKBrowserTodayExtension;
+			productReference = 11F72E031E9B416C0028151E /* ZKBrowserTodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
-		11B7A8C01E52CD9100C8A2E0 /* MessagesExtension */ = {
+		11F72E191E9B56AC0028151E /* ZKBrowseriMessageExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11B7A8D21E52CD9100C8A2E0 /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
+			buildConfigurationList = 11F72E291E9B56AC0028151E /* Build configuration list for PBXNativeTarget "ZKBrowseriMessageExtension" */;
 			buildPhases = (
-				11B7A8BD1E52CD9100C8A2E0 /* Sources */,
-				11B7A8BE1E52CD9100C8A2E0 /* Frameworks */,
-				11B7A8BF1E52CD9100C8A2E0 /* Resources */,
+				11F72E161E9B56AC0028151E /* Sources */,
+				11F72E171E9B56AC0028151E /* Frameworks */,
+				11F72E181E9B56AC0028151E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MessagesExtension;
-			productName = MessagesExtension;
-			productReference = 11B7A8C11E52CD9100C8A2E0 /* MessagesExtension.appex */;
+			name = ZKBrowseriMessageExtension;
+			productName = ZKBrowseriMessageExtension;
+			productReference = 11F72E1A1E9B56AC0028151E /* ZKBrowseriMessageExtension.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
 		};
 		B608AD581DFBE00C008C0010 /* ZKBrowser */ = {
@@ -499,10 +510,13 @@
 				B608AD551DFBE00C008C0010 /* Sources */,
 				B608AD561DFBE00C008C0010 /* Frameworks */,
 				B608AD571DFBE00C008C0010 /* Resources */,
+				11F72E141E9B416C0028151E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				11F72E0F1E9B416C0028151E /* PBXTargetDependency */,
+				11F72E271E9B56AC0028151E /* PBXTargetDependency */,
 			);
 			name = ZKBrowser;
 			productName = ZKBrowser;
@@ -518,20 +532,35 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "周桐";
 				TargetAttributes = {
-					11B7A8B71E52CD9100C8A2E0 = {
+					11F72E021E9B416C0028151E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 4E33RF5MGJ;
+						DevelopmentTeam = 92K4P4ND55;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
-					11B7A8C01E52CD9100C8A2E0 = {
+					11F72E191E9B56AC0028151E = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 4E33RF5MGJ;
+						DevelopmentTeam = 92K4P4ND55;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					B608AD581DFBE00C008C0010 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4E33RF5MGJ;
+						DevelopmentTeam = 92K4P4ND55;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -549,27 +578,27 @@
 			projectRoot = "";
 			targets = (
 				B608AD581DFBE00C008C0010 /* ZKBrowser */,
-				11B7A8B71E52CD9100C8A2E0 /* qweqw */,
-				11B7A8C01E52CD9100C8A2E0 /* MessagesExtension */,
+				11F72E021E9B416C0028151E /* ZKBrowserTodayExtension */,
+				11F72E191E9B56AC0028151E /* ZKBrowseriMessageExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		11B7A8B61E52CD9100C8A2E0 /* Resources */ = {
+		11F72E011E9B416C0028151E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11B7A8BB1E52CD9100C8A2E0 /* Assets.xcassets in Resources */,
+				11F72E0C1E9B416C0028151E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11B7A8BF1E52CD9100C8A2E0 /* Resources */ = {
+		11F72E181E9B56AC0028151E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11B7A8EB1E52CF6200C8A2E0 /* Assets.xcassets in Resources */,
-				11B7A8CE1E52CD9100C8A2E0 /* MainInterface.storyboard in Resources */,
+				11F72E241E9B56AC0028151E /* Assets.xcassets in Resources */,
+				11F72E221E9B56AC0028151E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,23 +616,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		11B7A8BD1E52CD9100C8A2E0 /* Sources */ = {
+		11F72DFF1E9B416C0028151E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11B7A8E91E52CF1300C8A2E0 /* MessagesViewController.m in Sources */,
-				11B7A8E81E52CEF400C8A2E0 /* NSObject+Description.m in Sources */,
-				11B7A8D91E52CE5400C8A2E0 /* MASCompositeConstraint.m in Sources */,
-				11B7A8DA1E52CE5400C8A2E0 /* MASConstraint.m in Sources */,
-				11B7A8DB1E52CE5400C8A2E0 /* MASConstraintMaker.m in Sources */,
-				11B7A8E61E52CEBD00C8A2E0 /* AddressView.m in Sources */,
-				11B7A8DC1E52CE5400C8A2E0 /* MASLayoutConstraint.m in Sources */,
-				11B7A8DD1E52CE5400C8A2E0 /* MASViewAttribute.m in Sources */,
-				11B7A8DE1E52CE5400C8A2E0 /* MASViewConstraint.m in Sources */,
-				11B7A8DF1E52CE5400C8A2E0 /* NSArray+MASAdditions.m in Sources */,
-				11B7A8E01E52CE5400C8A2E0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				11B7A8E11E52CE5400C8A2E0 /* View+MASAdditions.m in Sources */,
-				11B7A8E71E52CEBD00C8A2E0 /* ZKWebView.m in Sources */,
+				11F72E091E9B416C0028151E /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F72E161E9B56AC0028151E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F72E1F1E9B56AC0028151E /* MessagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,18 +672,31 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		11B7A8C41E52CD9100C8A2E0 /* PBXTargetDependency */ = {
+		11F72E0F1E9B416C0028151E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 11B7A8C01E52CD9100C8A2E0 /* MessagesExtension */;
-			targetProxy = 11B7A8C31E52CD9100C8A2E0 /* PBXContainerItemProxy */;
+			target = 11F72E021E9B416C0028151E /* ZKBrowserTodayExtension */;
+			targetProxy = 11F72E0E1E9B416C0028151E /* PBXContainerItemProxy */;
+		};
+		11F72E271E9B56AC0028151E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11F72E191E9B56AC0028151E /* ZKBrowseriMessageExtension */;
+			targetProxy = 11F72E261E9B56AC0028151E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		11B7A8CC1E52CD9100C8A2E0 /* MainInterface.storyboard */ = {
+		11F72E0A1E9B416C0028151E /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				11B7A8CD1E52CD9100C8A2E0 /* Base */,
+				11F72E0B1E9B416C0028151E /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		11F72E201E9B56AC0028151E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11F72E211E9B56AC0028151E /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -674,57 +712,61 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		11B7A8D31E52CD9100C8A2E0 /* Debug */ = {
+		11F72E121E9B416C0028151E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 4E33RF5MGJ;
-				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				CODE_SIGN_ENTITLEMENTS = ZKBrowserTodayExtension/ZKBrowserTodayExtension.entitlements;
+				DEVELOPMENT_TEAM = 92K4P4ND55;
+				INFOPLIST_FILE = ZKBrowserTodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Zac.qweqw.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = Ted.ZKBrowser.ZKBrowserTodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		11B7A8D41E52CD9100C8A2E0 /* Release */ = {
+		11F72E131E9B416C0028151E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 4E33RF5MGJ;
-				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				CODE_SIGN_ENTITLEMENTS = ZKBrowserTodayExtension/ZKBrowserTodayExtension.entitlements;
+				DEVELOPMENT_TEAM = 92K4P4ND55;
+				INFOPLIST_FILE = ZKBrowserTodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Zac.qweqw.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = Ted.ZKBrowser.ZKBrowserTodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		11B7A8D71E52CD9100C8A2E0 /* Debug */ = {
+		11F72E2A1E9B56AC0028151E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4E33RF5MGJ;
-				INFOPLIST_FILE = qweqw/Info.plist;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = ZKBrowseriMessageExtension/ZKBrowseriMessageExtension.entitlements;
+				DEVELOPMENT_TEAM = 92K4P4ND55;
+				INFOPLIST_FILE = ZKBrowseriMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				PRODUCT_BUNDLE_IDENTIFIER = Zac.qweqw;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ted.ZKBrowser.ZKBrowseriMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		11B7A8D81E52CD9100C8A2E0 /* Release */ = {
+		11F72E2B1E9B56AC0028151E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4E33RF5MGJ;
-				INFOPLIST_FILE = qweqw/Info.plist;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = ZKBrowseriMessageExtension/ZKBrowseriMessageExtension.entitlements;
+				DEVELOPMENT_TEAM = 92K4P4ND55;
+				INFOPLIST_FILE = ZKBrowseriMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				PRODUCT_BUNDLE_IDENTIFIER = Zac.qweqw;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ted.ZKBrowser.ZKBrowseriMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -822,10 +864,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4E33RF5MGJ;
+				CODE_SIGN_ENTITLEMENTS = ZKBrowser/ZKBrowser.entitlements;
+				DEVELOPMENT_TEAM = 92K4P4ND55;
 				INFOPLIST_FILE = ZKBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Zac.ZKBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = Ted.ZKBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -834,10 +877,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4E33RF5MGJ;
+				CODE_SIGN_ENTITLEMENTS = ZKBrowser/ZKBrowser.entitlements;
+				DEVELOPMENT_TEAM = 92K4P4ND55;
 				INFOPLIST_FILE = ZKBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Zac.ZKBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = Ted.ZKBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -845,19 +889,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11B7A8D21E52CD9100C8A2E0 /* Build configuration list for PBXNativeTarget "MessagesExtension" */ = {
+		11F72E111E9B416C0028151E /* Build configuration list for PBXNativeTarget "ZKBrowserTodayExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11B7A8D31E52CD9100C8A2E0 /* Debug */,
-				11B7A8D41E52CD9100C8A2E0 /* Release */,
+				11F72E121E9B416C0028151E /* Debug */,
+				11F72E131E9B416C0028151E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		11B7A8D61E52CD9100C8A2E0 /* Build configuration list for PBXNativeTarget "qweqw" */ = {
+		11F72E291E9B56AC0028151E /* Build configuration list for PBXNativeTarget "ZKBrowseriMessageExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11B7A8D71E52CD9100C8A2E0 /* Debug */,
-				11B7A8D81E52CD9100C8A2E0 /* Release */,
+				11F72E2A1E9B56AC0028151E /* Debug */,
+				11F72E2B1E9B56AC0028151E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

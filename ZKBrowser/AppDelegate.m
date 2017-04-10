@@ -99,7 +99,7 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
 //
 //        }
 //    };
-    NSString *prefix = @"ZKBrowser://";
+    NSString *prefix = @"zkbrowser://";
     NSString *str = url.absoluteString;
     
     NSURL *iMessageURL;

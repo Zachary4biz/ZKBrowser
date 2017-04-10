@@ -22,7 +22,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.Zac.ZKBrowser</string>
+			<string>Ted.ZKBrowser</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>zkbrowser</string>
