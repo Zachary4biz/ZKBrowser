@@ -16,10 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入网址或直接搜索" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMn-Wa-3on">
-                    <rect key="frame" x="51" y="17.5" width="333" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="NQK-eg-fdp"/>
-                    </constraints>
+                    <rect key="frame" x="51" y="0.0" width="333" height="65"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -39,6 +36,7 @@
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="MoP-an-vcV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="OXF-4R-yUW"/>
+                <constraint firstItem="UMn-Wa-3on" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="XPG-NZ-fOd"/>
                 <constraint firstItem="UMn-Wa-3on" firstAttribute="leading" secondItem="MoP-an-vcV" secondAttribute="trailing" constant="8" id="gje-E4-iQO"/>
                 <constraint firstItem="UMn-Wa-3on" firstAttribute="centerY" secondItem="MoP-an-vcV" secondAttribute="centerY" id="igv-Ah-ekd"/>
                 <constraint firstItem="MoP-an-vcV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="u1F-gP-9rI"/>

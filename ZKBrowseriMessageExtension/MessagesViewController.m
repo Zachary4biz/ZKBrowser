@@ -34,18 +34,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Layout
+#pragma mark - PrepareViews
 - (void)prepareViews
 {
     [self prepareAddressView];
     [self prepareBtnView];
     [self prepareLayout];
 }
+- (void)prepareAddressView
+{
+    self.addV = [[ZTAddressView alloc]init];
+    [self.view addSubview:self.addV];
+    
+    self.addV.addBar.textF.delegate = self;
+}
+- (void)prepareBtnView
+{
+    __weak typeof(self) Wself = self;
+    self.btnV = [[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil][0];
+    [self.view addSubview:self.btnV];
+    self.btnV.favoriteBtnBlock = ^(){
+        [Wself handleFavoriteBtn];
+    };
+    self.btnV.historyBtnBlock = ^(){
+        [Wself handleHistoryBtn];
+    };
+}
+
+#pragma mark - PrepareLayout
 - (void)prepareLayout
 {
     [self.addV mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
-        make.top.equalTo(self.view.mas_top).offset(30);
+        make.top.equalTo(self.view.mas_top).offset(50);
         make.width.mas_equalTo(self.view.mas_width).multipliedBy(0.8);
         make.height.mas_equalTo(35);
     }];
@@ -57,22 +78,6 @@
         make.height.mas_equalTo(50);
     }];
 }
-- (void)prepareAddressView
-{
-    self.addV = [[ZTAddressView alloc]init];
-    [self.view addSubview:self.addV];
-    
-    self.addV.addBar.textF.delegate = self;
-}
-- (void)prepareBtnView
-{
-    self.btnV = [[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil][0];
-    [self.view addSubview:self.btnV];
-    [self.btnV.favoriteBtn addTarget:self action:@selector(handleFavoriteBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.btnV.historyBtn addTarget:self action:@selector(handleHistoryBtn) forControlEvents:UIControlEventTouchUpInside];
-    
-}
-
 //compactLayout
 - (void)getCompactLayout
 {
@@ -112,6 +117,7 @@
 }
 
 
+
 #pragma mark - Conversation Handling
 
 -(void)didBecomeActiveWithConversation:(MSConversation *)conversation {
@@ -149,15 +155,7 @@
             break;
     }
 }
-- (void)willCompact
-{
-    [self getCompactLayout];
-    [self.addV.addBar.textF resignFirstResponder];
-}
-- (void)willExpanded
-{
-    self.addV.hidden = YES;
-}
+
 -(void)didTransitionToPresentationStyle:(MSMessagesAppPresentationStyle)presentationStyle {
     NSLog(@"切换style完成");
     switch (presentationStyle) {
@@ -171,17 +169,6 @@
         default:
             break;
     }
-}
-- (void)didCompact
-{
-    
-}
-
-- (void)didExpanded
-{
-    [self.addV.addBar.textF becomeFirstResponder];
-    self.addV.hidden = NO;
-    [self getExpandedLayout];
 }
 
 - (IBAction)tempBtn:(id)sender {
@@ -197,4 +184,32 @@
         }
     }];
 }
+#pragma mark - Change During Conversation
+//收缩
+- (void)willCompact
+{
+//    self.btnV.hidden = YES;
+//    self.addV.hidden = YES;
+    [self getCompactLayout];
+    [self.addV.addBar.textF resignFirstResponder];
+}
+- (void)didCompact
+{
+//    self.btnV.hidden = NO;
+//    self.addV.hidden = NO;
+}
+//展开
+- (void)willExpanded
+{
+//    self.btnV.hidden = YES;
+//    self.addV.hidden = YES;
+    [self getExpandedLayout];
+}
+- (void)didExpanded
+{
+    [self.addV.addBar.textF becomeFirstResponder];
+    self.addV.hidden = NO;
+//    [self getExpandedLayout];
+}
+
 @end
