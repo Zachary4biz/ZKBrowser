@@ -73,7 +73,7 @@
     
     [self.btnV mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.addV.mas_centerX);
-        make.top.equalTo(self.addV.mas_bottom).offset(0);
+        make.top.equalTo(self.addV.mas_bottom).offset(10);
         make.width.equalTo(self.addV.mas_width);
         make.height.mas_equalTo(50);
     }];
@@ -116,6 +116,11 @@
     }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    return YES;
+}
 
 
 #pragma mark - Conversation Handling
@@ -161,6 +166,7 @@
     switch (presentationStyle) {
         case MSMessagesAppPresentationStyleCompact:
             NSLog(@">>>compact状态");
+            [self didCompact];
             break;
         case MSMessagesAppPresentationStyleExpanded:
             NSLog(@">>>expanded状态");
@@ -188,28 +194,39 @@
 //收缩
 - (void)willCompact
 {
-//    self.btnV.hidden = YES;
-//    self.addV.hidden = YES;
-    [self getCompactLayout];
+    [self hideAll];
+    
     [self.addV.addBar.textF resignFirstResponder];
 }
 - (void)didCompact
 {
-//    self.btnV.hidden = NO;
-//    self.addV.hidden = NO;
+    [self getCompactLayout];
+    [self showAll];
 }
 //展开
 - (void)willExpanded
 {
-//    self.btnV.hidden = YES;
-//    self.addV.hidden = YES;
-    [self getExpandedLayout];
+    [self hideAll];
+    
 }
 - (void)didExpanded
 {
     [self.addV.addBar.textF becomeFirstResponder];
     self.addV.hidden = NO;
-//    [self getExpandedLayout];
+    [self getExpandedLayout];
+    [self showAll];
+}
+
+- (void)hideAll
+{
+    self.btnV.hidden = YES;
+    self.addV.hidden = YES;
+}
+
+- (void)showAll
+{
+    self.btnV.hidden = NO;
+    self.addV.hidden = NO;
 }
 
 @end

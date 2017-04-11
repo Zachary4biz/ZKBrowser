@@ -37,8 +37,8 @@
     [self.addBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(Wself.mas_left);
         make.right.equalTo(Wself.mas_right);
-        make.centerY.equalTo(Wself.mas_centerY).offset(-20);
-        make.height.mas_equalTo(40);
+        make.top.equalTo(Wself.mas_top);
+        make.bottom.equalTo(Wself.mas_bottom);
     }];
     self.addBar.layer.cornerRadius = 8.0;
     
