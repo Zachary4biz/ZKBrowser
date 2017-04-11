@@ -68,9 +68,13 @@
 {
     self.btnV = [[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil][0];
     [self.view addSubview:self.btnV];
-    [self.btnV.favoriteBtn addTarget:self action:@selector(handleFavoriteBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.btnV.historyBtn addTarget:self action:@selector(handleHistoryBtn) forControlEvents:UIControlEventTouchUpInside];
-    
+    __weak typeof(self) Wself = self;
+    self.btnV.favoriteBtnBlock = ^(){
+        [Wself handleFavoriteBtn];
+    };
+    self.btnV.historyBtnBlock = ^(){
+        [Wself handleHistoryBtn];
+    };
 }
 
 //compactLayout

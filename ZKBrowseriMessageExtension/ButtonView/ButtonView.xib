@@ -24,7 +24,7 @@
                     </constraints>
                     <state key="normal" image="iM_Favorite"/>
                     <connections>
-                        <action selector="favoriteBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Njb-CE-I0l"/>
+                        <action selector="favoriteBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="VJ9-RK-lV8"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxi-1H-TiA">
@@ -35,7 +35,7 @@
                     </constraints>
                     <state key="normal" image="iM_History"/>
                     <connections>
-                        <action selector="historyBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="bGK-b8-Agb"/>
+                        <action selector="historyBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="8hh-Fz-lda"/>
                     </connections>
                 </button>
             </subviews>

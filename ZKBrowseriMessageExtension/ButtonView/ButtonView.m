@@ -13,6 +13,18 @@
 @end
 
 @implementation ButtonView
+- (IBAction)favoriteBtn:(id)sender {
+    NSLog(@"favoriteBtn Clicked");
+    if (self.favoriteBtnBlock) {
+        self.favoriteBtnBlock();
+    }
+}
+- (IBAction)historyBtn:(id)sender {
+    NSLog(@"historyBtn Clicked");
+    if (self.historyBtnBlock) {
+        self.historyBtnBlock();
+    }
+}
 
 
 @end

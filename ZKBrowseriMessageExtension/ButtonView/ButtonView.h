@@ -13,4 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *favoriteBtn;
 @property (weak, nonatomic) IBOutlet UIButton *historyBtn;
 
+@property (nonatomic, copy) void (^favoriteBtnBlock)();
+@property (nonatomic, copy) void (^historyBtnBlock)();
+
 @end
