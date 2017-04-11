@@ -10,6 +10,7 @@
 #import "Masonry.h"
 #import "ZTAddressView.h"
 #import "ButtonView.h"
+#import "FavAndHisTableView.h"
 
 @interface MessagesViewController ()<UITextFieldDelegate>
 
@@ -26,12 +27,11 @@
     [super viewDidLoad];
     
     [self prepareViews];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark - Layout
@@ -70,7 +70,6 @@
     [self.view addSubview:self.btnV];
     [self.btnV.favoriteBtn addTarget:self action:@selector(handleFavoriteBtn) forControlEvents:UIControlEventTouchUpInside];
     [self.btnV.historyBtn addTarget:self action:@selector(handleHistoryBtn) forControlEvents:UIControlEventTouchUpInside];
-    
 }
 
 //compactLayout
