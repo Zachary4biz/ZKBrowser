@@ -10,18 +10,27 @@
 #import "Masonry.h"
 #import "ZTAddressView.h"
 #import "ButtonView.h"
+#import "ZTWebViewController.h"
 
 @interface MessagesViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) ZTAddressView *addV;
 @property (nonatomic, strong) ButtonView *btnV;
+@property (nonatomic, strong) ZTWebViewController *webVC;
+@property (nonatomic, strong) UIImage *snapWebV;
 
 
 
 @end
 
 @implementation MessagesViewController
-
+- (UIImage *)snapWebV
+{
+    if(!_snapWebV){
+        _snapWebV = [[UIImage alloc]init];
+    }
+    return _snapWebV;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,20 +48,38 @@
 {
     [self prepareAddressView];
     [self prepareBtnView];
+    [self prepareWebView];
     [self prepareLayout];
 }
 - (void)prepareAddressView
 {
     self.addV = [[ZTAddressView alloc]init];
+    self.addV.addBar.textF.delegate = self;
     [self.view addSubview:self.addV];
     
-    self.addV.addBar.textF.delegate = self;
+    __weak typeof(self) Wself = self;
+    self.addV.sendBtnBlock = ^(){
+        //拿到这个截图
+        UIGraphicsBeginImageContext(Wself.webVC.view.frame.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        [Wself.webVC.view.layer renderInContext:context];
+        UIImage *snapshotIMG = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        Wself.snapWebV = snapshotIMG;
+        
+        //发送消息
+        [Wself requestPresentationStyle:MSMessagesAppPresentationStyleCompact];
+        [Wself createMessage];
+        NSLog(@"sendBtn");
+    };
 }
 - (void)prepareBtnView
 {
     __weak typeof(self) Wself = self;
     self.btnV = [[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil][0];
     [self.view addSubview:self.btnV];
+    
+    
     self.btnV.favoriteBtnBlock = ^(){
         [Wself handleFavoriteBtn];
     };
@@ -60,7 +87,17 @@
         [Wself handleHistoryBtn];
     };
 }
-
+- (void)prepareWebView
+{
+    self.webVC = [[ZTWebViewController alloc]init];
+    [self addChildViewController:self.webVC];
+    [self.view addSubview:self.webVC.view];
+    
+    //一开始默认是隐藏的，要显示历史、收藏的tableView
+    //在点击返回按钮，即开始搜索时才显示
+    self.webVC.view.hidden = YES;
+    
+}
 #pragma mark - PrepareLayout
 - (void)prepareLayout
 {
@@ -77,6 +114,8 @@
         make.width.equalTo(self.addV.mas_width);
         make.height.mas_equalTo(50);
     }];
+    
+
 }
 //compactLayout
 - (void)getCompactLayout
@@ -90,8 +129,22 @@
     [self.addV mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).offset(8);
         make.right.equalTo(self.view.mas_right).offset(-8);
-        make.top.equalTo(self.view.mas_top).offset(110);
+        make.top.equalTo(self.view.mas_top).offset(100);
         make.height.mas_equalTo(50);
+    }];
+    
+    [self.btnV mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.addV.mas_centerX);
+        make.top.equalTo(self.addV.mas_bottom).offset(10);
+        make.width.equalTo(self.addV.mas_width);
+        make.height.mas_equalTo(50);
+    }];
+    
+    [self.webVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.btnV.mas_bottom);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-30);
+        make.left.equalTo(self.addV.mas_left);
+        make.right.equalTo(self.addV.mas_right);
     }];
 }
 #pragma mark - Button Handler
@@ -118,15 +171,47 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    
+    self.webVC.view.hidden = NO;
+    [textField endEditing:YES];
+    [self.webVC loadSearchContent:textField.text complition:^{
+        self.addV.addBar.sendBtn.enabled = YES;
+    }];
     return YES;
 }
+#pragma mark - Create Message
+- (void)createMessage
+{
+    MSMessageTemplateLayout *aLayout = [[MSMessageTemplateLayout alloc]init];
+    aLayout.image = self.snapWebV;
+    aLayout.imageTitle = self.webVC.webV.title;
+    
+    MSMessage *message = [[MSMessage alloc]init];
+    message.layout = aLayout;
+    
+    message.URL = self.webVC.webV.URL;
+    
+    [self.activeConversation insertMessage:message completionHandler:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error of sendAlter -- %@",error);
+        }
+    }];
 
+}
 
 #pragma mark - Conversation Handling
-
+- (void)willBecomeActiveWithConversation:(MSConversation *)conversation
+{
+    
+}
 -(void)didBecomeActiveWithConversation:(MSConversation *)conversation {
     NSLog(@"从会话中激活");
+    if (conversation.selectedMessage) {
+        NSLog(@"点击消息激活");
+        //如果是通过点击某条MessageExtension的消息激活的
+        [self openHostApp];
+    }else{
+        NSLog(@"普通激活");
+    }
 }
 
 -(void)willResignActiveWithConversation:(MSConversation *)conversation {
@@ -176,8 +261,19 @@
             break;
     }
 }
+- (void)willSelectMessage:(MSMessage *)message conversation:(MSConversation *)conversation
+{
+    
+}
+- (void)didSelectMessage:(MSMessage *)message conversation:(MSConversation *)conversation
+{
+    [self openHostApp];
+}
 
-- (IBAction)tempBtn:(id)sender {
+#pragma mark - Change During Conversation
+//跳转
+- (void)openHostApp
+{
     NSLog(@"点击测试");
     NSString *urlScheme = @"zkbrowser://";
     NSURL *url = [NSURL URLWithString:urlScheme];
@@ -190,18 +286,19 @@
         }
     }];
 }
-#pragma mark - Change During Conversation
 //收缩
 - (void)willCompact
 {
     [self hideAll];
     
     [self.addV.addBar.textF resignFirstResponder];
+    self.addV.addBar.sendBtn.enabled = NO;
 }
 - (void)didCompact
 {
     [self getCompactLayout];
     [self showAll];
+    
 }
 //展开
 - (void)willExpanded

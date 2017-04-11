@@ -22,6 +22,7 @@
 {
     if (self = [super init]) {
         self.addBar = [[NSBundle mainBundle]loadNibNamed:@"AddressView" owner:nil options:nil][0];
+        
         self.pickV = [[NSBundle mainBundle]loadNibNamed:@"AddressView" owner:nil options:nil][1];
         [self addSubview:self.pickV];
         [self addSubview:self.addBar];
@@ -79,6 +80,12 @@
                 make.bottom.equalTo(Wself.addBar.mas_bottom);
             }];
         }];
+    };
+    
+    _addBar.sendBtnBlock = ^(){
+        if (Wself.sendBtnBlock) {
+            Wself.sendBtnBlock();
+        }
     };
 }
 @end

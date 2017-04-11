@@ -45,6 +45,7 @@
 		115209A81E9B9E5E0043E671 /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115209A61E9B9E5E0043E671 /* ButtonView.xib */; };
 		115209B81E9CA4900043E671 /* ZTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115209B71E9CA4900043E671 /* ZTWebViewController.m */; };
 		115209BC1E9CA4B30043E671 /* ZTListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115209BB1E9CA4B30043E671 /* ZTListTableViewController.m */; };
+		115209BF1E9CA7C30043E671 /* ZTDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 115209BE1E9CA7C30043E671 /* ZTDetection.m */; };
 		118FB16E1E35BEB800A50698 /* SetUpAboutKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1601E35BEB800A50698 /* SetUpAboutKeyboard.m */; };
 		118FB16F1E35BEB800A50698 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1631E35BEB800A50698 /* MyButton.m */; };
 		118FB1701E35BEB800A50698 /* VerticalCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 118FB1661E35BEB800A50698 /* VerticalCollectionView.m */; };
@@ -151,6 +152,8 @@
 		115209B71E9CA4900043E671 /* ZTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTWebViewController.m; sourceTree = "<group>"; };
 		115209BA1E9CA4B30043E671 /* ZTListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTListTableViewController.h; sourceTree = "<group>"; };
 		115209BB1E9CA4B30043E671 /* ZTListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTListTableViewController.m; sourceTree = "<group>"; };
+		115209BD1E9CA7C30043E671 /* ZTDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTDetection.h; sourceTree = "<group>"; };
+		115209BE1E9CA7C30043E671 /* ZTDetection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTDetection.m; sourceTree = "<group>"; };
 		118FB15F1E35BEB800A50698 /* SetUpAboutKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpAboutKeyboard.h; sourceTree = "<group>"; };
 		118FB1601E35BEB800A50698 /* SetUpAboutKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpAboutKeyboard.m; sourceTree = "<group>"; };
 		118FB1621E35BEB800A50698 /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 			children = (
 				115209B61E9CA4900043E671 /* ZTWebViewController.h */,
 				115209B71E9CA4900043E671 /* ZTWebViewController.m */,
+				115209BD1E9CA7C30043E671 /* ZTDetection.h */,
+				115209BE1E9CA7C30043E671 /* ZTDetection.m */,
 			);
 			path = ZTWebView;
 			sourceTree = "<group>";
@@ -728,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				115209851E9B89880043E671 /* MASConstraintMaker.m in Sources */,
+				115209BF1E9CA7C30043E671 /* ZTDetection.m in Sources */,
 				1152093B1E9B86B40043E671 /* ZTAddressView.m in Sources */,
 				1152093A1E9B86B40043E671 /* ZTAddressBar.m in Sources */,
 				115209821E9B89880043E671 /* MASConstraint.m in Sources */,

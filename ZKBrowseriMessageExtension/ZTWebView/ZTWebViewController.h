@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <WebKit/WebKit.h>
 @interface ZTWebViewController : UIViewController
+@property (nonatomic, strong) WKWebView *webV;
 
+//- (void)loadURL:(NSURL *)url;
+//- (void)loadRequest:(NSURLRequest *)request;
+- (void)loadSearchContent:(NSString *)str complition:(void (^)())complitionBlock;
 @end

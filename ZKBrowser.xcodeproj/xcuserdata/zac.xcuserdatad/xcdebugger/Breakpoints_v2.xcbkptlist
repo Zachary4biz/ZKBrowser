@@ -196,26 +196,26 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZKBrowseriMessageExtension/ZTAddressView/ZTAddressView.m"
-            timestampString = "513577354.044411"
+            timestampString = "513584900.110138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109">
+            startingLineNumber = "116"
+            endingLineNumber = "116">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZKBrowseriMessageExtension/MessagesViewController.m"
-            timestampString = "513578645.029061"
+            timestampString = "513586134.417527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "-didBecomeActiveWithConversation:"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "-didSelectMessage:conversation:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

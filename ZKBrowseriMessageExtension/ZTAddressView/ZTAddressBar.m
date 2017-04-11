@@ -17,6 +17,11 @@
 
 
 @implementation ZTAddressBar
+- (IBAction)sendBtn:(id)sender {
+    if (self.sendBtnBlock) {
+        self.sendBtnBlock();
+    }
+}
 
 
 - (IBAction)engineBtn:(id)sender {
