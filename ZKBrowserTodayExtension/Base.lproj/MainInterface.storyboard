@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,29 +22,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="116" y="8" width="88.5" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUY-e2-R81">
+                                <rect key="frame" x="130" y="45" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="88.5" id="OBS-GJ-fw1"/>
-                                    <constraint firstAttribute="height" constant="33" id="Tvk-5X-LV5"/>
+                                    <constraint firstAttribute="width" constant="60" id="TFP-fQ-H6g"/>
+                                    <constraint firstAttribute="height" constant="60" id="dds-S4-f9g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUY-e2-R81">
-                                <rect key="frame" x="137" y="60" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="收藏" image="today_favorite">
+                                    <color key="titleColor" red="1" green="0.4538327029" blue="0.26293168420000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
-                                    <action selector="tmpBtn:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="yC5-dT-o7Q"/>
+                                    <action selector="favoriteBtn:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="V8d-NY-08X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKp-fI-BTs">
+                                <rect key="frame" x="50.5" y="45.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Qsp-Oy-Zq5"/>
+                                    <constraint firstAttribute="height" constant="60" id="w5H-Nu-pFR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="搜索" image="today_search">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchBtn:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="m4X-EZ-WjM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10T-xd-SvT">
+                                <rect key="frame" x="210" y="45" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Gi0-sU-ycd"/>
+                                    <constraint firstAttribute="width" constant="60" id="y5i-Kg-VaC"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="历史" image="today_history"/>
+                                <connections>
+                                    <action selector="historyBtn:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="GCL-n2-Dm7"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="1ly-Uu-74y"/>
+                            <constraint firstItem="cKp-fI-BTs" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" multiplier="0.5" id="AXt-gj-BWg"/>
+                            <constraint firstItem="10T-xd-SvT" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="V2p-QF-rmL"/>
                             <constraint firstItem="tUY-e2-R81" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="dx4-aA-jzf"/>
                             <constraint firstItem="tUY-e2-R81" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="hai-C9-uVD"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="lk8-OU-CdG"/>
+                            <constraint firstItem="10T-xd-SvT" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" multiplier="1.5" id="pNv-ky-7Iq"/>
+                            <constraint firstItem="cKp-fI-BTs" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="x7g-lw-Rry"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -52,9 +79,20 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="150"/>
+                    <connections>
+                        <outlet property="favoriteBtn" destination="tUY-e2-R81" id="mRx-r6-RmE"/>
+                        <outlet property="historyBtn" destination="10T-xd-SvT" id="ZIr-1c-7vi"/>
+                        <outlet property="searchBtn" destination="cKp-fI-BTs" id="FoT-lR-MP0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33.600000000000001" y="93.553223388305852"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="today_favorite" width="373" height="373"/>
+        <image name="today_history" width="1102" height="1102"/>
+        <image name="today_search" width="576" height="600"/>
+    </resources>
 </document>

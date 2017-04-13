@@ -12,4 +12,5 @@
 @interface ZTAddressView : UIView
 @property (nonatomic, strong) ZTAddressBar *addBar;
 @property (nonatomic, strong) ZTPickEngineView *pickV;
+@property (nonatomic, copy) void (^sendBtnBlock)();
 @end

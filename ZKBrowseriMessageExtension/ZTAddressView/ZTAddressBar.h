@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
 @interface ZTAddressBar : UIView
-@property (nonatomic, copy)void (^clickEngineBlock)();
+@property (nonatomic, copy) void (^clickEngineBlock)();
+@property (nonatomic, copy) void (^sendBtnBlock)();
+@property (weak, nonatomic) IBOutlet UIButton *sendBtn;
 @property (weak, nonatomic) IBOutlet UIButton *engineBtn;
 @property (weak, nonatomic) IBOutlet UITextField *textF;
 @end

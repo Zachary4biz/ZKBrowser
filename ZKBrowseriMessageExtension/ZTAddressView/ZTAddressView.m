@@ -22,6 +22,7 @@
 {
     if (self = [super init]) {
         self.addBar = [[NSBundle mainBundle]loadNibNamed:@"AddressView" owner:nil options:nil][0];
+        
         self.pickV = [[NSBundle mainBundle]loadNibNamed:@"AddressView" owner:nil options:nil][1];
         [self addSubview:self.pickV];
         [self addSubview:self.addBar];
@@ -37,10 +38,11 @@
     [self.addBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(Wself.mas_left);
         make.right.equalTo(Wself.mas_right);
-        make.centerY.equalTo(Wself.mas_centerY).offset(-20);
-        make.height.mas_equalTo(40);
+        make.top.equalTo(Wself.mas_top);
+        make.bottom.equalTo(Wself.mas_bottom);
     }];
     self.addBar.layer.cornerRadius = 8.0;
+    self.addBar.sendBtn.hidden = YES;
     
     [self.pickV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(Wself.addBar.mas_leading);
@@ -79,6 +81,12 @@
                 make.bottom.equalTo(Wself.addBar.mas_bottom);
             }];
         }];
+    };
+    
+    _addBar.sendBtnBlock = ^(){
+        if (Wself.sendBtnBlock) {
+            Wself.sendBtnBlock();
+        }
     };
 }
 @end
