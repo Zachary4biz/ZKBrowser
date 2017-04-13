@@ -20,6 +20,7 @@
 #import "SmallWebView.h"
 #import "SpotlightUtil.h"
 #import "InputAccessory.h"
+#import "AppDelegate.h"
 
 #define DesktopUA "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50"
 #define MobileUA "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5"
@@ -278,20 +279,27 @@ static id instance;
     self.addressView.clickFunctionalBtnBlock = ^(id object){
         //点击功能按钮
         NSLog(@"点击了功能键");
+        //保存收藏记录
+        AppDelegate *d = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        NSUserDefaults *groupD = [d getAppGroupUserDefault];
+        NSMutableArray *favoriteArr =[NSMutableArray arrayWithArray:[groupD objectForKey:@"favoriteArr"]];
+        NSString *targetStr = WeakSelf.addressView.urlTextField.text;
+        int hasTargetStr = 0;
+        for (int i=0; i<favoriteArr.count; i++) {
+            if ([targetStr isEqualToString:favoriteArr[i]]) {
+                //已有收藏记录，不处理，标记一下
+                hasTargetStr = 1;
+            }
+        }
+        if (hasTargetStr == 0) {
+            //遍历后发现没有存过
+            [favoriteArr insertObject:targetStr atIndex:0];
+        }
         
-        NSLog(@"添加了spotlight功能");
-        NSData *imgData = [SpotlightUtil getNSDataOfUIImage:[UIImage imageNamed:@"BlurBackGround"]];
+        NSArray *resultArr = [NSArray arrayWithArray:favoriteArr];
+        [groupD setObject:resultArr forKey:@"favoriteArr"];
         
-        NSArray *arr1 = [NSArray arrayWithObjects:@"mode",@"hanmode",@"muhanmode",@"穆罕默德",@"默德",nil];
-        CSSearchableItem *item1 = [SpotlightUtil getItemWithTitle:@"穆罕默德" keywordArr:arr1 contentDescription:@"穆罕穆德的百度百科" thumbnailData:imgData spotlightInfo:@"穆罕默德" domainID:@"item1"];
-        
-        NSArray *arr2 = [NSArray arrayWithObjects:@"zhongguo",@"china",@"中国",@"中华人民共和国",@"中华",nil];
-        CSSearchableItem *item2 = [SpotlightUtil getItemWithTitle:@"中国" keywordArr:arr2 contentDescription:@"中国\n中华人民共和国\n的百度百科" thumbnailData:imgData spotlightInfo:@"中国" domainID:@"item2"];
-        
-        NSArray *arr3 = [NSArray arrayWithObjects:@"Indian",@"印度",@"yindu", nil];
-         CSSearchableItem *item3 = [SpotlightUtil getItemWithTitle:@"印度" keywordArr:arr3 contentDescription:@"印度\n印度？？？\n的百度百科" thumbnailData:imgData spotlightInfo:@"印度" domainID:@"item3"];
-        
-        [SpotlightUtil setUpSpotlightWithItemsArr:@[item1,item2,item3]];
+//        [WeakSelf makeSpotlight];
         
         
     };
@@ -541,6 +549,22 @@ static id instance;
 }
 
 #pragma mark - 自定义的一些方法
+- (void)makeSpotlight
+{
+    NSLog(@"添加了spotlight功能");
+    NSData *imgData = [SpotlightUtil getNSDataOfUIImage:[UIImage imageNamed:@"BlurBackGround"]];
+    
+    NSArray *arr1 = [NSArray arrayWithObjects:@"mode",@"hanmode",@"muhanmode",@"穆罕默德",@"默德",nil];
+    CSSearchableItem *item1 = [SpotlightUtil getItemWithTitle:@"穆罕默德" keywordArr:arr1 contentDescription:@"穆罕穆德的百度百科" thumbnailData:imgData spotlightInfo:@"穆罕默德" domainID:@"item1"];
+    
+    NSArray *arr2 = [NSArray arrayWithObjects:@"zhongguo",@"china",@"中国",@"中华人民共和国",@"中华",nil];
+    CSSearchableItem *item2 = [SpotlightUtil getItemWithTitle:@"中国" keywordArr:arr2 contentDescription:@"中国\n中华人民共和国\n的百度百科" thumbnailData:imgData spotlightInfo:@"中国" domainID:@"item2"];
+    
+    NSArray *arr3 = [NSArray arrayWithObjects:@"Indian",@"印度",@"yindu", nil];
+    CSSearchableItem *item3 = [SpotlightUtil getItemWithTitle:@"印度" keywordArr:arr3 contentDescription:@"印度\n印度？？？\n的百度百科" thumbnailData:imgData spotlightInfo:@"印度" domainID:@"item3"];
+    
+    [SpotlightUtil setUpSpotlightWithItemsArr:@[item1,item2,item3]];
+}
 //这个是关掉APP后，再打开，还是自动回复标签，并且回复标签的backForwardList
 
 static int judge4isFromLocalWebViews = 0;
@@ -956,7 +980,31 @@ static NSString *access_token = @"24.7d5e1904fb54da55ab1fb411df317b79.2592000.14
 - (void)commitNavigationWebView:(WebView *)webView
 {
     if (webView.isRebooting) {
+        //重新生成webView时（这是因为重启后想恢复标签页历史记录）
         [webView stopLoading];
+    }else{
+        //正常加载时，记录历史记录
+        AppDelegate *d = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        NSUserDefaults *groupD = [d getAppGroupUserDefault];
+        NSMutableArray *historyArr =[NSMutableArray arrayWithArray:[groupD arrayForKey:@"historyArr"]];
+        for (int i=0;i<historyArr.count;i++){
+            NSString *hisStr = historyArr[i];
+            if ([hisStr isEqualToString:webView.URL.absoluteString]) {
+                //如果有过记录就不存了，把这个记录放到最前面
+                [historyArr exchangeObjectAtIndex:0 withObjectAtIndex:i];
+            }
+        }
+        //遍历结束后，检查
+        //注意用firstObject，因为数组可能为空
+        if ([webView.URL.absoluteString isEqualToString:[historyArr firstObject]]) {
+            //如果第一个是当前页的URL，说明是有过记录的，在遍历时把它放到了第一个
+        }else{
+            //如果第一个不是当前URL，说明没有记录，放进去
+            [historyArr insertObject:webView.URL.absoluteString atIndex:0];
+        }
+        
+        NSArray *resultArr = [NSArray arrayWithArray:historyArr];
+        [groupD setObject:resultArr forKey:@"historyArr"];
     }
 }
 

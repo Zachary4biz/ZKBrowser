@@ -131,8 +131,9 @@ static CGFloat WandH4searchEngineBtn = 30.0;
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     self.textFieldRetrunBlock(textField.text);
+    [self.urlTextField endEditing:YES];
     [self.urlTextField resignFirstResponder];
-    return NO;
+    return YES;
 }
 
 #pragma mark 响应

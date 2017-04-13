@@ -37,20 +37,7 @@
     self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
 #endif
     
-//    [self prepareButton:@[_favoriteBtn,_searchBtn]];
-//    [_favoriteBtn setTitle:@"收藏" forState:UIControlStateNormal];
-//    [_favoriteBtn.imageView setImage:[UIImage imageNamed:@"today_favorite"]];
-//    
-//    [_searchBtn.imageView setImage:[UIImage imageNamed:@"today_search"]];
-//    
-//    [_historyBtn setImage:[UIImage imageNamed:@"today_history"] forState:UIControlStateNormal];
-//    [_historyBtn setTitle:@"历史" forState:UIControlStateNormal];
-//    
-//    self.hisBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
-//    [self.hisBtn.imageView setImage:[UIImage imageNamed:@"today_history"]];
-//    [self.hisBtn setTitle:@"历史" forState:UIControlStateNormal];
-//    self.hisBtn.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:self.hisBtn];
+
 }
 - (void)prepareButton:(NSArray *)btnArr
 {

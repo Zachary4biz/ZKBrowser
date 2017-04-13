@@ -87,7 +87,12 @@ continueUserActivity:(nonnull NSUserActivity *)userActivity
     }
     return YES;
 }
-
+#pragma mark - AppGroup
+- (NSUserDefaults *)getAppGroupUserDefault
+{
+    NSUserDefaults *d = [[NSUserDefaults alloc]initWithSuiteName:@"group.Ted.ZKBrowser"];
+    return d;
+}
 #pragma mark - iMessageApp拓展进来
 - (BOOL)application:(UIApplication *)application openURL:(NSURL * _Nonnull)url sourceApplication:(NSString * _Nullable)sourceApplication annotation:(id _Nonnull)annotation
 {

@@ -31,9 +31,18 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, assign) TableViewKind kind;
 
+@property (nonatomic, strong) NSUserDefaults *groupD;
+
 @end
 
 @implementation MessagesViewController
+- (NSUserDefaults *)groupD
+{
+    if(!_groupD){
+        _groupD = [[NSUserDefaults alloc] initWithSuiteName:@"group.Ted.ZKBrowser"];
+    }
+    return _groupD;
+}
 - (UIImage *)snapWebV
 {
     if(!_snapWebV){
@@ -45,7 +54,7 @@ typedef enum : NSUInteger {
 {
     if(!_hisArr){
         _hisArr = [NSMutableArray new];
-        _hisArr = [NSMutableArray arrayWithObjects:@"https://www.baidu.com",@"https://www.tencent.com", nil];
+        _hisArr = [self.groupD objectForKey:@"historyArr"];
     }
     return _hisArr;
 }
@@ -53,7 +62,8 @@ typedef enum : NSUInteger {
 {
     if(!_favArr){
         _favArr = [NSMutableArray new];
-        _favArr = [NSMutableArray arrayWithObjects:@"https://www.youku.com",@"https://www.apusapps.com",@"https://music.163.com", nil];
+        _favArr = [self.groupD objectForKey:@"favoriteArr"];
+//        _favArr = [NSMutableArray arrayWithObjects:@"https://www.youku.com",@"https://www.apusapps.com",@"https://music.163.com", nil];
     }
     return _favArr;
 }
