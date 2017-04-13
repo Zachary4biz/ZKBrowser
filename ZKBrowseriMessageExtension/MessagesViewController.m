@@ -12,6 +12,7 @@
 #import "ButtonView.h"
 #import "ZTSlideViewController.h"
 
+
 typedef enum : NSUInteger {
     History,
     Favorite,
@@ -62,7 +63,6 @@ typedef enum : NSUInteger {
     [super viewDidLoad];
     
     [self prepareViews];
-    
     //默认是收藏
     self.kind = Favorite;
     
@@ -71,7 +71,7 @@ typedef enum : NSUInteger {
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -176,7 +176,7 @@ typedef enum : NSUInteger {
         make.width.equalTo(self.addV.mas_width);
         make.height.mas_equalTo(50);
     }];
-    
+
 }
 //compactLayout
 - (void)getCompactLayout
