@@ -10,7 +10,7 @@
 #import "Masonry.h"
 #import "ZTDetection.h"
 
-@interface ZTWebViewController ()<WKUIDelegate,WKNavigationDelegate>
+@interface ZTWebViewController ()<WKUIDelegate,WKNavigationDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIProgressView *progressV;
 
@@ -28,6 +28,7 @@
 - (void)prepareViews
 {
     [self prepareWebView];
+    [self prepareProgressView];
     [self prepareLayout];
 }
 - (void)prepareWebView
@@ -37,27 +38,80 @@
     self.webV.navigationDelegate = self;
     [self.view addSubview:self.webV];
     
+    [self.webV addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    self.webV.scrollView.delegate = self;
+    self.webV.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.webV.layer.shadowOpacity = 0.5;
+    
 }
-
+- (void)prepareProgressView
+{
+    self.progressV = [[UIProgressView alloc]init];
+    self.progressV.trackTintColor = [UIColor whiteColor];
+    self.progressV.progressTintColor = [UIColor lightGrayColor];
+    [self.view addSubview:self.progressV];
+}
 - (void)prepareLayout
 {
     [self.webV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
-        make.top.equalTo(self.view.mas_top);
+        make.top.equalTo(self.view.mas_top).offset(2);
         make.bottom.equalTo(self.view.mas_bottom);
+    }];
+    
+    [self.progressV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.right.mas_equalTo(self.view.mas_right);
+        make.top.equalTo(self.view.mas_top);
+        make.bottom.equalTo(self.webV.mas_top);
+        
     }];
 }
 
 - (void)loadSearchContent:(NSString *)str complition:(void (^)())complitionBlock
 {
-    NSURLRequest *req = [ZTDetection detectReqeuestFromString:str];
+    NSMutableURLRequest *req = [ZTDetection detectReqeuestFromString:str];
+    req.timeoutInterval = 3.0;
+    self.progressV.progress = 0.0;
+    self.progressV.hidden = NO;
+    self.progressV.alpha = 1.0;
     [self.webV loadRequest:req];
     self.finishBlock = complitionBlock;
 }
-
-
-
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"webview  scroll");
+    if (self.webViewScrollBlock) {
+        self.webViewScrollBlock();
+    }
+}
+#pragma mark - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if ([keyPath isEqual:@"estimatedProgress"]) {
+        if (object == self.webV){
+            float estimateP = [change[NSKeyValueChangeNewKey] floatValue];
+            if (estimateP==1.0) {
+                
+                [UIView animateWithDuration:0.2 animations:^{
+                    self.progressV.alpha = 0;
+                }completion:^(BOOL finished) {
+                    self.progressV.hidden = YES;
+                }];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.progressV.progress = estimateP;
+            });
+            
+        }
+    }
+}
+- (void)dealloc
+{
+    [self.webV removeObserver:self forKeyPath:@"estimatedProgress"];
+}
 #pragma mark - WKUIDelegate
 //JS方面要直接弹窗的
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
@@ -103,23 +157,33 @@
 #pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {
-    
+    NSLog(@"startProvisionalNavigation");
 }
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
 {
-    
+    NSLog(@"didcommit");
 }
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
+    NSLog(@"加载结束");
     if (self.finishBlock){
         self.finishBlock();
     }
 }
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
+    NSLog(@"加载出现错误");
+}
+- (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler
+{
+    //收到https验证
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust])
+    {
+        NSURLCredential *card = [[NSURLCredential alloc]initWithTrust:challenge.protectionSpace.serverTrust];
+        completionHandler(NSURLSessionAuthChallengeUseCredential,card);
+    }
     
 }
-
 //接收到服务器重定向
 - (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation
 {

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ZTListTableViewController : UITableViewController
-
+@property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, copy) void (^didSelectCellBlock)(NSString *str);
+@property (nonatomic, copy) void (^didScrollBlock)();
+@property (nonatomic, strong) UIImage *img4cell;
 @end

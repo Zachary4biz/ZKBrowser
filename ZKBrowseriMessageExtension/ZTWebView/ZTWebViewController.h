@@ -14,4 +14,6 @@
 //- (void)loadURL:(NSURL *)url;
 //- (void)loadRequest:(NSURLRequest *)request;
 - (void)loadSearchContent:(NSString *)str complition:(void (^)())complitionBlock;
+
+@property (nonatomic, copy) void (^webViewScrollBlock)();
 @end

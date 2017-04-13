@@ -12,5 +12,7 @@
 
 @property (nonatomic, copy) void (^favoriteBtnBlock)();
 @property (nonatomic, copy) void (^historyBtnBlock)();
-
+@property (weak, nonatomic) IBOutlet UIView *maskV;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteBtn;
+@property (weak, nonatomic) IBOutlet UIButton *historyBtn;
 @end

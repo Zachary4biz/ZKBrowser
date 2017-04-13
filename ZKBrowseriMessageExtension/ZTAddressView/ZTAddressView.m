@@ -42,6 +42,7 @@
         make.bottom.equalTo(Wself.mas_bottom);
     }];
     self.addBar.layer.cornerRadius = 8.0;
+    self.addBar.sendBtn.hidden = YES;
     
     [self.pickV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(Wself.addBar.mas_leading);

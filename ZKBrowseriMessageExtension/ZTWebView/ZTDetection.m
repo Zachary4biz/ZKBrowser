@@ -9,26 +9,22 @@
 #import "ZTDetection.h"
 
 @implementation ZTDetection
-+ (NSURLRequest *)detectReqeuestFromString:(NSString *)str
++ (NSMutableURLRequest *)detectReqeuestFromString:(NSString *)str
 {
     NSString *object = str;
-    NSURLRequest *request = nil;
+    NSMutableURLRequest *request = nil;
     if([object hasSuffix:@".com"] || [object hasSuffix:@".org"]){
         //结尾.com表示是网页
         //首先全部小写
         object = [object lowercaseString];
         if ([object hasPrefix:@"http://"] || [object hasPrefix:@"https://"]) {
             //有http开头或者https开头，直接请求
-            request = [NSURLRequest requestWithURL:[NSURL URLWithString:object]
-                                       cachePolicy:0
-                                   timeoutInterval:1.0];
+            request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:object]];
         }else{
             //没有http开头的补全一下
             NSString *urlPrefix = @"https://";
             NSString *urlStr = [urlPrefix stringByAppendingString:object];
-            request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]
-                                       cachePolicy:0
-                                   timeoutInterval:1.0];
+            request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
         }
     }else if (object.length == 0){
         NSLog(@"URL栏输入为空，即加载首页");
@@ -44,9 +40,7 @@
         
         NSString *urlStr = [PreStrBaidu stringByAppendingString:object];
         NSURL *url = [NSURL URLWithString:urlStr];
-        request = [NSURLRequest requestWithURL:url
-                                   cachePolicy:0
-                               timeoutInterval:1.0];
+        request = [NSMutableURLRequest requestWithURL:url];
     }
     
     return request;

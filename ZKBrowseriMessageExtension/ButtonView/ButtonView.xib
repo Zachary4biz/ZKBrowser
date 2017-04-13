@@ -16,6 +16,13 @@
             <rect key="frame" x="0.0" y="0.0" width="262" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8g-PV-QiY">
+                    <rect key="frame" x="40.5" y="47" width="50" height="3"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="P9B-PM-woh"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftU-mi-6H8">
                     <rect key="frame" x="40.5" y="0.0" width="50" height="50"/>
                     <constraints>
@@ -28,10 +35,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxi-1H-TiA">
-                    <rect key="frame" x="176.5" y="5" width="40" height="40"/>
+                    <rect key="frame" x="171.5" y="0.0" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="a9A-cL-2V4"/>
-                        <constraint firstAttribute="width" constant="40" id="zJt-s0-H4x"/>
+                        <constraint firstAttribute="height" constant="50" id="a9A-cL-2V4"/>
+                        <constraint firstAttribute="width" constant="50" id="zJt-s0-H4x"/>
                     </constraints>
                     <state key="normal" image="iM_History"/>
                     <connections>
@@ -42,8 +49,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ftU-mi-6H8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.5" id="2eD-wN-7ZF"/>
+                <constraint firstAttribute="bottom" secondItem="x8g-PV-QiY" secondAttribute="bottom" id="412-qn-mkS"/>
+                <constraint firstItem="x8g-PV-QiY" firstAttribute="width" secondItem="ftU-mi-6H8" secondAttribute="width" id="CDa-8X-6qr"/>
                 <constraint firstItem="Yxi-1H-TiA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.5" id="E95-C0-S9K"/>
-                <constraint firstItem="Yxi-1H-TiA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Iuz-DX-0UP"/>
+                <constraint firstItem="x8g-PV-QiY" firstAttribute="leading" secondItem="ftU-mi-6H8" secondAttribute="leading" id="I8j-1p-J83"/>
+                <constraint firstItem="Yxi-1H-TiA" firstAttribute="top" secondItem="ftU-mi-6H8" secondAttribute="top" id="spY-3n-vVB"/>
                 <constraint firstItem="ftU-mi-6H8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uQf-kN-dhT"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -53,6 +63,7 @@
             <connections>
                 <outlet property="favoriteBtn" destination="ftU-mi-6H8" id="UGc-94-Q6V"/>
                 <outlet property="historyBtn" destination="Yxi-1H-TiA" id="5e1-ip-lh2"/>
+                <outlet property="maskV" destination="x8g-PV-QiY" id="UbN-qu-He4"/>
             </connections>
             <point key="canvasLocation" x="-24" y="208"/>
         </view>

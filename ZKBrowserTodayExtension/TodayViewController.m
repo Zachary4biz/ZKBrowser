@@ -10,11 +10,24 @@
 #import <NotificationCenter/NotificationCenter.h>
 
 @interface TodayViewController () <NCWidgetProviding>
-- (IBAction)tmpBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *searchBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *historyBtn;
+
+@property (nonatomic, strong) UIButton *hisBtn;
 
 @end
 
 @implementation TodayViewController
+- (IBAction)favoriteBtn:(id)sender {
+    
+}
+- (IBAction)searchBtn:(id)sender {
+}
+- (IBAction)historyBtn:(id)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,23 +37,41 @@
     self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
 #endif
     
-    
+//    [self prepareButton:@[_favoriteBtn,_searchBtn]];
+//    [_favoriteBtn setTitle:@"收藏" forState:UIControlStateNormal];
+//    [_favoriteBtn.imageView setImage:[UIImage imageNamed:@"today_favorite"]];
+//    
+//    [_searchBtn.imageView setImage:[UIImage imageNamed:@"today_search"]];
+//    
+//    [_historyBtn setImage:[UIImage imageNamed:@"today_history"] forState:UIControlStateNormal];
+//    [_historyBtn setTitle:@"历史" forState:UIControlStateNormal];
+//    
+//    self.hisBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+//    [self.hisBtn.imageView setImage:[UIImage imageNamed:@"today_history"]];
+//    [self.hisBtn setTitle:@"历史" forState:UIControlStateNormal];
+//    self.hisBtn.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:self.hisBtn];
 }
-
+- (void)prepareButton:(NSArray *)btnArr
+{
+    for (UIButton *btn in btnArr){
+        btn.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+        btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 20, 10)];
+        [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.frame.size.height-20, 0, 0, 0)];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    // Perform any setup necessary in order to update the view.
-    
-    // If an error is encountered, use NCUpdateResultFailed
-    // If there's no update required, use NCUpdateResultNoData
-    // If there's an update, use NCUpdateResultNewData
+
 
     completionHandler(NCUpdateResultNewData);
 }
+
 
 - (IBAction)tmpBtn:(id)sender {
     NSLog(@"点击测试");

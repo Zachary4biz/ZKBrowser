@@ -1,0 +1,27 @@
+这里有两种状态
+compact:
+    MessageVC - btnView(1)
+              - addressView(1)
+
+expanded:
+    MessageVC - SlideVC(scrollV) - leftView  - btnView(2)
+                                             - listTableVC
+                                 - rightView - webVC
+              - addressView(1)
+
+btnView实现了两个实例，addressView一直用的同一个实例
+
+btnView比较繁琐：
+    compact下，下方的maskV标记hidden，点击进入expanded状态，maskV.hidden=NO，并且根据点击的按钮进行位移
+    expanded下，点击任意btn就会位移maskV，并且刷新下方的tableView
+    注意maskV的位移是用transform做的，而不是autolayout
+
+addressView：
+    compac模式下，sendBtn.hidden=YES
+    expanded模式下,sendBtn.hidden = NO
+
+在代码中
+MessageVC 一级持有   btnView（expanded下隐藏）
+                   addressView
+                   SlideVC（compact下隐藏）
+而SlideVC里面也有另外一个btnView（的实例）

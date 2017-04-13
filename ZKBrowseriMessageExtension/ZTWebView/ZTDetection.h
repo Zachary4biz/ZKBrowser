@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface ZTDetection : NSObject
-+ (NSURLRequest *)detectReqeuestFromString:(NSString *)str;
++ (NSMutableURLRequest *)detectReqeuestFromString:(NSString *)str;
 @end
